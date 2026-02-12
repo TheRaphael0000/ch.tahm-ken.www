@@ -57,7 +57,7 @@
 		},
 		{
 			text: 'github',
-			href: 'https://github.com/TheRaphael0000/beta.tahm-ken.ch/',
+			href: 'https://github.com/TheRaphael0000/ch.tahm-ken.www/',
 			class: 'fa-brands fa-github text-zinc-50'
 		}
 	];
