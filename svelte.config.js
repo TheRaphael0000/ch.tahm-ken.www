@@ -9,6 +9,9 @@ export default {
 			precompress: true,
 			strict: true
 		}),
+		paths: {
+			relative: false,
+		},
 		alias: {
 			data: './src/data'
 		}
