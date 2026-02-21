@@ -7,6 +7,7 @@
 	import { onMount } from 'svelte';
 	import ThemeSelector from './ThemeSelector.svelte';
 	import { browser } from '$app/environment';
+	import { Link } from '$lib/components';
 	const version = import.meta.env.VITE_BUILD_VERSION;
 
 	let currentPath = $derived(page.url.pathname);
@@ -116,7 +117,7 @@
 
 	<div class="text-sm text-gray-500">
 		<div>
-			Build {version} / DD {manifest_json.dd} / LCU {lcu_version}
+			Build <Link href="https://github.com/TheRaphael0000/ch.tahm-ken.www/commits/{version}" target="_blank">{version}</Link> / DD <Link href="https://ddragon.leagueoflegends.com/cdn/dragontail-{manifest_json.dd}.tgz">{manifest_json.dd}</Link> / LCU {lcu_version}
 		</div>
 		<div>
 			Tahm-Ken.ch isn't endorsed by Riot Games and doesn't reflect the views or opinions of Riot
