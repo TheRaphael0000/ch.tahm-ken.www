@@ -1,6 +1,8 @@
 import tailwindcss from '@tailwindcss/vite';
 import { sveltekit } from '@sveltejs/kit/vite';
 import { defineConfig } from 'vite';
+import wasm from "vite-plugin-wasm";
+import topLevelAwait from "vite-plugin-top-level-await";
 
 
 export default defineConfig(({ command, mode }) => { 
@@ -27,7 +29,7 @@ export default defineConfig(({ command, mode }) => {
 	}
 	
 	return {
-		plugins: [sveltekit(), tailwindcss()],
+		plugins: [sveltekit(), tailwindcss(), wasm(), topLevelAwait()],
 		server: { proxy: proxy },
 	}
 });

@@ -151,6 +151,14 @@
 		let url = `${page.url.pathname}?region=${region}&summoner=${summoner.replace('#', '-')}`;
 		goto(url);
 	}
+
+	function optimize(event: any)
+	{
+		event.preventDefault();
+		console.log(challengesSelected)
+		let url = `compositions?challenges=${challengesSelected.map(c => c.id).join(",")}&champions=${championsSelected.join(",")}`;
+		goto(url);
+	}
 </script>
 
 <svelte:head>
@@ -364,12 +372,6 @@
 					bind:value={championFilter}
 					onkeypress={filterKey}
 				/>
-				<!-- <Button
-					class="m-3"
-					title="Find compositions that satify the current selection (selected champions and challenges)."
-				>
-					<i class="fa-solid fa-wand-magic-sparkles"></i> Optimize selection
-				</Button> -->
 				<div class="flex items-center gap-3">
 					{#each Array.from(Array(5).keys()) as i}
 						{@const championSelected = championsSelected.at(i) ?? ''}
@@ -392,6 +394,12 @@
 				<!-- <Button class="m-3" title="Copy a link to your current selection to the clipboard">
 					<i class="fa-solid fa-share"></i> Share
 				</Button> -->
+				<Button
+					title="Find compositions that satify the current selection (selected champions and challenges)."
+					onclick={optimize}
+				>
+					<i class="fa-solid fa-wand-magic-sparkles"></i> Optimize selection
+				</Button>
 			</div>
 		</div>
 
