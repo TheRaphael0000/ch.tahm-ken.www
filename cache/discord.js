@@ -22,6 +22,10 @@ export default async function main() {
 	}
 	const communities_string = JSON.stringify(Object.fromEntries(cache), null, 2);
 
-	try { mkdirSync("src/data/cache/", { recursive: true }) } catch { }
+	try {
+		mkdirSync('src/data/cache/', { recursive: true });
+	} catch {
+		//
+	}
 	writeFileSync('src/data/cache/discord.cache.json', communities_string);
 }

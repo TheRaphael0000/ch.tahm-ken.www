@@ -6,4 +6,4 @@ async function main() {
 	await cache_datadragon();
 }
 
-main()
+main();

@@ -152,11 +152,9 @@
 		goto(url);
 	}
 
-	function optimize(event: any)
-	{
+	function optimize(event: any) {
 		event.preventDefault();
-		console.log(challengesSelected)
-		let url = `optimizer?challenges=${challengesSelected.map(c => c.id).join(",")}&champions=${championsSelected.join(",")}`;
+		let url = `optimizer?challenges=${challengesSelected.map((c) => c.id).join(',')}&champions=${championsSelected.join(',')}`;
 		goto(url);
 	}
 </script>
@@ -184,14 +182,12 @@
 					{/each}
 				</Select>
 				<InputText
-					class="-ml-[1px] rounded-none {playerData == undefined
-						? 'text-red-500'
-						: 'text-green-500'}"
+					class="-ml-px rounded-none {playerData == undefined ? 'text-red-500' : 'text-green-500'}"
 					title="Search your account"
 					placeholder="Summoner name#tag..."
 					bind:value={summoner}
 				/>
-				<Button class="-ml-[1px] rounded-l-none" type="submit">
+				<Button class="-ml-px rounded-l-none" type="submit">
 					<i class="fa-solid fa-fw fa-magnifying-glass"></i>
 				</Button>
 			</form>
@@ -238,8 +234,7 @@
 				{#each challengesGroups as challengeGroup}
 					{@const main = challengeGroup.main}
 					{@const mainPlayerChallenge = playerChallengesMap?.get(main?.id)}
-					{@const mainPlayerChallengeLevel =
-						mainPlayerChallenge?.level ?? 'IRON'}
+					{@const mainPlayerChallengeLevel = mainPlayerChallenge?.level ?? 'IRON'}
 					<tr>
 						<td class="px-2"></td>
 						<td class="px-2"></td>
@@ -321,7 +316,7 @@
 								<td class="px-2 text-left">
 									<div class="flex items-center">
 										{#each championsSelectedChallenge as championSelectedChallenge}
-											<div class="mx-0.5 h-[20px] w-[20px]">
+											<div class="mx-0.5 h-5 w-5">
 												<img
 													src={`/img/cache/datadragon/champion/${championSelectedChallenge?.image.full}`}
 													alt={championSelectedChallenge?.name}
@@ -329,7 +324,7 @@
 											</div>
 										{/each}
 										{#each Array(missingDots) as i}
-											<div class="mx-0.5 h-[20px] w-[20px] p-[5px]">
+											<div class="mx-0.5 h-5 w-5 p-[5px]">
 												<div class="v-full h-full rounded-full bg-white/50"></div>
 											</div>
 										{/each}
@@ -382,7 +377,10 @@
 								<div class="v-full h-full rounded-full bg-white/50"></div>
 							{:else}
 								<button class="cursor-pointer" onclick={(e) => championClick(e, champion.id)}>
-									<img src={`/img/cache/datadragon/champion/${champion?.image.full}`} alt={champion.name} />
+									<img
+										src={`/img/cache/datadragon/champion/${champion?.image.full}`}
+										alt={champion.name}
+									/>
 								</button>
 							{/if}
 						</div>
@@ -417,7 +415,11 @@
 							class:opacity-35={!championsKeyForSelectedChallenges.includes(champion.key) &&
 								championsKeyForSelectedChallenges.length != 0}
 						>
-							<img src={`/img/cache/datadragon/champion/${champion.image.full}`} alt={champion.name} class="w-16" />
+							<img
+								src={`/img/cache/datadragon/champion/${champion.image.full}`}
+								alt={champion.name}
+								class="w-16"
+							/>
 							<div
 								class={[
 									'absolute right-0 bottom-0 rounded-tl-[50%] px-2 pt-0.5 text-sm font-bold',

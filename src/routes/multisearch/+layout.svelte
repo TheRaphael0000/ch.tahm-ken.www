@@ -7,5 +7,5 @@
 <Article>
 	<H1>Multisearch</H1>
 
-    {@render children()}
+	{@render children()}
 </Article>

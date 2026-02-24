@@ -10,11 +10,11 @@ export default {
 			strict: true
 		}),
 		paths: {
-			relative: false,
+			relative: false
 		},
 		alias: {
 			data: './src/data',
-			'wasm-optimizer': './src/wasm-optimizer',
+			'wasm-optimizer': './src/wasm-optimizer'
 		}
 	}
 };

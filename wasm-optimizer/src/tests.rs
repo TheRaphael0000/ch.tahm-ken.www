@@ -10,11 +10,11 @@ mod tests {
         //     10
         // );
 
-        // let comps = complete_comp(vec_to_set(vec![303407,303509]), vec_to_set(vec![]), 10);
+        // let result = complete_comp(vec_to_set(vec![303407,303509]), vec_to_set(vec![]), 10);
 
-        // let comps = complete_comp(vec_to_set(vec![303401]), vec_to_set(vec![166, 103, 266, 22]), 10000);
-        // let comps = complete_comp(vec_to_set(vec![303501]), vec_to_set(vec![]), 10000);
-        let comps = complete_comp(vec_to_set(vec![303401, 303402, 303403, 303404]), vec_to_set(vec![]), 10000);
+        // let result = complete_comp(vec_to_set(vec![303401]), vec_to_set(vec![166, 103, 266, 22]), 10000);
+        let result = complete_comp(vec_to_set(vec![303501]), vec_to_set(vec![]), 10000);
+        // let result = complete_comp(vec_to_set(vec![303401, 303402, 303403, 303404]), vec_to_set(vec![]), 100);
 
         // let comps = complete_comp(
         //     vec_to_set(vec![303401, 303402, 303403]),
@@ -22,10 +22,9 @@ mod tests {
         //     1000000,
         // );
 
-        for comp in &comps {
-            println!("{:?}", comp);
+        for (nb_challenges, comps) in &result {
+            println!("{}: {}", nb_challenges, comps.len());
         }
-        println!("{}", comps.len());
 
         // let comps = complete_comp(
         //     vec_to_set(vec![303401]),

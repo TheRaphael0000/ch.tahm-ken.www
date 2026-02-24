@@ -1,5 +1,5 @@
 use itertools::Itertools;
-use std::collections::HashSet;
+use std::collections::{HashMap, HashSet};
 
 use crate::data::get_challenges;
 use crate::data_transform::{get_challenge_requirements, get_challenges_by_champions, get_champions};
@@ -16,7 +16,7 @@ struct ChallengeExplore {
 fn complete_comp_recursive(
     selected_challenges: HashSet<i32>,
     selected_champions: HashSet<i32>,
-    results: &mut Vec<HashSet<i32>>,
+    results: &mut HashMap<usize, Vec<(HashSet<i32>, HashSet<i32>)>>,
     limit: i32,
     max_depth: Option<i32>,
 ) -> bool {
@@ -34,7 +34,7 @@ fn complete_comp_recursive(
     if available_champion_slots <= 0 && still_missing_challenges.is_empty() {
         let comp = selected_champions.clone();
         // println!("found!");
-        results.push(comp);
+        results.entry(current_challenges.len()).or_default().push((comp, current_challenges));
 
         // if we reach enough comps we start the exit condition
         return (results.len() as i32) < limit;
@@ -109,8 +109,8 @@ fn complete_comp_recursive(
     true
 }
 
-pub fn complete_comp(selected_challenges: HashSet<i32>, selected_champions: HashSet<i32>, limit: i32) -> Vec<HashSet<i32>> {
-    let mut results = Vec::new();
+pub fn complete_comp(selected_challenges: HashSet<i32>, selected_champions: HashSet<i32>, limit: i32) -> HashMap<usize, Vec<(HashSet<i32>, HashSet<i32>)>> {
+    let mut results = HashMap::new();
     complete_comp_recursive(selected_challenges, selected_champions, &mut results, limit, None);
     results
 }
