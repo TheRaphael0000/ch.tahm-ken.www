@@ -156,7 +156,7 @@
 	{
 		event.preventDefault();
 		console.log(challengesSelected)
-		let url = `compositions?challenges=${challengesSelected.map(c => c.id).join(",")}&champions=${championsSelected.join(",")}`;
+		let url = `optimizer?challenges=${challengesSelected.map(c => c.id).join(",")}&champions=${championsSelected.join(",")}`;
 		goto(url);
 	}
 </script>

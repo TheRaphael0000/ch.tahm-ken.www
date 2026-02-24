@@ -9,7 +9,6 @@ def get_endpoint(game_folder):
     values = open(game_folder / Path("lockfile")).read().split(":")
     return (f"{values[4]}://127.0.0.1:{values[2]}", ("riot", values[3]))
 
-
 def query(route):
     try:
         url, creds = get_endpoint(Path(game_path))
@@ -20,6 +19,9 @@ def query(route):
         print("Client not open")
 
 challenges = query(f"/lol-challenges/v1/challenges/local-player")
+
+champions = json.loads(open("src/data/cache/datadragon/champion.json", "rb").read().decode("utf-8"))
+champions_keys = [int(c["key"]) for c in champions["data"].values()]
 
 to_keep = [
     "availableIds", "capstoneGroupId", "capstoneGroupName", "category", "childrenIds", "description", "descriptionShort", "gameModes", "hasLeaderboard", "id", "idListType", "isCapstone", "isReverseDirection", "name", "parentId", "parentName", "retireTimestamp", "source", "thresholds"
@@ -35,8 +37,9 @@ for challenge_k, challenge in list(challenges.items()):
         if k not in to_keep:
             del challenge[k]
     # sort to have a clear git diff, since riot randomly change the order each update
-    print(challenge["id"], len(challenge["availableIds"]))
     challenge["availableIds"] = sorted(challenge["availableIds"])
+    challenge["availableIds"] = list(filter(lambda c: c in champions_keys, challenge["availableIds"]))
+    print(challenge["id"], len(challenge["availableIds"]))
 
 json.dump(challenges, open("src/data/lcu/challenges.json", "w"), indent=4)
 
