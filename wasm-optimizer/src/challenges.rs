@@ -37,7 +37,7 @@ fn complete_comp_recursive(
         results.entry(current_challenges.len()).or_default().push((comp, current_challenges));
 
         // if we reach enough comps we start the exit condition
-        return (results.len() as i32) < limit;
+        return (results.values().map(|e |e.len()).sum::<usize>() as i32) < limit;
     }
 
     let challenges = get_challenges();

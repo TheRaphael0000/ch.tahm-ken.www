@@ -324,7 +324,7 @@
 											</div>
 										{/each}
 										{#each Array(missingDots) as i}
-											<div class="mx-0.5 h-5 w-5 p-[5px]">
+											<div class="mx-0.5 h-5 w-5 p-1.25">
 												<div class="v-full h-full rounded-full bg-white/50"></div>
 											</div>
 										{/each}
@@ -372,7 +372,7 @@
 						{@const championSelected = championsSelected.at(i) ?? ''}
 						{@const champion = championsMap.get(championSelected)}
 
-						<div class={['h-10', 'w-10', champion == undefined ? 'p-[11px]' : '']}>
+						<div class={['h-10', 'w-10', champion == undefined ? 'p-2.75' : '']}>
 							{#if champion == undefined}
 								<div class="v-full h-full rounded-full bg-white/50"></div>
 							{:else}

@@ -36,6 +36,11 @@ export const challenges = Object.values(challenges_json).map((challenge) => ({
 	internalId: `${challenge.id}`
 }));
 
+export const challengesById = new Map<number, any>();
+for (const challenge of challenges) {
+	challengesById.set(challenge.id, challenge);
+}
+
 const varietyIsOverrated = challenges.find((c) => c.id == 303408);
 
 for (const tag of championsByTags.keys()) {

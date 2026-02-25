@@ -194,7 +194,7 @@
 				</td>
 			</tr>
 		{/each}
-		<tr class="h-3 border-b-1"> </tr>
+		<tr class="h-3 border-b"> </tr>
 		<tr>
 			<td class="py-2 italic" colspan="4">
 				Completion
