@@ -1,6 +1,10 @@
 use std::collections::HashSet;
+use std::hash::Hash;
 
-pub fn vec_to_set(vec: Vec<i32>) -> HashSet<i32> {
+pub fn vec_to_set<T>(vec: Vec<T>) -> HashSet<T>
+where
+    T: Eq + Hash,
+{
     HashSet::from_iter(vec)
 }
 

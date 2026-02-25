@@ -14,7 +14,8 @@ mod tests {
 
         // let result = complete_comp(vec_to_set(vec![303401]), vec_to_set(vec![166, 103, 266, 22]), 10000);
         // let result = complete_comp(vec_to_set(vec![303501]), vec_to_set(vec![]), 10000);
-        let result = complete_comp(vec_to_set(vec![303401, 303402, 303403, 303404]), vec_to_set(vec![]), 100);
+        // let result = complete_comp(vec_to_set(vec![303401, 303402, 303403, 303404]), vec_to_set(vec![]), 100);
+        let result = complete_comp(vec_to_set(vec![303408]), vec_to_set(vec![40]), 100);
 
         // let comps = complete_comp(
         //     vec_to_set(vec![303401, 303402, 303403]),

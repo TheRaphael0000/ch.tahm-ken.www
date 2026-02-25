@@ -85,3 +85,19 @@ export function parseJoinText(text: string): string {
 
 	return Array(...summoners_names).join('\n');
 }
+
+// thanks gemini
+export function nCr(n: number, r: number): bigint {
+	if (r < 0 || r > n) return 0n;
+	if (r === 0 || r === n) return 1n;
+
+	// Optimization: nCr is symmetric, so nCr(10, 8) == nCr(10, 2)
+	if (r > n / 2) r = n - r;
+
+	let result = 1n;
+	for (let i = 1n; i <= BigInt(r); i++) {
+		result = (result * (BigInt(n) - i + 1n)) / i;
+	}
+
+	return result;
+}

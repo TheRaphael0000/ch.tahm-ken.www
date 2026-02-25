@@ -73,6 +73,16 @@
 	setInterval(updateQuote, 10000);
 </script>
 
+<svelte:head>
+	{#if import.meta.env.PROD}
+		<script
+			defer
+			src="https://tasty.theraphael0000.ch/script.js"
+			data-website-id="c77ef602-e758-4984-a350-8543de40f3cb"
+		></script>
+	{/if}
+</svelte:head>
+
 <header>
 	<div
 		class="bg_img"

@@ -2,7 +2,7 @@ use itertools::Itertools;
 use std::collections::{HashMap, HashSet};
 
 use crate::data::get_challenges;
-use crate::data_transform::{get_challenge_requirements, get_challenges_by_champions, get_champions};
+use crate::data_transform::{get_challenge_int_id, get_challenge_requirements, get_challenges_by_champions, get_champions};
 use crate::tools::combinations_count;
 
 const COMP_SIZE: i32 = 5;
@@ -12,6 +12,15 @@ struct ChallengeExplore {
     missing: i32,
     explore_size: i64,
 }
+
+const VARIETY_KEYS: [&str; 6] = [
+    "303408-Fighter",
+    "303408-Mage",
+    "303408-Assassin",
+    "303408-Marksman",
+    "303408-Tank",
+    "303408-Support",
+];
 
 fn complete_comp_recursive(
     selected_challenges: HashSet<i32>,
@@ -37,7 +46,7 @@ fn complete_comp_recursive(
         results.entry(current_challenges.len()).or_default().push((comp, current_challenges));
 
         // if we reach enough comps we start the exit condition
-        return (results.values().map(|e |e.len()).sum::<usize>() as i32) < limit;
+        return (results.values().map(|e| e.len()).sum::<usize>() as i32) < limit;
     }
 
     let challenges = get_challenges();
@@ -46,31 +55,56 @@ fn complete_comp_recursive(
     let mut challenges_to_explore: Vec<ChallengeExplore> = Vec::new();
 
     for &challenge_id in &still_missing_challenges {
-        let challenge_champions = challenges.get(&challenge_id).unwrap();
-        let addable_champions: HashSet<i32> = challenge_champions.difference(&selected_champions).copied().collect();
-        let intersection: HashSet<i32> = challenge_champions.intersection(&selected_champions).copied().collect();
-        let missing = get_challenge_requirements(challenge_id) - (intersection.len() as i32);
-        let size = addable_champions.len() as i32;
-
-        // we already have this challenge don't need to explore
-        if missing <= 0 {
-            continue;
+        let mut challenges_group = Vec::new();
+        let mut challenges_ids = Vec::new();
+        let single_value;
+        if challenge_id == 303408 {
+            challenges_ids.extend(VARIETY_KEYS);
+        } else {
+            single_value = challenge_id.to_string();
+            challenges_ids.push(single_value.as_str());
         }
 
-        // we don't have enough available stop to add this challenge
+        for key in challenges_ids {
+            let challenge_id_str = String::from(key);
+            let challenge_champions = challenges.get(&challenge_id_str).unwrap();
+            challenges_group.push(challenge_champions);
+        }
+
+        let mut return_count = challenges_group.len();
+
+        'inter: for challenge_champions in challenges_group {
+            let addable_champions: HashSet<i32> = challenge_champions.difference(&selected_champions).copied().collect();
+            let intersection: HashSet<i32> = challenge_champions.intersection(&selected_champions).copied().collect();
+            let missing = get_challenge_requirements(challenge_id) - (intersection.len() as i32);
+            let size = addable_champions.len() as i32;
+
+            // we already have this challenge don't need to explore
+            if missing <= 0 {
+                println!("continue");
+
+                continue 'inter;
+            }
+
+            if missing > available_champion_slots {
+                return_count -= 1;
+            }
+
+            let explore_size = combinations_count(size as i64, missing as i64);
+
+            challenges_to_explore.push(ChallengeExplore {
+                addable_champions,
+                missing,
+                explore_size,
+            });
+        }
+
+        // we don't have enough available stop to add this challenge group
         // we stop this leaf
-        if missing > available_champion_slots {
-            // println!("missing {:?} available_champion_slots {:?}", missing, available_champion_slots);
+        if return_count <= 0 {
+            println!("return");
             return true;
         }
-
-        let explore_size = combinations_count(size as i64, missing as i64);
-
-        challenges_to_explore.push(ChallengeExplore {
-            addable_champions,
-            missing,
-            explore_size,
-        });
     }
 
     // when we have all challenges we still need to add champions to keep adding champions to have a complete comp
@@ -109,7 +143,11 @@ fn complete_comp_recursive(
     true
 }
 
-pub fn complete_comp(selected_challenges: HashSet<i32>, selected_champions: HashSet<i32>, limit: i32) -> HashMap<usize, Vec<(HashSet<i32>, HashSet<i32>)>> {
+pub fn complete_comp(
+    selected_challenges: HashSet<i32>,
+    selected_champions: HashSet<i32>,
+    limit: i32,
+) -> HashMap<usize, Vec<(HashSet<i32>, HashSet<i32>)>> {
     let mut results = HashMap::new();
     complete_comp_recursive(selected_challenges, selected_champions, &mut results, limit, None);
     results
@@ -121,9 +159,10 @@ pub fn find_challenges(composition: &HashSet<i32>) -> HashSet<i32> {
 
     for (challenge_id, challenge) in challenges {
         let intersect = challenge.intersection(&composition);
+        let challenge_id_int = get_challenge_int_id(challenge_id);
 
-        if intersect.count() as i32 >= get_challenge_requirements(challenge_id) {
-            challanges_found.insert(challenge_id);
+        if intersect.count() as i32 >= get_challenge_requirements(challenge_id_int) {
+            challanges_found.insert(challenge_id_int);
         }
     }
 
