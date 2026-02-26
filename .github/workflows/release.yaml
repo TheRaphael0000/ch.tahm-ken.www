@@ -19,7 +19,7 @@ jobs:
         run: VITE_BUILD_VERSION=$(git describe --tags | tr -d '\n') docker compose up --build
 
       - name: Zip Build
-        run: (cd build && zip -r ../build.zip .)
+        run: (cd data/build && zip -r ../../build.zip .)
 
       - name: Create Release
         id: create_release
