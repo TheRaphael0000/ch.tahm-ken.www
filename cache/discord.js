@@ -3,12 +3,8 @@ import { writeFileSync, mkdirSync } from 'fs';
 const communities = ['aHs3uDraNU', 'zASN5E6RCv', 'FJXAvqxw6T', 'yapEVysv3b', 'cKGS6ASyuZ'];
 
 async function query(invite_id) {
-	const response = await fetch(`https://discord.com/api/v10/invites/${invite_id}`, {
-		headers: {
-			'User-Agent': 'TKBOT (https://tahm-ken.ch, 2.0)',
-			'Content-Type': 'application/json'
-		}
-	});
+	console.log(`fetching ${invite_id}`);
+	const response = await fetch(`https://discord.com/api/v10/invites/${invite_id}`);
 	const json = await response.json();
 	return json;
 }
