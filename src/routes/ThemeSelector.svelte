@@ -3,21 +3,20 @@
 	import Button from '$lib/components/Button.svelte';
 
 	const valid_img = [
-		["TahmKench_0.jpg", "Original"],
-		["TahmKench_1.jpg", "Master Chef"],
-		["TahmKench_2.jpg", "Urf Kench"],
-		["TahmKench_3.jpg", "Coin Emperor"],
-		["TahmKench_11.jpg", "Arcana"],
-		["TahmKench_20.jpg", "High Noon"],
-		["TahmKench_30.jpg", "Shan Hai Scrolls"],
-	]
+		['TahmKench_0.jpg', 'Original'],
+		['TahmKench_1.jpg', 'Master Chef'],
+		['TahmKench_2.jpg', 'Urf Kench'],
+		['TahmKench_3.jpg', 'Coin Emperor'],
+		['TahmKench_11.jpg', 'Arcana'],
+		['TahmKench_20.jpg', 'High Noon'],
+		['TahmKench_30.jpg', 'Shan Hai Scrolls']
+	];
 
 	let isVisible: boolean = $state(false);
 	let { background = $bindable() } = $props();
 
 	// ensure that the background is a valid one
-	if(!valid_img.some(f => f[0] == background))
-	{
+	if (!valid_img.some((f) => f[0] == background)) {
 		background = valid_img[0][0];
 	}
 </script>

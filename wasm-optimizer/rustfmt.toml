@@ -1,0 +1,11 @@
+# Increases the total allowed line width (default is 100)
+max_width = 150
+
+# Prevents the formatter from breaking apart simple functions/closures
+control_brace_style = "AlwaysNextLine"
+fn_single_line = true
+where_single_line = true
+
+# Keeps imports and arrays on one line if they fit
+imports_layout = "Horizontal"
+array_layout = "Horizontal"

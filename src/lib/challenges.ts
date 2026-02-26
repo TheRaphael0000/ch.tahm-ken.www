@@ -22,8 +22,8 @@ export const championsMapKey = new Map(
 );
 
 export const championsByTags = new Map<string, number[]>();
-for (let champion of champions) {
-	for (let tag of champion.tags) {
+for (const champion of champions) {
+	for (const tag of champion.tags) {
 		if (!championsByTags.has(tag)) championsByTags.set(tag, []);
 		championsByTags.get(tag)?.push(Number(champion.key));
 	}
@@ -36,9 +36,14 @@ export const challenges = Object.values(challenges_json).map((challenge) => ({
 	internalId: `${challenge.id}`
 }));
 
+export const challengesById = new Map<number, any>();
+for (const challenge of challenges) {
+	challengesById.set(challenge.id, challenge);
+}
+
 const varietyIsOverrated = challenges.find((c) => c.id == 303408);
 
-for (let tag of championsByTags.keys()) {
+for (const tag of championsByTags.keys()) {
 	const clone = structuredClone(varietyIsOverrated);
 	if (!clone) continue;
 	clone.internalId = `${clone.id}_${tag}`;

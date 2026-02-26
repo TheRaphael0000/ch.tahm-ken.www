@@ -2,6 +2,6 @@
 	let { children, class: propClasses = '', ...props } = $props();
 </script>
 
-<h2 {...props} class={'text-2xl mt-4' + propClasses}>
+<h2 {...props} class={'mt-4 text-2xl' + propClasses}>
 	{@render children()}
 </h2>

@@ -1,2 +1,4 @@
+# ignore in sub-folders, the docker image copy only what's necessary
 static/img/cache
 src/data/cache
+wasm-optimizer/src/data.rs

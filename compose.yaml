@@ -4,6 +4,6 @@ services:
     environment:
       - VITE_BUILD_VERSION=${VITE_BUILD_VERSION}
     volumes:
-      - ./node_modules:/app/node_modules
-      - ./datadragon:/app/datadragon
-      - ./build:/build
+      - ./data/node_modules:/app/node_modules
+      - ./data/datadragon:/app/datadragon
+      - ./data/build:/build

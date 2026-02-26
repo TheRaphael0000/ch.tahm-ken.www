@@ -15,7 +15,7 @@
 	{@render text()}
 
 	{#if visible}
-		<div class="pointer-events-none absolute z-10 rounded-md bg-black/85 p-3">
+		<div class="pointer-events-none absolute z-10 rounded-md bg-black/85 px-3 py-2">
 			{@render children()}
 		</div>
 	{/if}
