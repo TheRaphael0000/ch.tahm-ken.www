@@ -7,9 +7,10 @@ Dependencies:
 
 - NodeJS (https://nodejs.org/en/download)
 - Rust (https://rust-lang.org/tools/install/)
+    - wasm-pack (`cargo install wasm-pack`)
 - Python (https://www.python.org/downloads/)
 
-I personally uses the WSL.
+I personally uses the WSL. But it should also work on Linux.
 
 You can also use docker to build it (no dev capabilities yet)
 
