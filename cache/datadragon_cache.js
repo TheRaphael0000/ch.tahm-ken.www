@@ -1,5 +1,5 @@
 import { readFileSync, existsSync, mkdirSync, rmSync, cpSync } from 'fs';
-import { queryTar } from './datadragon_utils.js';
+import { queryTar, versionPath } from './datadragon_utils.js';
 
 console.log('Caching datadragon...');
 
@@ -9,7 +9,6 @@ try {
 	//
 }
 
-const versionPath = `datadragon/version.json`;
 const version = JSON.parse(readFileSync(versionPath));
 
 const dragontailPath = `datadragon/dragontail-${version}`;

@@ -5,6 +5,7 @@ import { Readable } from 'stream';
 import { mkdirSync } from 'fs';
 
 const endpoint = 'https://ddragon.leagueoflegends.com';
+export const versionPath = `src/data/datadragon_version.json`;
 
 export async function queryFile(pathname, filename) {
 	const url = `${endpoint}/${pathname}`;

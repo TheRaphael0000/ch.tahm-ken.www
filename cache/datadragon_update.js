@@ -1,7 +1,6 @@
-import { queryFile } from './datadragon_utils.js';
+import { queryFile, versionPath } from './datadragon_utils.js';
 import { readFileSync, writeFileSync } from 'fs';
 
-const versionPath = `datadragon/version.json`;
 const versionsPath = `datadragon/versions.json`;
 
 const currentVersion = JSON.parse(readFileSync(versionPath));
