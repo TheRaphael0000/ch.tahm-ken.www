@@ -9,19 +9,17 @@ async function query(invite_id) {
 	return json;
 }
 
-export default async function main() {
-	console.log('Caching discord...');
-	const cache = new Map();
-	for (const invite_id of communities) {
-		const community = await query(invite_id);
-		cache.set(invite_id, community);
-	}
-	const communities_string = JSON.stringify(Object.fromEntries(cache), null, 2);
-
-	try {
-		mkdirSync('src/data/cache/', { recursive: true });
-	} catch {
-		//
-	}
-	writeFileSync('src/data/cache/discord.cache.json', communities_string);
+console.log('Caching discord...');
+const cache = new Map();
+for (const invite_id of communities) {
+	const community = await query(invite_id);
+	cache.set(invite_id, community);
 }
+const communities_string = JSON.stringify(Object.fromEntries(cache), null, 2);
+
+try {
+	mkdirSync('src/data/cache/', { recursive: true });
+} catch {
+	//
+}
+writeFileSync('src/data/cache/discord.cache.json', communities_string);
