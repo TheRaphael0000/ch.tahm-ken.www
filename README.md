@@ -7,7 +7,7 @@ Dependencies:
 
 - NodeJS (https://nodejs.org/en/download)
 - Rust (https://rust-lang.org/tools/install/)
-    - wasm-pack (`cargo install wasm-pack`)
+  - wasm-pack (`cargo install wasm-pack`)
 - Python (https://www.python.org/downloads/)
 
 I personally uses the WSL. But it should also work on Linux.
@@ -18,11 +18,11 @@ You can also use docker to build it (no dev capabilities yet)
 
 ```bash
 npm i # install node dependencies
+
+npm run cache:update # (Optional) update the cache version target
 npm run cache # download datadragon and discord cache files
 
-# (Optional)
-# Run from a Windows CLI with access to the League Client (must be running)
-python update_challenges.py
+python update_challenges.py # (Optional) Run from a Windows CLI with access to the League Client (must be running)
 
 # (Require Rust and Python)
 npm run wasm:data # Convert the LCU challenge file to a rust file (code generation)
@@ -43,7 +43,7 @@ docker compose up --build
 VITE_BUILD_VERSION=$(git describe --tags | tr -d '\n') docker compose up --build
 ```
 
-Wses 2 cache volumes:
+Uses 2 cache volumes:
 
 - data/datadragon -> cache the big data dragon file
 - data/node_modules -> cache the node modules

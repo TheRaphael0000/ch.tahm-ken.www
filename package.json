@@ -3,9 +3,10 @@
 	"private": true,
 	"type": "module",
 	"scripts": {
-		"dev": "npm run wasm:build && vite dev",
+		"dev": "vite dev",
 		"build": "vite build",
-		"cache": "node cache/cache.js",
+		"cache": "node cache/discord_cache.js && node cache/datadragon_cache.js",
+		"cache:update": "node cache/datadragon_update.js",
 		"wasm:data": "cd wasm-optimizer && python build_data_file.py",
 		"wasm:build": "wasm-pack build ./wasm-optimizer --target web --out-dir ../src/wasm-optimizer",
 		"preview": "vite preview",

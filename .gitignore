@@ -26,6 +26,4 @@ vite.config.ts.timestamp-*
 # Python
 __pycache__
 
-
-datadragon
 data
