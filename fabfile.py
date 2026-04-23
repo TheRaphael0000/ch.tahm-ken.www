@@ -25,7 +25,8 @@ def deploy(c):
         if not has_version:
             c.run(f"mkdir -p {version}")
             c.run(f"curl -L {release_url} | tar -xzf - -C {version}")
-        c.run(f"rsync -av --delete --progress --size-only {version}/ live/")
+        c.run(f"unlink live")
+        c.run(f"ln -s {version} live")
 
 
 c = fabric.Connection(host="tahm-ken.ch", user="root", port=22)
