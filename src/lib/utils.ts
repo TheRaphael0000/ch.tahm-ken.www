@@ -105,11 +105,11 @@ export function nCr(n: number, r: number): bigint {
 }
 
 export function masteryLevelToColor(level: number) {
-	if (level >= 10) return 'pink-800';
-	else if (level == 9) return 'yellow-700';
-	else if (level == 8) return 'fuchsia-800';
-	else if (level == 7) return 'blue-800';
-	else if (level == 6) return 'green-600';
-	else if (level == 5) return 'sky-700';
-	else if (level < 5) return 'black';
+	if (level >= 10) return 'bg-pink-800/80';
+	else if (level == 9) return 'bg-yellow-700/80';
+	else if (level == 8) return 'bg-fuchsia-800/80';
+	else if (level == 7) return 'bg-blue-800/80';
+	else if (level == 6) return 'bg-green-600/80';
+	else if (level == 5) return 'bg-sky-700/80';
+	else return 'bg-black/80';
 }

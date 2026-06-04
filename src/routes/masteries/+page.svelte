@@ -189,6 +189,7 @@
 	});
 </script>
 
+
 <div class="flex flex-col md:flex-row px-6 mt-2">
 	<div>
 		<div class="flex flex-col gap-6">
@@ -201,7 +202,7 @@
 					{#snippet text()}
 						<label>
 							<input type="checkbox" value={10} bind:group={masteryFilter} />
-							<Pill bg={'bg-' + masteryLevelToColor(10)} fg="text-white">
+							<Pill bg={masteryLevelToColor(10)} fg="text-white">
 								{masteryLevels.filter((l: number) => l >= 10).length}
 							</Pill>
 						</label>
@@ -214,7 +215,7 @@
 						{#snippet text()}
 							<label>
 								<input type="checkbox" value={li} bind:group={masteryFilter} />
-								<Pill bg={'bg-' + masteryLevelToColor(li)} fg="text-white">
+								<Pill bg={masteryLevelToColor(li)} fg="text-white">
 									{masteryLevels.filter((l: number) => l == li).length}
 								</Pill>
 							</label>
@@ -227,7 +228,7 @@
 					{#snippet text()}
 						<label>
 							<input type="checkbox" value={4} bind:group={masteryFilter} />
-							<Pill bg={'bg-' + masteryLevelToColor(4)} fg="text-white">
+							<Pill bg={masteryLevelToColor(4)} fg="text-white">
 								{masteryLevels.filter((l: number) => l <= 4).length}
 							</Pill>
 						</label>

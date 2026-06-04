@@ -94,7 +94,7 @@
 							'pt-0.5',
 							'text-sm',
 							'font-bold',
-							'bg-' + masteryLevelToColor(level) + '/80'
+							masteryLevelToColor(level)
 						]}
 					>
 						{level}
