@@ -35,6 +35,10 @@
 			href: '/team_builder',
 			text: 'Team Builder'
 		},
+		{
+			href: '/masteries',
+			text: 'Masteries'
+		},
 		// {
 		// 	href: '/compositions',
 		// 	text: 'Compositions'

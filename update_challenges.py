@@ -27,7 +27,7 @@ to_keep = [
     "availableIds", "capstoneGroupId", "capstoneGroupName", "category", "childrenIds", "description", "descriptionShort", "gameModes", "hasLeaderboard", "id", "idListType", "isCapstone", "isReverseDirection", "name", "parentId", "parentName", "retireTimestamp", "source", "thresholds"
 ]
 
-to_keep_id = [303400, 303500]
+to_keep_id = [303400, 303500, 401100, 401200]
 
 for challenge_k, challenge in list(challenges.items()):
     if challenge["id"] not in to_keep_id and challenge["parentId"] not in to_keep_id:

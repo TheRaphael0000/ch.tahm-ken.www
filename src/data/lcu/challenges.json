@@ -2919,5 +2919,2919 @@
                 "value": 3.0
             }
         }
+    },
+    "401100": {
+        "availableIds": [],
+        "capstoneGroupId": 401100,
+        "capstoneGroupName": "Guru",
+        "category": "VETERANCY",
+        "childrenIds": [
+            401102,
+            401103,
+            401101,
+            401106,
+            401107,
+            401104,
+            401105
+        ],
+        "description": "Earn progress from challenges in the Guru group",
+        "descriptionShort": "Earn progress from challenges in the Guru group",
+        "gameModes": [],
+        "hasLeaderboard": true,
+        "id": 401100,
+        "idListType": "NONE",
+        "isCapstone": true,
+        "isReverseDirection": false,
+        "name": "Guru",
+        "parentId": 401000,
+        "parentName": "Sage",
+        "retireTimestamp": 0,
+        "source": "CHALLENGES",
+        "thresholds": {
+            "BRONZE": {
+                "rewards": [
+                    {
+                        "asset": "",
+                        "category": "CHALLENGE_POINTS",
+                        "name": "",
+                        "quantity": 10
+                    }
+                ],
+                "value": 30.0
+            },
+            "CHALLENGER": {
+                "rewards": [
+                    {
+                        "asset": "",
+                        "category": "CHALLENGE_POINTS",
+                        "name": "",
+                        "quantity": 100
+                    }
+                ],
+                "value": 690.0
+            },
+            "DIAMOND": {
+                "rewards": [
+                    {
+                        "asset": "",
+                        "category": "TITLE",
+                        "name": "Guru",
+                        "quantity": 1
+                    },
+                    {
+                        "asset": "",
+                        "category": "CHALLENGE_POINTS",
+                        "name": "",
+                        "quantity": 60
+                    }
+                ],
+                "value": 290.0
+            },
+            "GOLD": {
+                "rewards": [
+                    {
+                        "asset": "",
+                        "category": "CHALLENGE_POINTS",
+                        "name": "",
+                        "quantity": 25
+                    }
+                ],
+                "value": 100.0
+            },
+            "GRANDMASTER": {
+                "rewards": [
+                    {
+                        "asset": "",
+                        "category": "CHALLENGE_POINTS",
+                        "name": "",
+                        "quantity": 100
+                    }
+                ],
+                "value": 570.0
+            },
+            "IRON": {
+                "rewards": [
+                    {
+                        "asset": "",
+                        "category": "CHALLENGE_POINTS",
+                        "name": "",
+                        "quantity": 5
+                    }
+                ],
+                "value": 15.0
+            },
+            "MASTER": {
+                "rewards": [
+                    {
+                        "asset": "",
+                        "category": "CHALLENGE_POINTS",
+                        "name": "",
+                        "quantity": 100
+                    }
+                ],
+                "value": 475.0
+            },
+            "PLATINUM": {
+                "rewards": [
+                    {
+                        "asset": "",
+                        "category": "CHALLENGE_POINTS",
+                        "name": "",
+                        "quantity": 40
+                    }
+                ],
+                "value": 160.0
+            },
+            "SILVER": {
+                "rewards": [
+                    {
+                        "asset": "",
+                        "category": "CHALLENGE_POINTS",
+                        "name": "",
+                        "quantity": 15
+                    }
+                ],
+                "value": 45.0
+            }
+        }
+    },
+    "401101": {
+        "availableIds": [],
+        "capstoneGroupId": 401100,
+        "capstoneGroupName": "Guru",
+        "category": "VETERANCY",
+        "childrenIds": [],
+        "description": "Have 150 champions with at least a certain number of Mastery Points.",
+        "descriptionShort": "Earn mastery points on 150 champions",
+        "gameModes": [],
+        "hasLeaderboard": true,
+        "id": 401101,
+        "idListType": "NONE",
+        "isCapstone": false,
+        "isReverseDirection": false,
+        "name": "Catch 'em All",
+        "parentId": 401100,
+        "parentName": "Guru",
+        "retireTimestamp": 0,
+        "source": "EOGD_CHAMPION_MASTERY",
+        "thresholds": {
+            "BRONZE": {
+                "rewards": [
+                    {
+                        "asset": "",
+                        "category": "CHALLENGE_POINTS",
+                        "name": "",
+                        "quantity": 10
+                    }
+                ],
+                "value": 500.0
+            },
+            "CHALLENGER": {
+                "rewards": [
+                    {
+                        "asset": "",
+                        "category": "CHALLENGE_POINTS",
+                        "name": "",
+                        "quantity": 100
+                    }
+                ],
+                "value": 115000.0
+            },
+            "DIAMOND": {
+                "rewards": [
+                    {
+                        "asset": "",
+                        "category": "CHALLENGE_POINTS",
+                        "name": "",
+                        "quantity": 60
+                    }
+                ],
+                "value": 50000.0
+            },
+            "GOLD": {
+                "rewards": [
+                    {
+                        "asset": "",
+                        "category": "CHALLENGE_POINTS",
+                        "name": "",
+                        "quantity": 25
+                    }
+                ],
+                "value": 5000.0
+            },
+            "GRANDMASTER": {
+                "rewards": [
+                    {
+                        "asset": "",
+                        "category": "CHALLENGE_POINTS",
+                        "name": "",
+                        "quantity": 100
+                    }
+                ],
+                "value": 107500.0
+            },
+            "IRON": {
+                "rewards": [
+                    {
+                        "asset": "",
+                        "category": "CHALLENGE_POINTS",
+                        "name": "",
+                        "quantity": 5
+                    }
+                ],
+                "value": 100.0
+            },
+            "MASTER": {
+                "rewards": [
+                    {
+                        "asset": "",
+                        "category": "CHALLENGE_POINTS",
+                        "name": "",
+                        "quantity": 100
+                    }
+                ],
+                "value": 100000.0
+            },
+            "PLATINUM": {
+                "rewards": [
+                    {
+                        "asset": "",
+                        "category": "TITLE",
+                        "name": "Champ Master",
+                        "quantity": 1
+                    },
+                    {
+                        "asset": "",
+                        "category": "CHALLENGE_POINTS",
+                        "name": "",
+                        "quantity": 40
+                    }
+                ],
+                "value": 10000.0
+            },
+            "SILVER": {
+                "rewards": [
+                    {
+                        "asset": "",
+                        "category": "CHALLENGE_POINTS",
+                        "name": "",
+                        "quantity": 15
+                    }
+                ],
+                "value": 1000.0
+            }
+        }
+    },
+    "401102": {
+        "availableIds": [],
+        "capstoneGroupId": 401100,
+        "capstoneGroupName": "Guru",
+        "category": "VETERANCY",
+        "childrenIds": [],
+        "description": "Earn total Mastery Points",
+        "descriptionShort": "Earn Mastery Points",
+        "gameModes": [],
+        "hasLeaderboard": true,
+        "id": 401102,
+        "idListType": "NONE",
+        "isCapstone": false,
+        "isReverseDirection": false,
+        "name": "Wise Master",
+        "parentId": 401100,
+        "parentName": "Guru",
+        "retireTimestamp": 0,
+        "source": "EOGD_CHAMPION_MASTERY",
+        "thresholds": {
+            "BRONZE": {
+                "rewards": [
+                    {
+                        "asset": "",
+                        "category": "CHALLENGE_POINTS",
+                        "name": "",
+                        "quantity": 10
+                    }
+                ],
+                "value": 3500.0
+            },
+            "CHALLENGER": {
+                "rewards": [
+                    {
+                        "asset": "",
+                        "category": "CHALLENGE_POINTS",
+                        "name": "",
+                        "quantity": 100
+                    }
+                ],
+                "value": 5000000.0
+            },
+            "DIAMOND": {
+                "rewards": [
+                    {
+                        "asset": "",
+                        "category": "CHALLENGE_POINTS",
+                        "name": "",
+                        "quantity": 60
+                    }
+                ],
+                "value": 2500000.0
+            },
+            "GOLD": {
+                "rewards": [
+                    {
+                        "asset": "",
+                        "category": "CHALLENGE_POINTS",
+                        "name": "",
+                        "quantity": 25
+                    }
+                ],
+                "value": 220000.0
+            },
+            "GRANDMASTER": {
+                "rewards": [
+                    {
+                        "asset": "",
+                        "category": "CHALLENGE_POINTS",
+                        "name": "",
+                        "quantity": 100
+                    }
+                ],
+                "value": 5000000.0
+            },
+            "IRON": {
+                "rewards": [
+                    {
+                        "asset": "",
+                        "category": "CHALLENGE_POINTS",
+                        "name": "",
+                        "quantity": 5
+                    }
+                ],
+                "value": 1200.0
+            },
+            "MASTER": {
+                "rewards": [
+                    {
+                        "asset": "",
+                        "category": "CHALLENGE_POINTS",
+                        "name": "",
+                        "quantity": 100
+                    }
+                ],
+                "value": 5000000.0
+            },
+            "PLATINUM": {
+                "rewards": [
+                    {
+                        "asset": "",
+                        "category": "CHALLENGE_POINTS",
+                        "name": "",
+                        "quantity": 40
+                    }
+                ],
+                "value": 900000.0
+            },
+            "SILVER": {
+                "rewards": [
+                    {
+                        "asset": "",
+                        "category": "CHALLENGE_POINTS",
+                        "name": "",
+                        "quantity": 15
+                    }
+                ],
+                "value": 35000.0
+            }
+        }
+    },
+    "401103": {
+        "availableIds": [],
+        "capstoneGroupId": 401100,
+        "capstoneGroupName": "Guru",
+        "category": "VETERANCY",
+        "childrenIds": [],
+        "description": "Earn Mastery Points on a single champion",
+        "descriptionShort": "Gain Mastery Points on a single champion",
+        "gameModes": [],
+        "hasLeaderboard": true,
+        "id": 401103,
+        "idListType": "NONE",
+        "isCapstone": false,
+        "isReverseDirection": false,
+        "name": "One-Trick",
+        "parentId": 401100,
+        "parentName": "Guru",
+        "retireTimestamp": 0,
+        "source": "EOGD_CHAMPION_MASTERY",
+        "thresholds": {
+            "BRONZE": {
+                "rewards": [
+                    {
+                        "asset": "",
+                        "category": "CHALLENGE_POINTS",
+                        "name": "",
+                        "quantity": 10
+                    }
+                ],
+                "value": 1500.0
+            },
+            "CHALLENGER": {
+                "rewards": [
+                    {
+                        "asset": "",
+                        "category": "CHALLENGE_POINTS",
+                        "name": "",
+                        "quantity": 100
+                    }
+                ],
+                "value": 1500000.0
+            },
+            "DIAMOND": {
+                "rewards": [
+                    {
+                        "asset": "",
+                        "category": "CHALLENGE_POINTS",
+                        "name": "",
+                        "quantity": 60
+                    }
+                ],
+                "value": 280000.0
+            },
+            "GOLD": {
+                "rewards": [
+                    {
+                        "asset": "",
+                        "category": "CHALLENGE_POINTS",
+                        "name": "",
+                        "quantity": 25
+                    }
+                ],
+                "value": 38000.0
+            },
+            "GRANDMASTER": {
+                "rewards": [
+                    {
+                        "asset": "",
+                        "category": "CHALLENGE_POINTS",
+                        "name": "",
+                        "quantity": 100
+                    }
+                ],
+                "value": 1000000.0
+            },
+            "IRON": {
+                "rewards": [
+                    {
+                        "asset": "",
+                        "category": "CHALLENGE_POINTS",
+                        "name": "",
+                        "quantity": 5
+                    }
+                ],
+                "value": 850.0
+            },
+            "MASTER": {
+                "rewards": [
+                    {
+                        "asset": "",
+                        "category": "CHALLENGE_POINTS",
+                        "name": "",
+                        "quantity": 100
+                    }
+                ],
+                "value": 840000.0
+            },
+            "PLATINUM": {
+                "rewards": [
+                    {
+                        "asset": "",
+                        "category": "CHALLENGE_POINTS",
+                        "name": "",
+                        "quantity": 40
+                    }
+                ],
+                "value": 110000.0
+            },
+            "SILVER": {
+                "rewards": [
+                    {
+                        "asset": "",
+                        "category": "CHALLENGE_POINTS",
+                        "name": "",
+                        "quantity": 15
+                    }
+                ],
+                "value": 9000.0
+            }
+        }
+    },
+    "401104": {
+        "availableIds": [],
+        "capstoneGroupId": 401100,
+        "capstoneGroupName": "Guru",
+        "category": "VETERANCY",
+        "childrenIds": [],
+        "description": "Earn Mastery 5 on different champions",
+        "descriptionShort": "Earn Mastery 5 on <em>different champions</em>",
+        "gameModes": [],
+        "hasLeaderboard": false,
+        "id": 401104,
+        "idListType": "CHAMPION",
+        "isCapstone": false,
+        "isReverseDirection": false,
+        "name": "Master Yourself",
+        "parentId": 401100,
+        "parentName": "Guru",
+        "retireTimestamp": 0,
+        "source": "EOGD_CHAMPION_MASTERY",
+        "thresholds": {
+            "BRONZE": {
+                "rewards": [
+                    {
+                        "asset": "",
+                        "category": "CHALLENGE_POINTS",
+                        "name": "",
+                        "quantity": 10
+                    }
+                ],
+                "value": 15.0
+            },
+            "DIAMOND": {
+                "rewards": [
+                    {
+                        "asset": "",
+                        "category": "CHALLENGE_POINTS",
+                        "name": "",
+                        "quantity": 60
+                    }
+                ],
+                "value": 100.0
+            },
+            "GOLD": {
+                "rewards": [
+                    {
+                        "asset": "",
+                        "category": "CHALLENGE_POINTS",
+                        "name": "",
+                        "quantity": 25
+                    }
+                ],
+                "value": 50.0
+            },
+            "IRON": {
+                "rewards": [
+                    {
+                        "asset": "",
+                        "category": "CHALLENGE_POINTS",
+                        "name": "",
+                        "quantity": 5
+                    }
+                ],
+                "value": 5.0
+            },
+            "MASTER": {
+                "rewards": [
+                    {
+                        "asset": "",
+                        "category": "CHALLENGE_POINTS",
+                        "name": "",
+                        "quantity": 100
+                    }
+                ],
+                "value": 150.0
+            },
+            "PLATINUM": {
+                "rewards": [
+                    {
+                        "asset": "",
+                        "category": "CHALLENGE_POINTS",
+                        "name": "",
+                        "quantity": 40
+                    }
+                ],
+                "value": 75.0
+            },
+            "SILVER": {
+                "rewards": [
+                    {
+                        "asset": "",
+                        "category": "CHALLENGE_POINTS",
+                        "name": "",
+                        "quantity": 15
+                    }
+                ],
+                "value": 30.0
+            }
+        }
+    },
+    "401105": {
+        "availableIds": [],
+        "capstoneGroupId": 401100,
+        "capstoneGroupName": "Guru",
+        "category": "VETERANCY",
+        "childrenIds": [],
+        "description": "Earn Mastery 7 on different champions",
+        "descriptionShort": "Earn Mastery 7 on <em>different champions</em>",
+        "gameModes": [],
+        "hasLeaderboard": false,
+        "id": 401105,
+        "idListType": "CHAMPION",
+        "isCapstone": false,
+        "isReverseDirection": false,
+        "name": "Master the Enemy (Legacy)",
+        "parentId": 401100,
+        "parentName": "Guru",
+        "retireTimestamp": 0,
+        "source": "EOGD_CHAMPION_MASTERY",
+        "thresholds": {
+            "BRONZE": {
+                "rewards": [
+                    {
+                        "asset": "",
+                        "category": "CHALLENGE_POINTS",
+                        "name": "",
+                        "quantity": 10
+                    }
+                ],
+                "value": 7.0
+            },
+            "DIAMOND": {
+                "rewards": [
+                    {
+                        "asset": "",
+                        "category": "CHALLENGE_POINTS",
+                        "name": "",
+                        "quantity": 60
+                    }
+                ],
+                "value": 60.0
+            },
+            "GOLD": {
+                "rewards": [
+                    {
+                        "asset": "",
+                        "category": "CHALLENGE_POINTS",
+                        "name": "",
+                        "quantity": 25
+                    }
+                ],
+                "value": 25.0
+            },
+            "IRON": {
+                "rewards": [
+                    {
+                        "asset": "",
+                        "category": "CHALLENGE_POINTS",
+                        "name": "",
+                        "quantity": 5
+                    }
+                ],
+                "value": 3.0
+            },
+            "MASTER": {
+                "rewards": [
+                    {
+                        "asset": "",
+                        "category": "CHALLENGE_POINTS",
+                        "name": "",
+                        "quantity": 100
+                    }
+                ],
+                "value": 100.0
+            },
+            "PLATINUM": {
+                "rewards": [
+                    {
+                        "asset": "",
+                        "category": "TITLE",
+                        "name": "Deep Diver",
+                        "quantity": 1
+                    },
+                    {
+                        "asset": "",
+                        "category": "CHALLENGE_POINTS",
+                        "name": "",
+                        "quantity": 40
+                    }
+                ],
+                "value": 40.0
+            },
+            "SILVER": {
+                "rewards": [
+                    {
+                        "asset": "",
+                        "category": "CHALLENGE_POINTS",
+                        "name": "",
+                        "quantity": 15
+                    }
+                ],
+                "value": 15.0
+            }
+        }
+    },
+    "401106": {
+        "availableIds": [],
+        "capstoneGroupId": 401100,
+        "capstoneGroupName": "Guru",
+        "category": "VETERANCY",
+        "childrenIds": [],
+        "description": "Win a game with different champions",
+        "descriptionShort": "Win games with <em>different champions</em>",
+        "gameModes": [
+            "CLASSIC",
+            "CLASSIC",
+            "CLASSIC",
+            "CLASSIC",
+            "CLASSIC",
+            "CLASSIC",
+            "SWIFTPLAY"
+        ],
+        "hasLeaderboard": false,
+        "id": 401106,
+        "idListType": "CHAMPION",
+        "isCapstone": false,
+        "isReverseDirection": false,
+        "name": "Jack of All Champs",
+        "parentId": 401100,
+        "parentName": "Guru",
+        "retireTimestamp": 0,
+        "source": "EOGD",
+        "thresholds": {
+            "BRONZE": {
+                "rewards": [
+                    {
+                        "asset": "",
+                        "category": "CHALLENGE_POINTS",
+                        "name": "",
+                        "quantity": 10
+                    }
+                ],
+                "value": 25.0
+            },
+            "DIAMOND": {
+                "rewards": [
+                    {
+                        "asset": "",
+                        "category": "CHALLENGE_POINTS",
+                        "name": "",
+                        "quantity": 60
+                    }
+                ],
+                "value": 125.0
+            },
+            "GOLD": {
+                "rewards": [
+                    {
+                        "asset": "",
+                        "category": "CHALLENGE_POINTS",
+                        "name": "",
+                        "quantity": 25
+                    }
+                ],
+                "value": 75.0
+            },
+            "IRON": {
+                "rewards": [
+                    {
+                        "asset": "",
+                        "category": "CHALLENGE_POINTS",
+                        "name": "",
+                        "quantity": 5
+                    }
+                ],
+                "value": 10.0
+            },
+            "MASTER": {
+                "rewards": [
+                    {
+                        "asset": "",
+                        "category": "CHALLENGE_POINTS",
+                        "name": "",
+                        "quantity": 100
+                    }
+                ],
+                "value": 150.0
+            },
+            "PLATINUM": {
+                "rewards": [
+                    {
+                        "asset": "",
+                        "category": "CHALLENGE_POINTS",
+                        "name": "",
+                        "quantity": 40
+                    }
+                ],
+                "value": 100.0
+            },
+            "SILVER": {
+                "rewards": [
+                    {
+                        "asset": "",
+                        "category": "CHALLENGE_POINTS",
+                        "name": "",
+                        "quantity": 15
+                    }
+                ],
+                "value": 50.0
+            }
+        }
+    },
+    "401107": {
+        "availableIds": [],
+        "capstoneGroupId": 401100,
+        "capstoneGroupName": "Guru",
+        "category": "VETERANCY",
+        "childrenIds": [],
+        "description": "Earn Mastery 10 on different champions",
+        "descriptionShort": "Earn Mastery 10 on <em>different champions</em>",
+        "gameModes": [],
+        "hasLeaderboard": false,
+        "id": 401107,
+        "idListType": "CHAMPION",
+        "isCapstone": false,
+        "isReverseDirection": false,
+        "name": "Master the Enemy",
+        "parentId": 401100,
+        "parentName": "Guru",
+        "retireTimestamp": 0,
+        "source": "EOGD_CHAMPION_MASTERY",
+        "thresholds": {
+            "BRONZE": {
+                "rewards": [
+                    {
+                        "asset": "",
+                        "category": "CHALLENGE_POINTS",
+                        "name": "",
+                        "quantity": 10
+                    }
+                ],
+                "value": 7.0
+            },
+            "DIAMOND": {
+                "rewards": [
+                    {
+                        "asset": "",
+                        "category": "CHALLENGE_POINTS",
+                        "name": "",
+                        "quantity": 60
+                    }
+                ],
+                "value": 60.0
+            },
+            "GOLD": {
+                "rewards": [
+                    {
+                        "asset": "",
+                        "category": "CHALLENGE_POINTS",
+                        "name": "",
+                        "quantity": 25
+                    }
+                ],
+                "value": 25.0
+            },
+            "IRON": {
+                "rewards": [
+                    {
+                        "asset": "",
+                        "category": "CHALLENGE_POINTS",
+                        "name": "",
+                        "quantity": 5
+                    }
+                ],
+                "value": 3.0
+            },
+            "MASTER": {
+                "rewards": [
+                    {
+                        "asset": "",
+                        "category": "CHALLENGE_POINTS",
+                        "name": "",
+                        "quantity": 100
+                    }
+                ],
+                "value": 100.0
+            },
+            "PLATINUM": {
+                "rewards": [
+                    {
+                        "asset": "",
+                        "category": "TITLE",
+                        "name": "Omni-master",
+                        "quantity": 1
+                    },
+                    {
+                        "asset": "",
+                        "category": "CHALLENGE_POINTS",
+                        "name": "",
+                        "quantity": 40
+                    }
+                ],
+                "value": 40.0
+            },
+            "SILVER": {
+                "rewards": [
+                    {
+                        "asset": "",
+                        "category": "CHALLENGE_POINTS",
+                        "name": "",
+                        "quantity": 15
+                    }
+                ],
+                "value": 15.0
+            }
+        }
+    },
+    "401200": {
+        "availableIds": [],
+        "capstoneGroupId": 401200,
+        "capstoneGroupName": "Virtuoso",
+        "category": "VETERANCY",
+        "childrenIds": [
+            401212,
+            401211,
+            401206,
+            401207,
+            401204,
+            401205,
+            401202,
+            401203,
+            401201,
+            401210,
+            401208,
+            401209
+        ],
+        "description": "Earn progress from challenges in the Virtuoso group",
+        "descriptionShort": "Earn progress from challenges in the Virtuoso group",
+        "gameModes": [],
+        "hasLeaderboard": false,
+        "id": 401200,
+        "idListType": "NONE",
+        "isCapstone": true,
+        "isReverseDirection": false,
+        "name": "Virtuoso",
+        "parentId": 401000,
+        "parentName": "Sage",
+        "retireTimestamp": 0,
+        "source": "CHALLENGES",
+        "thresholds": {
+            "BRONZE": {
+                "rewards": [
+                    {
+                        "asset": "",
+                        "category": "CHALLENGE_POINTS",
+                        "name": "",
+                        "quantity": 10
+                    }
+                ],
+                "value": 30.0
+            },
+            "DIAMOND": {
+                "rewards": [
+                    {
+                        "asset": "",
+                        "category": "TITLE",
+                        "name": "Peerless",
+                        "quantity": 1
+                    },
+                    {
+                        "asset": "",
+                        "category": "CHALLENGE_POINTS",
+                        "name": "",
+                        "quantity": 60
+                    }
+                ],
+                "value": 290.0
+            },
+            "GOLD": {
+                "rewards": [
+                    {
+                        "asset": "",
+                        "category": "CHALLENGE_POINTS",
+                        "name": "",
+                        "quantity": 25
+                    }
+                ],
+                "value": 100.0
+            },
+            "IRON": {
+                "rewards": [
+                    {
+                        "asset": "",
+                        "category": "CHALLENGE_POINTS",
+                        "name": "",
+                        "quantity": 5
+                    }
+                ],
+                "value": 15.0
+            },
+            "MASTER": {
+                "rewards": [
+                    {
+                        "asset": "",
+                        "category": "CHALLENGE_POINTS",
+                        "name": "",
+                        "quantity": 100
+                    }
+                ],
+                "value": 475.0
+            },
+            "PLATINUM": {
+                "rewards": [
+                    {
+                        "asset": "",
+                        "category": "CHALLENGE_POINTS",
+                        "name": "",
+                        "quantity": 40
+                    }
+                ],
+                "value": 160.0
+            },
+            "SILVER": {
+                "rewards": [
+                    {
+                        "asset": "",
+                        "category": "CHALLENGE_POINTS",
+                        "name": "",
+                        "quantity": 15
+                    }
+                ],
+                "value": 45.0
+            }
+        }
+    },
+    "401201": {
+        "availableIds": [
+            7,
+            11,
+            18,
+            23,
+            28,
+            29,
+            35,
+            38,
+            39,
+            55,
+            56,
+            60,
+            64,
+            67,
+            76,
+            80,
+            84,
+            91,
+            92,
+            103,
+            105,
+            107,
+            114,
+            121,
+            131,
+            133,
+            141,
+            157,
+            164,
+            166,
+            233,
+            234,
+            236,
+            238,
+            245,
+            246,
+            254,
+            360,
+            517,
+            555,
+            777,
+            799,
+            893,
+            895,
+            904,
+            950
+        ],
+        "capstoneGroupId": 401200,
+        "capstoneGroupName": "Virtuoso",
+        "category": "VETERANCY",
+        "childrenIds": [],
+        "description": "Earn Mastery 7 on different assassins",
+        "descriptionShort": "Get Mastery 7 on different <em>assassins</em>",
+        "gameModes": [],
+        "hasLeaderboard": false,
+        "id": 401201,
+        "idListType": "CHAMPION",
+        "isCapstone": false,
+        "isReverseDirection": false,
+        "name": "Master Assassin (Legacy)",
+        "parentId": 401200,
+        "parentName": "Virtuoso",
+        "retireTimestamp": 0,
+        "source": "EOGD_CHAMPION_MASTERY",
+        "thresholds": {
+            "BRONZE": {
+                "rewards": [
+                    {
+                        "asset": "",
+                        "category": "CHALLENGE_POINTS",
+                        "name": "",
+                        "quantity": 10
+                    }
+                ],
+                "value": 5.0
+            },
+            "DIAMOND": {
+                "rewards": [
+                    {
+                        "asset": "",
+                        "category": "CHALLENGE_POINTS",
+                        "name": "",
+                        "quantity": 60
+                    }
+                ],
+                "value": 35.0
+            },
+            "GOLD": {
+                "rewards": [
+                    {
+                        "asset": "",
+                        "category": "CHALLENGE_POINTS",
+                        "name": "",
+                        "quantity": 25
+                    }
+                ],
+                "value": 15.0
+            },
+            "IRON": {
+                "rewards": [
+                    {
+                        "asset": "",
+                        "category": "CHALLENGE_POINTS",
+                        "name": "",
+                        "quantity": 5
+                    }
+                ],
+                "value": 1.0
+            },
+            "MASTER": {
+                "rewards": [
+                    {
+                        "asset": "",
+                        "category": "CHALLENGE_POINTS",
+                        "name": "",
+                        "quantity": 100
+                    }
+                ],
+                "value": 45.0
+            },
+            "PLATINUM": {
+                "rewards": [
+                    {
+                        "asset": "",
+                        "category": "TITLE",
+                        "name": "Deathmaster",
+                        "quantity": 1
+                    },
+                    {
+                        "asset": "",
+                        "category": "CHALLENGE_POINTS",
+                        "name": "",
+                        "quantity": 40
+                    }
+                ],
+                "value": 25.0
+            },
+            "SILVER": {
+                "rewards": [
+                    {
+                        "asset": "",
+                        "category": "CHALLENGE_POINTS",
+                        "name": "",
+                        "quantity": 15
+                    }
+                ],
+                "value": 10.0
+            }
+        }
+    },
+    "401202": {
+        "availableIds": [
+            2,
+            5,
+            6,
+            8,
+            11,
+            14,
+            19,
+            23,
+            24,
+            36,
+            39,
+            41,
+            48,
+            56,
+            58,
+            59,
+            62,
+            64,
+            68,
+            72,
+            75,
+            77,
+            78,
+            79,
+            80,
+            82,
+            83,
+            86,
+            92,
+            102,
+            105,
+            106,
+            107,
+            114,
+            120,
+            122,
+            126,
+            131,
+            141,
+            150,
+            154,
+            157,
+            164,
+            200,
+            233,
+            234,
+            240,
+            254,
+            266,
+            420,
+            421,
+            777,
+            799,
+            875,
+            876,
+            887,
+            895,
+            897,
+            904,
+            950
+        ],
+        "capstoneGroupId": 401200,
+        "capstoneGroupName": "Virtuoso",
+        "category": "VETERANCY",
+        "childrenIds": [],
+        "description": "Earn Mastery 7 on different fighters",
+        "descriptionShort": "Get Mastery 7 on different <em>fighters</em>",
+        "gameModes": [],
+        "hasLeaderboard": false,
+        "id": 401202,
+        "idListType": "CHAMPION",
+        "isCapstone": false,
+        "isReverseDirection": false,
+        "name": "Master Fighter (Legacy)",
+        "parentId": 401200,
+        "parentName": "Virtuoso",
+        "retireTimestamp": 0,
+        "source": "EOGD_CHAMPION_MASTERY",
+        "thresholds": {
+            "BRONZE": {
+                "rewards": [
+                    {
+                        "asset": "",
+                        "category": "CHALLENGE_POINTS",
+                        "name": "",
+                        "quantity": 10
+                    }
+                ],
+                "value": 5.0
+            },
+            "DIAMOND": {
+                "rewards": [
+                    {
+                        "asset": "",
+                        "category": "CHALLENGE_POINTS",
+                        "name": "",
+                        "quantity": 60
+                    }
+                ],
+                "value": 50.0
+            },
+            "GOLD": {
+                "rewards": [
+                    {
+                        "asset": "",
+                        "category": "CHALLENGE_POINTS",
+                        "name": "",
+                        "quantity": 25
+                    }
+                ],
+                "value": 20.0
+            },
+            "IRON": {
+                "rewards": [
+                    {
+                        "asset": "",
+                        "category": "CHALLENGE_POINTS",
+                        "name": "",
+                        "quantity": 5
+                    }
+                ],
+                "value": 1.0
+            },
+            "MASTER": {
+                "rewards": [
+                    {
+                        "asset": "",
+                        "category": "CHALLENGE_POINTS",
+                        "name": "",
+                        "quantity": 100
+                    }
+                ],
+                "value": 70.0
+            },
+            "PLATINUM": {
+                "rewards": [
+                    {
+                        "asset": "",
+                        "category": "TITLE",
+                        "name": "Warlord",
+                        "quantity": 1
+                    },
+                    {
+                        "asset": "",
+                        "category": "CHALLENGE_POINTS",
+                        "name": "",
+                        "quantity": 40
+                    }
+                ],
+                "value": 30.0
+            },
+            "SILVER": {
+                "rewards": [
+                    {
+                        "asset": "",
+                        "category": "CHALLENGE_POINTS",
+                        "name": "",
+                        "quantity": 15
+                    }
+                ],
+                "value": 12.0
+            }
+        }
+    },
+    "401203": {
+        "availableIds": [
+            1,
+            3,
+            4,
+            7,
+            8,
+            9,
+            10,
+            13,
+            16,
+            17,
+            20,
+            21,
+            25,
+            26,
+            27,
+            28,
+            30,
+            31,
+            34,
+            37,
+            38,
+            40,
+            42,
+            43,
+            45,
+            50,
+            54,
+            55,
+            60,
+            61,
+            63,
+            68,
+            69,
+            74,
+            76,
+            79,
+            81,
+            82,
+            85,
+            90,
+            96,
+            99,
+            101,
+            103,
+            110,
+            112,
+            115,
+            117,
+            127,
+            134,
+            136,
+            142,
+            143,
+            145,
+            147,
+            161,
+            163,
+            202,
+            245,
+            267,
+            268,
+            350,
+            427,
+            432,
+            517,
+            518,
+            711,
+            800,
+            876,
+            888,
+            893,
+            901,
+            902,
+            910
+        ],
+        "capstoneGroupId": 401200,
+        "capstoneGroupName": "Virtuoso",
+        "category": "VETERANCY",
+        "childrenIds": [],
+        "description": "Earn Mastery 7 on different mages",
+        "descriptionShort": "Get Mastery 7 on different <em>mages</em>",
+        "gameModes": [],
+        "hasLeaderboard": false,
+        "id": 401203,
+        "idListType": "CHAMPION",
+        "isCapstone": false,
+        "isReverseDirection": false,
+        "name": "Master Mage (Legacy)",
+        "parentId": 401200,
+        "parentName": "Virtuoso",
+        "retireTimestamp": 0,
+        "source": "EOGD_CHAMPION_MASTERY",
+        "thresholds": {
+            "BRONZE": {
+                "rewards": [
+                    {
+                        "asset": "",
+                        "category": "CHALLENGE_POINTS",
+                        "name": "",
+                        "quantity": 10
+                    }
+                ],
+                "value": 5.0
+            },
+            "DIAMOND": {
+                "rewards": [
+                    {
+                        "asset": "",
+                        "category": "CHALLENGE_POINTS",
+                        "name": "",
+                        "quantity": 60
+                    }
+                ],
+                "value": 45.0
+            },
+            "GOLD": {
+                "rewards": [
+                    {
+                        "asset": "",
+                        "category": "CHALLENGE_POINTS",
+                        "name": "",
+                        "quantity": 25
+                    }
+                ],
+                "value": 18.0
+            },
+            "IRON": {
+                "rewards": [
+                    {
+                        "asset": "",
+                        "category": "CHALLENGE_POINTS",
+                        "name": "",
+                        "quantity": 5
+                    }
+                ],
+                "value": 1.0
+            },
+            "MASTER": {
+                "rewards": [
+                    {
+                        "asset": "",
+                        "category": "CHALLENGE_POINTS",
+                        "name": "",
+                        "quantity": 100
+                    }
+                ],
+                "value": 65.0
+            },
+            "PLATINUM": {
+                "rewards": [
+                    {
+                        "asset": "",
+                        "category": "TITLE",
+                        "name": "Archmage",
+                        "quantity": 1
+                    },
+                    {
+                        "asset": "",
+                        "category": "CHALLENGE_POINTS",
+                        "name": "",
+                        "quantity": 40
+                    }
+                ],
+                "value": 25.0
+            },
+            "SILVER": {
+                "rewards": [
+                    {
+                        "asset": "",
+                        "category": "CHALLENGE_POINTS",
+                        "name": "",
+                        "quantity": 15
+                    }
+                ],
+                "value": 12.0
+            }
+        }
+    },
+    "401204": {
+        "availableIds": [
+            4,
+            10,
+            15,
+            17,
+            18,
+            21,
+            22,
+            29,
+            42,
+            51,
+            67,
+            81,
+            96,
+            104,
+            110,
+            119,
+            126,
+            133,
+            145,
+            166,
+            202,
+            203,
+            221,
+            222,
+            235,
+            236,
+            268,
+            360,
+            429,
+            498,
+            523,
+            804,
+            901
+        ],
+        "capstoneGroupId": 401200,
+        "capstoneGroupName": "Virtuoso",
+        "category": "VETERANCY",
+        "childrenIds": [],
+        "description": "Earn Mastery 7 on different marksmen",
+        "descriptionShort": "Get Mastery 7 on different <em>marksmen</em>",
+        "gameModes": [],
+        "hasLeaderboard": false,
+        "id": 401204,
+        "idListType": "CHAMPION",
+        "isCapstone": false,
+        "isReverseDirection": false,
+        "name": "Master Marksman (Legacy)",
+        "parentId": 401200,
+        "parentName": "Virtuoso",
+        "retireTimestamp": 0,
+        "source": "EOGD_CHAMPION_MASTERY",
+        "thresholds": {
+            "BRONZE": {
+                "rewards": [
+                    {
+                        "asset": "",
+                        "category": "CHALLENGE_POINTS",
+                        "name": "",
+                        "quantity": 10
+                    }
+                ],
+                "value": 3.0
+            },
+            "DIAMOND": {
+                "rewards": [
+                    {
+                        "asset": "",
+                        "category": "CHALLENGE_POINTS",
+                        "name": "",
+                        "quantity": 60
+                    }
+                ],
+                "value": 20.0
+            },
+            "GOLD": {
+                "rewards": [
+                    {
+                        "asset": "",
+                        "category": "CHALLENGE_POINTS",
+                        "name": "",
+                        "quantity": 25
+                    }
+                ],
+                "value": 10.0
+            },
+            "IRON": {
+                "rewards": [
+                    {
+                        "asset": "",
+                        "category": "CHALLENGE_POINTS",
+                        "name": "",
+                        "quantity": 5
+                    }
+                ],
+                "value": 1.0
+            },
+            "MASTER": {
+                "rewards": [
+                    {
+                        "asset": "",
+                        "category": "CHALLENGE_POINTS",
+                        "name": "",
+                        "quantity": 100
+                    }
+                ],
+                "value": 30.0
+            },
+            "PLATINUM": {
+                "rewards": [
+                    {
+                        "asset": "",
+                        "category": "TITLE",
+                        "name": "Deadeye",
+                        "quantity": 1
+                    },
+                    {
+                        "asset": "",
+                        "category": "CHALLENGE_POINTS",
+                        "name": "",
+                        "quantity": 40
+                    }
+                ],
+                "value": 15.0
+            },
+            "SILVER": {
+                "rewards": [
+                    {
+                        "asset": "",
+                        "category": "CHALLENGE_POINTS",
+                        "name": "",
+                        "quantity": 15
+                    }
+                ],
+                "value": 5.0
+            }
+        }
+    },
+    "401205": {
+        "availableIds": [
+            1,
+            9,
+            12,
+            16,
+            22,
+            25,
+            26,
+            32,
+            37,
+            40,
+            43,
+            44,
+            50,
+            53,
+            57,
+            61,
+            63,
+            74,
+            89,
+            99,
+            101,
+            111,
+            117,
+            143,
+            147,
+            161,
+            163,
+            201,
+            223,
+            235,
+            267,
+            350,
+            412,
+            427,
+            432,
+            497,
+            518,
+            526,
+            555,
+            800,
+            888,
+            902,
+            910
+        ],
+        "capstoneGroupId": 401200,
+        "capstoneGroupName": "Virtuoso",
+        "category": "VETERANCY",
+        "childrenIds": [],
+        "description": "Earn Mastery 7 on different supports",
+        "descriptionShort": "Get Mastery 7 on different <em>supports</em>",
+        "gameModes": [],
+        "hasLeaderboard": false,
+        "id": 401205,
+        "idListType": "CHAMPION",
+        "isCapstone": false,
+        "isReverseDirection": false,
+        "name": "Master Support (Legacy)",
+        "parentId": 401200,
+        "parentName": "Virtuoso",
+        "retireTimestamp": 0,
+        "source": "EOGD_CHAMPION_MASTERY",
+        "thresholds": {
+            "BRONZE": {
+                "rewards": [
+                    {
+                        "asset": "",
+                        "category": "CHALLENGE_POINTS",
+                        "name": "",
+                        "quantity": 10
+                    }
+                ],
+                "value": 3.0
+            },
+            "DIAMOND": {
+                "rewards": [
+                    {
+                        "asset": "",
+                        "category": "CHALLENGE_POINTS",
+                        "name": "",
+                        "quantity": 60
+                    }
+                ],
+                "value": 20.0
+            },
+            "GOLD": {
+                "rewards": [
+                    {
+                        "asset": "",
+                        "category": "CHALLENGE_POINTS",
+                        "name": "",
+                        "quantity": 25
+                    }
+                ],
+                "value": 10.0
+            },
+            "IRON": {
+                "rewards": [
+                    {
+                        "asset": "",
+                        "category": "CHALLENGE_POINTS",
+                        "name": "",
+                        "quantity": 5
+                    }
+                ],
+                "value": 1.0
+            },
+            "MASTER": {
+                "rewards": [
+                    {
+                        "asset": "",
+                        "category": "CHALLENGE_POINTS",
+                        "name": "",
+                        "quantity": 100
+                    }
+                ],
+                "value": 30.0
+            },
+            "PLATINUM": {
+                "rewards": [
+                    {
+                        "asset": "",
+                        "category": "TITLE",
+                        "name": "Warden",
+                        "quantity": 1
+                    },
+                    {
+                        "asset": "",
+                        "category": "CHALLENGE_POINTS",
+                        "name": "",
+                        "quantity": 40
+                    }
+                ],
+                "value": 15.0
+            },
+            "SILVER": {
+                "rewards": [
+                    {
+                        "asset": "",
+                        "category": "CHALLENGE_POINTS",
+                        "name": "",
+                        "quantity": 15
+                    }
+                ],
+                "value": 5.0
+            }
+        }
+    },
+    "401206": {
+        "availableIds": [
+            2,
+            3,
+            5,
+            6,
+            12,
+            14,
+            19,
+            20,
+            27,
+            31,
+            32,
+            33,
+            36,
+            44,
+            48,
+            53,
+            54,
+            57,
+            58,
+            59,
+            62,
+            72,
+            75,
+            77,
+            78,
+            83,
+            86,
+            89,
+            98,
+            102,
+            106,
+            111,
+            113,
+            120,
+            122,
+            150,
+            154,
+            201,
+            223,
+            412,
+            420,
+            421,
+            516,
+            526,
+            875,
+            897
+        ],
+        "capstoneGroupId": 401200,
+        "capstoneGroupName": "Virtuoso",
+        "category": "VETERANCY",
+        "childrenIds": [],
+        "description": "Earn Mastery 7 on different tanks",
+        "descriptionShort": "Get Mastery 7 on different <em>tanks</em>",
+        "gameModes": [],
+        "hasLeaderboard": false,
+        "id": 401206,
+        "idListType": "CHAMPION",
+        "isCapstone": false,
+        "isReverseDirection": false,
+        "name": "Master Tank (Legacy)",
+        "parentId": 401200,
+        "parentName": "Virtuoso",
+        "retireTimestamp": 0,
+        "source": "EOGD_CHAMPION_MASTERY",
+        "thresholds": {
+            "BRONZE": {
+                "rewards": [
+                    {
+                        "asset": "",
+                        "category": "CHALLENGE_POINTS",
+                        "name": "",
+                        "quantity": 10
+                    }
+                ],
+                "value": 3.0
+            },
+            "DIAMOND": {
+                "rewards": [
+                    {
+                        "asset": "",
+                        "category": "CHALLENGE_POINTS",
+                        "name": "",
+                        "quantity": 60
+                    }
+                ],
+                "value": 30.0
+            },
+            "GOLD": {
+                "rewards": [
+                    {
+                        "asset": "",
+                        "category": "CHALLENGE_POINTS",
+                        "name": "",
+                        "quantity": 25
+                    }
+                ],
+                "value": 10.0
+            },
+            "IRON": {
+                "rewards": [
+                    {
+                        "asset": "",
+                        "category": "CHALLENGE_POINTS",
+                        "name": "",
+                        "quantity": 5
+                    }
+                ],
+                "value": 1.0
+            },
+            "MASTER": {
+                "rewards": [
+                    {
+                        "asset": "",
+                        "category": "CHALLENGE_POINTS",
+                        "name": "",
+                        "quantity": 100
+                    }
+                ],
+                "value": 40.0
+            },
+            "PLATINUM": {
+                "rewards": [
+                    {
+                        "asset": "",
+                        "category": "TITLE",
+                        "name": "Juggernaut",
+                        "quantity": 1
+                    },
+                    {
+                        "asset": "",
+                        "category": "CHALLENGE_POINTS",
+                        "name": "",
+                        "quantity": 40
+                    }
+                ],
+                "value": 20.0
+            },
+            "SILVER": {
+                "rewards": [
+                    {
+                        "asset": "",
+                        "category": "CHALLENGE_POINTS",
+                        "name": "",
+                        "quantity": 15
+                    }
+                ],
+                "value": 5.0
+            }
+        }
+    },
+    "401207": {
+        "availableIds": [
+            7,
+            11,
+            18,
+            23,
+            28,
+            29,
+            35,
+            38,
+            39,
+            55,
+            56,
+            60,
+            64,
+            67,
+            76,
+            80,
+            84,
+            91,
+            92,
+            103,
+            105,
+            107,
+            114,
+            121,
+            131,
+            133,
+            141,
+            157,
+            164,
+            166,
+            233,
+            234,
+            236,
+            238,
+            245,
+            246,
+            254,
+            360,
+            517,
+            555,
+            777,
+            799,
+            893,
+            895,
+            904,
+            950
+        ],
+        "capstoneGroupId": 401200,
+        "capstoneGroupName": "Virtuoso",
+        "category": "VETERANCY",
+        "childrenIds": [],
+        "description": "Earn Mastery 10 on different assassins",
+        "descriptionShort": "Get Mastery 10 on different <em>assassins</em>",
+        "gameModes": [],
+        "hasLeaderboard": false,
+        "id": 401207,
+        "idListType": "CHAMPION",
+        "isCapstone": false,
+        "isReverseDirection": false,
+        "name": "Master Assassin",
+        "parentId": 401200,
+        "parentName": "Virtuoso",
+        "retireTimestamp": 0,
+        "source": "EOGD_CHAMPION_MASTERY",
+        "thresholds": {
+            "BRONZE": {
+                "rewards": [
+                    {
+                        "asset": "",
+                        "category": "CHALLENGE_POINTS",
+                        "name": "",
+                        "quantity": 10
+                    }
+                ],
+                "value": 5.0
+            },
+            "DIAMOND": {
+                "rewards": [
+                    {
+                        "asset": "",
+                        "category": "CHALLENGE_POINTS",
+                        "name": "",
+                        "quantity": 60
+                    }
+                ],
+                "value": 35.0
+            },
+            "GOLD": {
+                "rewards": [
+                    {
+                        "asset": "",
+                        "category": "CHALLENGE_POINTS",
+                        "name": "",
+                        "quantity": 25
+                    }
+                ],
+                "value": 15.0
+            },
+            "IRON": {
+                "rewards": [
+                    {
+                        "asset": "",
+                        "category": "CHALLENGE_POINTS",
+                        "name": "",
+                        "quantity": 5
+                    }
+                ],
+                "value": 1.0
+            },
+            "MASTER": {
+                "rewards": [
+                    {
+                        "asset": "",
+                        "category": "CHALLENGE_POINTS",
+                        "name": "",
+                        "quantity": 100
+                    }
+                ],
+                "value": 45.0
+            },
+            "PLATINUM": {
+                "rewards": [
+                    {
+                        "asset": "",
+                        "category": "TITLE",
+                        "name": "Reaper",
+                        "quantity": 1
+                    },
+                    {
+                        "asset": "",
+                        "category": "CHALLENGE_POINTS",
+                        "name": "",
+                        "quantity": 40
+                    }
+                ],
+                "value": 25.0
+            },
+            "SILVER": {
+                "rewards": [
+                    {
+                        "asset": "",
+                        "category": "CHALLENGE_POINTS",
+                        "name": "",
+                        "quantity": 15
+                    }
+                ],
+                "value": 10.0
+            }
+        }
+    },
+    "401208": {
+        "availableIds": [
+            2,
+            5,
+            6,
+            8,
+            11,
+            14,
+            19,
+            23,
+            24,
+            36,
+            39,
+            41,
+            48,
+            56,
+            58,
+            59,
+            62,
+            64,
+            68,
+            72,
+            75,
+            77,
+            78,
+            79,
+            80,
+            82,
+            83,
+            86,
+            92,
+            102,
+            105,
+            106,
+            107,
+            114,
+            120,
+            122,
+            126,
+            131,
+            141,
+            150,
+            154,
+            157,
+            164,
+            200,
+            233,
+            234,
+            240,
+            254,
+            266,
+            420,
+            421,
+            777,
+            799,
+            875,
+            876,
+            887,
+            895,
+            897,
+            904,
+            950
+        ],
+        "capstoneGroupId": 401200,
+        "capstoneGroupName": "Virtuoso",
+        "category": "VETERANCY",
+        "childrenIds": [],
+        "description": "Earn Mastery 10 on different fighters",
+        "descriptionShort": "Get Mastery 10 on different <em>fighters</em>",
+        "gameModes": [],
+        "hasLeaderboard": false,
+        "id": 401208,
+        "idListType": "CHAMPION",
+        "isCapstone": false,
+        "isReverseDirection": false,
+        "name": "Master Fighter",
+        "parentId": 401200,
+        "parentName": "Virtuoso",
+        "retireTimestamp": 0,
+        "source": "EOGD_CHAMPION_MASTERY",
+        "thresholds": {
+            "BRONZE": {
+                "rewards": [
+                    {
+                        "asset": "",
+                        "category": "CHALLENGE_POINTS",
+                        "name": "",
+                        "quantity": 10
+                    }
+                ],
+                "value": 5.0
+            },
+            "DIAMOND": {
+                "rewards": [
+                    {
+                        "asset": "",
+                        "category": "CHALLENGE_POINTS",
+                        "name": "",
+                        "quantity": 60
+                    }
+                ],
+                "value": 50.0
+            },
+            "GOLD": {
+                "rewards": [
+                    {
+                        "asset": "",
+                        "category": "CHALLENGE_POINTS",
+                        "name": "",
+                        "quantity": 25
+                    }
+                ],
+                "value": 20.0
+            },
+            "IRON": {
+                "rewards": [
+                    {
+                        "asset": "",
+                        "category": "CHALLENGE_POINTS",
+                        "name": "",
+                        "quantity": 5
+                    }
+                ],
+                "value": 1.0
+            },
+            "MASTER": {
+                "rewards": [
+                    {
+                        "asset": "",
+                        "category": "CHALLENGE_POINTS",
+                        "name": "",
+                        "quantity": 100
+                    }
+                ],
+                "value": 70.0
+            },
+            "PLATINUM": {
+                "rewards": [
+                    {
+                        "asset": "",
+                        "category": "TITLE",
+                        "name": "Conqueror",
+                        "quantity": 1
+                    },
+                    {
+                        "asset": "",
+                        "category": "CHALLENGE_POINTS",
+                        "name": "",
+                        "quantity": 40
+                    }
+                ],
+                "value": 30.0
+            },
+            "SILVER": {
+                "rewards": [
+                    {
+                        "asset": "",
+                        "category": "CHALLENGE_POINTS",
+                        "name": "",
+                        "quantity": 15
+                    }
+                ],
+                "value": 12.0
+            }
+        }
+    },
+    "401209": {
+        "availableIds": [
+            1,
+            3,
+            4,
+            7,
+            8,
+            9,
+            10,
+            13,
+            16,
+            17,
+            20,
+            21,
+            25,
+            26,
+            27,
+            28,
+            30,
+            31,
+            34,
+            37,
+            38,
+            40,
+            42,
+            43,
+            45,
+            50,
+            54,
+            55,
+            60,
+            61,
+            63,
+            68,
+            69,
+            74,
+            76,
+            79,
+            81,
+            82,
+            85,
+            90,
+            96,
+            99,
+            101,
+            103,
+            110,
+            112,
+            115,
+            117,
+            127,
+            134,
+            136,
+            142,
+            143,
+            145,
+            147,
+            161,
+            163,
+            202,
+            245,
+            267,
+            268,
+            350,
+            427,
+            432,
+            517,
+            518,
+            711,
+            800,
+            876,
+            888,
+            893,
+            901,
+            902,
+            910
+        ],
+        "capstoneGroupId": 401200,
+        "capstoneGroupName": "Virtuoso",
+        "category": "VETERANCY",
+        "childrenIds": [],
+        "description": "Earn Mastery 10 on different mages",
+        "descriptionShort": "Get Mastery 10 on different <em>mages</em>",
+        "gameModes": [],
+        "hasLeaderboard": false,
+        "id": 401209,
+        "idListType": "CHAMPION",
+        "isCapstone": false,
+        "isReverseDirection": false,
+        "name": "Master Mage",
+        "parentId": 401200,
+        "parentName": "Virtuoso",
+        "retireTimestamp": 0,
+        "source": "EOGD_CHAMPION_MASTERY",
+        "thresholds": {
+            "BRONZE": {
+                "rewards": [
+                    {
+                        "asset": "",
+                        "category": "CHALLENGE_POINTS",
+                        "name": "",
+                        "quantity": 10
+                    }
+                ],
+                "value": 5.0
+            },
+            "DIAMOND": {
+                "rewards": [
+                    {
+                        "asset": "",
+                        "category": "CHALLENGE_POINTS",
+                        "name": "",
+                        "quantity": 60
+                    }
+                ],
+                "value": 45.0
+            },
+            "GOLD": {
+                "rewards": [
+                    {
+                        "asset": "",
+                        "category": "CHALLENGE_POINTS",
+                        "name": "",
+                        "quantity": 25
+                    }
+                ],
+                "value": 18.0
+            },
+            "IRON": {
+                "rewards": [
+                    {
+                        "asset": "",
+                        "category": "CHALLENGE_POINTS",
+                        "name": "",
+                        "quantity": 5
+                    }
+                ],
+                "value": 1.0
+            },
+            "MASTER": {
+                "rewards": [
+                    {
+                        "asset": "",
+                        "category": "CHALLENGE_POINTS",
+                        "name": "",
+                        "quantity": 100
+                    }
+                ],
+                "value": 65.0
+            },
+            "PLATINUM": {
+                "rewards": [
+                    {
+                        "asset": "",
+                        "category": "TITLE",
+                        "name": "Supreme Sorcerer",
+                        "quantity": 1
+                    },
+                    {
+                        "asset": "",
+                        "category": "CHALLENGE_POINTS",
+                        "name": "",
+                        "quantity": 40
+                    }
+                ],
+                "value": 25.0
+            },
+            "SILVER": {
+                "rewards": [
+                    {
+                        "asset": "",
+                        "category": "CHALLENGE_POINTS",
+                        "name": "",
+                        "quantity": 15
+                    }
+                ],
+                "value": 12.0
+            }
+        }
+    },
+    "401210": {
+        "availableIds": [
+            4,
+            10,
+            15,
+            17,
+            18,
+            21,
+            22,
+            29,
+            42,
+            51,
+            67,
+            81,
+            96,
+            104,
+            110,
+            119,
+            126,
+            133,
+            145,
+            166,
+            202,
+            203,
+            221,
+            222,
+            235,
+            236,
+            268,
+            360,
+            429,
+            498,
+            523,
+            804,
+            901
+        ],
+        "capstoneGroupId": 401200,
+        "capstoneGroupName": "Virtuoso",
+        "category": "VETERANCY",
+        "childrenIds": [],
+        "description": "Earn Mastery 10 on different marksmen",
+        "descriptionShort": "Get Mastery 10 on different <em>marksmen</em>",
+        "gameModes": [],
+        "hasLeaderboard": false,
+        "id": 401210,
+        "idListType": "CHAMPION",
+        "isCapstone": false,
+        "isReverseDirection": false,
+        "name": "Master Marksman",
+        "parentId": 401200,
+        "parentName": "Virtuoso",
+        "retireTimestamp": 0,
+        "source": "EOGD_CHAMPION_MASTERY",
+        "thresholds": {
+            "BRONZE": {
+                "rewards": [
+                    {
+                        "asset": "",
+                        "category": "CHALLENGE_POINTS",
+                        "name": "",
+                        "quantity": 10
+                    }
+                ],
+                "value": 3.0
+            },
+            "DIAMOND": {
+                "rewards": [
+                    {
+                        "asset": "",
+                        "category": "CHALLENGE_POINTS",
+                        "name": "",
+                        "quantity": 60
+                    }
+                ],
+                "value": 20.0
+            },
+            "GOLD": {
+                "rewards": [
+                    {
+                        "asset": "",
+                        "category": "CHALLENGE_POINTS",
+                        "name": "",
+                        "quantity": 25
+                    }
+                ],
+                "value": 10.0
+            },
+            "IRON": {
+                "rewards": [
+                    {
+                        "asset": "",
+                        "category": "CHALLENGE_POINTS",
+                        "name": "",
+                        "quantity": 5
+                    }
+                ],
+                "value": 1.0
+            },
+            "MASTER": {
+                "rewards": [
+                    {
+                        "asset": "",
+                        "category": "CHALLENGE_POINTS",
+                        "name": "",
+                        "quantity": 100
+                    }
+                ],
+                "value": 30.0
+            },
+            "PLATINUM": {
+                "rewards": [
+                    {
+                        "asset": "",
+                        "category": "TITLE",
+                        "name": "Sharpshooter",
+                        "quantity": 1
+                    },
+                    {
+                        "asset": "",
+                        "category": "CHALLENGE_POINTS",
+                        "name": "",
+                        "quantity": 40
+                    }
+                ],
+                "value": 15.0
+            },
+            "SILVER": {
+                "rewards": [
+                    {
+                        "asset": "",
+                        "category": "CHALLENGE_POINTS",
+                        "name": "",
+                        "quantity": 15
+                    }
+                ],
+                "value": 5.0
+            }
+        }
+    },
+    "401211": {
+        "availableIds": [
+            1,
+            9,
+            12,
+            16,
+            22,
+            25,
+            26,
+            32,
+            37,
+            40,
+            43,
+            44,
+            50,
+            53,
+            57,
+            61,
+            63,
+            74,
+            89,
+            99,
+            101,
+            111,
+            117,
+            143,
+            147,
+            161,
+            163,
+            201,
+            223,
+            235,
+            267,
+            350,
+            412,
+            427,
+            432,
+            497,
+            518,
+            526,
+            555,
+            800,
+            888,
+            902,
+            910
+        ],
+        "capstoneGroupId": 401200,
+        "capstoneGroupName": "Virtuoso",
+        "category": "VETERANCY",
+        "childrenIds": [],
+        "description": "Earn Mastery 10 on different supports",
+        "descriptionShort": "Get Mastery 10 on different <em>supports</em>",
+        "gameModes": [],
+        "hasLeaderboard": false,
+        "id": 401211,
+        "idListType": "CHAMPION",
+        "isCapstone": false,
+        "isReverseDirection": false,
+        "name": "Master Support",
+        "parentId": 401200,
+        "parentName": "Virtuoso",
+        "retireTimestamp": 0,
+        "source": "EOGD_CHAMPION_MASTERY",
+        "thresholds": {
+            "BRONZE": {
+                "rewards": [
+                    {
+                        "asset": "",
+                        "category": "CHALLENGE_POINTS",
+                        "name": "",
+                        "quantity": 10
+                    }
+                ],
+                "value": 3.0
+            },
+            "DIAMOND": {
+                "rewards": [
+                    {
+                        "asset": "",
+                        "category": "CHALLENGE_POINTS",
+                        "name": "",
+                        "quantity": 60
+                    }
+                ],
+                "value": 20.0
+            },
+            "GOLD": {
+                "rewards": [
+                    {
+                        "asset": "",
+                        "category": "CHALLENGE_POINTS",
+                        "name": "",
+                        "quantity": 25
+                    }
+                ],
+                "value": 10.0
+            },
+            "IRON": {
+                "rewards": [
+                    {
+                        "asset": "",
+                        "category": "CHALLENGE_POINTS",
+                        "name": "",
+                        "quantity": 5
+                    }
+                ],
+                "value": 1.0
+            },
+            "MASTER": {
+                "rewards": [
+                    {
+                        "asset": "",
+                        "category": "CHALLENGE_POINTS",
+                        "name": "",
+                        "quantity": 100
+                    }
+                ],
+                "value": 30.0
+            },
+            "PLATINUM": {
+                "rewards": [
+                    {
+                        "asset": "",
+                        "category": "TITLE",
+                        "name": "Ultimate Guardian",
+                        "quantity": 1
+                    },
+                    {
+                        "asset": "",
+                        "category": "CHALLENGE_POINTS",
+                        "name": "",
+                        "quantity": 40
+                    }
+                ],
+                "value": 15.0
+            },
+            "SILVER": {
+                "rewards": [
+                    {
+                        "asset": "",
+                        "category": "CHALLENGE_POINTS",
+                        "name": "",
+                        "quantity": 15
+                    }
+                ],
+                "value": 5.0
+            }
+        }
+    },
+    "401212": {
+        "availableIds": [
+            2,
+            3,
+            5,
+            6,
+            12,
+            14,
+            19,
+            20,
+            27,
+            31,
+            32,
+            33,
+            36,
+            44,
+            48,
+            53,
+            54,
+            57,
+            58,
+            59,
+            62,
+            72,
+            75,
+            77,
+            78,
+            83,
+            86,
+            89,
+            98,
+            102,
+            106,
+            111,
+            113,
+            120,
+            122,
+            150,
+            154,
+            201,
+            223,
+            412,
+            420,
+            421,
+            516,
+            526,
+            875,
+            897
+        ],
+        "capstoneGroupId": 401200,
+        "capstoneGroupName": "Virtuoso",
+        "category": "VETERANCY",
+        "childrenIds": [],
+        "description": "Earn Mastery 10 on different tanks",
+        "descriptionShort": "Get Mastery 10 on different <em>tanks</em>",
+        "gameModes": [],
+        "hasLeaderboard": false,
+        "id": 401212,
+        "idListType": "CHAMPION",
+        "isCapstone": false,
+        "isReverseDirection": false,
+        "name": "Master Tank",
+        "parentId": 401200,
+        "parentName": "Virtuoso",
+        "retireTimestamp": 0,
+        "source": "EOGD_CHAMPION_MASTERY",
+        "thresholds": {
+            "BRONZE": {
+                "rewards": [
+                    {
+                        "asset": "",
+                        "category": "CHALLENGE_POINTS",
+                        "name": "",
+                        "quantity": 10
+                    }
+                ],
+                "value": 3.0
+            },
+            "DIAMOND": {
+                "rewards": [
+                    {
+                        "asset": "",
+                        "category": "CHALLENGE_POINTS",
+                        "name": "",
+                        "quantity": 60
+                    }
+                ],
+                "value": 30.0
+            },
+            "GOLD": {
+                "rewards": [
+                    {
+                        "asset": "",
+                        "category": "CHALLENGE_POINTS",
+                        "name": "",
+                        "quantity": 25
+                    }
+                ],
+                "value": 10.0
+            },
+            "IRON": {
+                "rewards": [
+                    {
+                        "asset": "",
+                        "category": "CHALLENGE_POINTS",
+                        "name": "",
+                        "quantity": 5
+                    }
+                ],
+                "value": 1.0
+            },
+            "MASTER": {
+                "rewards": [
+                    {
+                        "asset": "",
+                        "category": "CHALLENGE_POINTS",
+                        "name": "",
+                        "quantity": 100
+                    }
+                ],
+                "value": 40.0
+            },
+            "PLATINUM": {
+                "rewards": [
+                    {
+                        "asset": "",
+                        "category": "TITLE",
+                        "name": "Colossus",
+                        "quantity": 1
+                    },
+                    {
+                        "asset": "",
+                        "category": "CHALLENGE_POINTS",
+                        "name": "",
+                        "quantity": 40
+                    }
+                ],
+                "value": 20.0
+            },
+            "SILVER": {
+                "rewards": [
+                    {
+                        "asset": "",
+                        "category": "CHALLENGE_POINTS",
+                        "name": "",
+                        "quantity": 15
+                    }
+                ],
+                "value": 5.0
+            }
+        }
     }
 }

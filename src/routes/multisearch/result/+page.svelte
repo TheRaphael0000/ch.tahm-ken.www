@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { page } from '$app/state';
-	import { championsMapKey, challengesSite } from '$lib/challenges';
+	import { championsMapKey, challengesSite, ensureChallengeLevelRank } from '$lib/challenges';
 	import Tooltip from '$lib/components/Tooltip.svelte';
 	import { browser } from '$app/environment';
 	import HelpText from '$lib/components/HelpText.svelte';
@@ -145,7 +145,7 @@
 						{@const summonerChallenge = allChallenges.find(
 							(c: any) => c.challengeId == challenge.id
 						)}
-						{@const challengeLevel = summonerChallenge?.level ?? 'IRON'}
+						{@const challengeLevel = ensureChallengeLevelRank(summonerChallenge?.level)}
 						<div class="flex flex-col">
 							<div class="relative">
 								<Tooltip>

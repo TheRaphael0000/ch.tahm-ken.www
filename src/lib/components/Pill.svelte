@@ -1,11 +1,25 @@
 <script lang="ts">
-	let { children, class: propClasses = '', ...props } = $props();
+	let {
+		children,
+		fg = 'text-black',
+		bg = 'bg-white/90',
+		class: propClasses = '',
+		...props
+	} = $props();
 </script>
 
 <div
 	{...props}
-	class={'inline-block rounded-3xl bg-white/90 px-2 text-sm font-semibold text-black ' +
-		propClasses}
+	class={[
+		'inline-block',
+		'rounded-3xl',
+		'px-2',
+		'text-sm',
+		'font-semibold',
+		fg,
+		bg,
+		...propClasses
+	]}
 >
 	{@render children()}
 </div>
