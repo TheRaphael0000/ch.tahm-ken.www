@@ -106,29 +106,28 @@
 {/snippet}
 
 <!-- svelte-ignore a11y_no_static_element_interactions -->
-<div class="team_builder px-6">
-	<div class="col1">
-		<div class="my-2 flex w-full gap-3">
-			<PlayerSearch bind:playerData>
-				{#if playerData}
-					<div>
-						<Pill class="my-auto">
-							{challengesCompleted}/{challengesTotal}
-						</Pill>
+<div class="flex flex-col gap-3 p-3 2xl:flex-row">
+	<div class="flex flex-col gap-3">
+		<div class="flex flex-wrap items-center justify-start gap-3 2xl:flex-nowrap">
+			<PlayerSearch bind:playerData></PlayerSearch>
+			{#if playerData}
+				<Pill class="my-auto">
+					{challengesCompleted}/{challengesTotal}
+				</Pill>
 
-						<Button
-							title="Show/Hide completed challenges"
-							onclick={() => (showCompleted = !showCompleted)}
-						>
-							{#if showCompleted}
-								<i class="fa-solid fa-fw fa-eye"></i>
-							{:else}
-								<i class="fa-solid fa-fw fa-eye-slash"></i>
-							{/if}
-						</Button>
-					</div>
-				{/if}
-			</PlayerSearch>
+				<div>
+					<Button
+						title="Show/Hide completed challenges"
+						onclick={() => (showCompleted = !showCompleted)}
+					>
+						{#if showCompleted}
+							Hide Completed
+						{:else}
+							Show Completed
+						{/if}
+					</Button>
+				</div>
+			{/if}
 		</div>
 
 		<table class="mb-auto w-full">
@@ -266,51 +265,46 @@
 			</tbody>
 		</table>
 	</div>
-	<div class="col2">
-		<div class="w-full">
-			<div class="my-2 flex justify-center gap-2">
-				<InputText
-					title="Search for champions, enter allows you to selected when only one champion matches the search"
-					placeholder="Search champion..."
-					bind:value={textfilterChampions}
-					onkeypress={filterKey}
-				/>
-				<div class="flex items-center gap-3">
-					{#each Array.from(Array(5).keys()) as i}
-						{@const championSelected = selectedChampions.at(i) ?? ''}
-						{@const champion = championsMap.get(championSelected)}
+	<div class="flex flex-col gap-3">
+		<div class="flex flex-wrap items-center justify-center gap-3 2xl:flex-nowrap">
+			<InputText
+				title="Search for champions, enter allows you to selected when only one champion matches the search"
+				placeholder="Search champion..."
+				bind:value={textfilterChampions}
+				onkeypress={filterKey}
+			/>
+			<div class="flex items-center gap-3">
+				{#each Array.from(Array(5).keys()) as i}
+					{@const championSelected = selectedChampions.at(i) ?? ''}
+					{@const champion = championsMap.get(championSelected)}
 
-						<div class={['h-10', 'w-10', champion == undefined ? 'p-2.75' : '']}>
-							{#if champion == undefined}
-								<div class="v-full h-full rounded-full bg-white/50"></div>
-							{:else}
-								<button
-									class="cursor-pointer"
-									onclick={() =>
-										selectedChampions.splice(selectedChampions.indexOf(champion.id), 1)}
-								>
-									<img
-										src={`/img/cache/datadragon/champion/${champion?.image.full}`}
-										alt={champion.name}
-									/>
-								</button>
-							{/if}
-						</div>
-					{/each}
-				</div>
-				<Button title="Clear selections" onclick={clear}>
-					<i class="fa-solid fa-fw fa-trash"></i> Clear
-				</Button>
-				<!-- <Button class="m-3" title="Copy a link to your current selection to the clipboard">
-					<i class="fa-solid fa-share"></i> Share
-				</Button> -->
-				<Button
-					title="Find compositions that satify the current selection (selected champions and challenges)."
-					onclick={optimize}
-				>
-					<i class="fa-solid fa-wand-magic-sparkles"></i> Optimize selection
-				</Button>
+					<div class={['h-10', 'w-10', champion == undefined ? 'p-2.75' : '']}>
+						{#if champion == undefined}
+							<div class="v-full h-full rounded-full bg-white/50"></div>
+						{:else}
+							<button
+								class="cursor-pointer"
+								onclick={() => selectedChampions.splice(selectedChampions.indexOf(champion.id), 1)}
+							>
+								<img
+									src={`/img/cache/datadragon/champion/${champion?.image.full}`}
+									alt={champion.name}
+								/>
+							</button>
+						{/if}
+					</div>
+				{/each}
 			</div>
+			<Button title="Clear selections" onclick={clear}>Clear</Button>
+			<!-- <Button class="m-3" title="Copy a link to your current selection to the clipboard">
+					Share
+				</Button> -->
+			<Button
+				title="Find compositions that satify the current selection (selected champions and challenges)."
+				onclick={optimize}
+			>
+				Optimize selection
+			</Button>
 		</div>
 
 		<ChampionPool
@@ -323,30 +317,3 @@
 		/>
 	</div>
 </div>
-
-<style>
-	.team_builder {
-		display: grid;
-		gap: 5px;
-		grid-template-columns: 678px auto;
-		grid-template-areas: 'col1 col2';
-	}
-
-	@media screen and (max-width: 1000px) {
-		.col1 {
-			grid-area: 1 / span 2 !important;
-		}
-		.col2 {
-			grid-area: 2 / span 2 !important;
-		}
-	}
-
-	@media screen and (min-width: 1000px) {
-		.col1 {
-			grid-area: col1;
-		}
-		.col2 {
-			grid-area: col2;
-		}
-	}
-</style>

@@ -39,31 +39,32 @@
 			href: '/masteries',
 			text: 'Masteries'
 		},
-		// {
-		// 	href: '/compositions',
-		// 	text: 'Compositions'
-		// },
 		{
 			href: '/community',
 			text: 'Community'
+		},
+		{
+			href: '/donate',
+			text: 'Donate'
 		}
 	];
 
 	let footerNav = [
 		{
 			text: 'discord',
-			href: 'https://discord.gg/aHs3uDraNU',
-			class: 'fa-brands fa-discord text-indigo-400'
+			href: 'https://discord.gg/aHs3uDraNU'
 		},
 		{
-			text: 'kofi',
-			href: 'https://ko-fi.com/theraphael0000',
-			class: 'fa-solid fa-heart text-rose-600'
+			text: 'ko-fi',
+			href: 'https://ko-fi.com/theraphael0000'
 		},
 		{
 			text: 'github',
-			href: 'https://github.com/TheRaphael0000/ch.tahm-ken.www/',
-			class: 'fa-brands fa-github text-zinc-50'
+			href: 'https://github.com/TheRaphael0000/ch.tahm-ken.www/'
+		},
+		{
+			text: 'contact@tahm-ken.ch',
+			href: 'mailto:contact@tahm-ken.ch'
 		}
 	];
 
@@ -92,21 +93,24 @@
 		class="bg_img"
 		style:background-image={background ? `url(/img/cache/datadragon/splash/${background})` : ''}
 	></div>
-	<nav class="flex flex-col items-center justify-between md:flex-row">
-		<div class="mx-7 my-3 flex flex-col items-center gap-2 md:flex-row md:gap-7">
+	<nav class="flex flex-col items-center justify-between lg:flex-row">
+		<div class="mx-7 my-3 flex flex-col items-center gap-2 lg:flex-row lg:gap-7">
 			<a href="/" aria-label="home">
-				<img src="/img/favicon.png" alt="logo" class="h-10" />
+				<img src="/img/favicon.png" alt="logo" class="h-10 min-h-10 min-w-10" />
 			</a>
 			{#each headerNav as link, i}
 				<!-- svelte-ignore a11y_accesskey -->
 				<a
 					class:border-b-1={currentPath === link.href}
+					class="whitespace-nowrap"
 					href={link.href}
-					accesskey={(i + 1).toString()}>{link.text}</a
+					accesskey={(i + 1).toString()}
 				>
+					{link.text}
+				</a>
 			{/each}
 		</div>
-		<div class="mx-7 my-3 flex flex-col items-center gap-2 md:flex-row md:gap-7">
+		<div class="mx-7 my-3 flex flex-col items-center gap-2 lg:flex-row lg:gap-7">
 			<ThemeSelector bind:background />
 		</div>
 	</nav>
@@ -116,36 +120,39 @@
 	{@render children()}
 </main>
 
-<footer class="p-6 text-center">
+<footer class="mt-3 flex flex-col gap-y-3 text-center">
 	<div>
 		<cite>{quote}</cite> &mdash; The River King
 	</div>
 
-	<div class="m-2 flex flex-wrap justify-center">
+	<div class="flex flex-wrap justify-center gap-x-3">
 		{#each footerNav as link}
-			<a aria-label={link.text} href={link.href} target="_blank" class="m-2 text-3xl">
-				<i class={link.class}></i>
+			<a aria-label={link.text} href={link.href} target="_blank" class="text-sm">
+				{link.text}
 			</a>
 		{/each}
 	</div>
 
 	<div class="text-sm text-gray-500">
-		<div>
-			Build <Link
-				href="https://github.com/TheRaphael0000/ch.tahm-ken.www/commits/{version}"
-				target="_blank">{version}</Link
-			> / DD <Link href="https://ddragon.leagueoflegends.com/cdn/dragontail-{manifest_json.dd}.tgz"
-				>{manifest_json.dd}</Link
-			> / LCU {lcu_version}
-		</div>
-		<div>
-			Tahm-Ken.ch isn't endorsed by Riot Games and doesn't reflect the views or opinions of Riot
-			Games or anyone officially involved in producing or managing Riot Games properties.
-		</div>
-		<div>
-			Riot Games, and all associated properties are trademarks or registered trademarks of Riot
-			Games, Inc.
-		</div>
+		Build
+		<Link
+			href="https://github.com/TheRaphael0000/ch.tahm-ken.www/commits/{version}"
+			target="_blank"
+		>
+			{version}
+		</Link>
+		/ DD
+		<Link href="https://ddragon.leagueoflegends.com/cdn/dragontail-{manifest_json.dd}.tgz">
+			{manifest_json.dd}
+		</Link>
+		/ LCU
+		{lcu_version}
+	</div>
+	<div class="text-sm text-gray-500">
+		Tahm-Ken.ch isn't endorsed by Riot Games and doesn't reflect the views or opinions of Riot Games
+		or anyone officially involved in producing or managing Riot Games properties.
+		<br />
+		Riot Games, and all associated properties are trademarks or registered trademarks of Riot Games, Inc.
 	</div>
 </footer>
 

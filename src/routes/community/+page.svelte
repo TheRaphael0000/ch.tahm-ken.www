@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { H1, Article } from '$lib/components';
+	import { H1, Article, Link, H2 } from '$lib/components';
 	import Community from './Community.svelte';
 	import DiscordCommunity from './DiscordCommunity.svelte';
 	import discord_invites from 'data/cache/discord.cache.json';
@@ -15,6 +15,19 @@
 
 <Article>
 	<H1>Community</H1>
+
+	<H2>League of Legends challenges communities on discord</H2>
+	<p>Looking for teammates to complete challenges? Here are a few Discord communities.</p>
+
+	<!-- League Challenges -->
+	<DiscordCommunity community={discord_invites.FJXAvqxw6T} />
+	<!-- League Desafíos LoL ESP -->
+	<DiscordCommunity community={discord_invites.cKGS6ASyuZ} />
+	<!-- Achievement Hunting -->
+	<DiscordCommunity community={discord_invites.yapEVysv3b} />
+
+	<H2>League of Legends challenges websites</H2>
+	<p>Useful websites for challenges completion.</p>
 
 	<!-- challenges.darkintaqt -->
 	<Community
@@ -32,16 +45,19 @@
 		buttonText="Visit Website"
 		text="LoLDB, the complete League of Legends database with champions, skins, chromas, items, mythic shop content, and more!"
 	/>
-	<!-- League Challenges -->
-	<DiscordCommunity community={discord_invites.FJXAvqxw6T} />
-	<!-- League Desafíos LoL ESP -->
-	<DiscordCommunity community={discord_invites.cKGS6ASyuZ} />
-	<!-- Achievement Hunting -->
-	<DiscordCommunity community={discord_invites.yapEVysv3b} />
+
+	<H2>Developement Discord</H2>
+
+	<p>
+		If you encounter any <b>bugs</b> or have <b>suggestions</b> for website <b>improvements</b>,
+		please let us know on our
+		<Link href="https://discord.gg/aHs3uDraNU">discord</Link>. or by mail
+		<Link href="mailto:contact@tahm-ken.ch">contact@tahm-ken.ch</Link>.
+	</p>
 
 	<!-- Tahm-Ken.ch -->
 	<DiscordCommunity community={discord_invites.aHs3uDraNU} />
-	<p>
+	<p class="text-sm text-gray-500">
 		You can ask on the Tahm-Ken.ch Discord server if you want to add your challenge community on the
 		site (it doesn't need to be a Discord server). You must be admin of this community.
 	</p>

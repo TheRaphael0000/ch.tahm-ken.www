@@ -120,6 +120,6 @@
 
 <div class="mt-2 text-gray-500" style="font-size:0.9em;">
 	The placeholder contains the list of the Donators, thanks to them ! link to the
-	<Link href="https://ko-fi.com/theraphael0000">donation page</Link>
+	<Link href="/donate">donation page</Link>
 	&lt;(^.^&lt;) <br />
 </div>

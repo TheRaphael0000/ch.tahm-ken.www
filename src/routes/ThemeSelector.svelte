@@ -24,6 +24,7 @@
 <div>
 	<a
 		href="."
+		class="whitespace-nowrap"
 		onclick={(event) => {
 			event.preventDefault();
 			isVisible = !isVisible;

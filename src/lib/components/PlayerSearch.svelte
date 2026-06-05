@@ -9,10 +9,8 @@
 
 	let { children = undefined, playerData = $bindable(undefined) } = $props();
 
-	let icon: string = $state('');
 	let region: string = $state('');
 	let summoner: string = $state('');
-	let globalLevel: string = $state('');
 
 	if (browser) {
 		summoner = page.url.searchParams.get('summoner')?.replace('-', '#') ?? '';
@@ -30,8 +28,6 @@
 					playerData = (await response.json()).at(0);
 					if (playerData) {
 						summoner = `${playerData?.account?.gameName}#${playerData?.account?.tagLine}`;
-						globalLevel = playerData.challenges.totalPoints.level.toLocaleLowerCase();
-						icon = playerData.summoner.profileIconId;
 					}
 				})();
 			} else {
@@ -61,7 +57,7 @@
 </script>
 
 <div>
-	<div class="my-2 flex w-full gap-3">
+	<div class="flex w-full gap-3">
 		<form class="flex" onsubmit={search}>
 			<Select class="rounded-r-none" bind:value={region}>
 				{#each regions as region}
@@ -74,15 +70,13 @@
 				placeholder="Summoner name#tag..."
 				bind:value={summoner}
 			/>
-			<Button class="-ml-px rounded-l-none" type="submit">
-				<i class="fa-solid fa-fw fa-magnifying-glass"></i>
-			</Button>
+			<Button class="-ml-px rounded-l-none" type="submit">Search</Button>
 		</form>
 		{#if playerData}
 			<img
 				class="h-10 max-h-10 w-10 max-w-10"
-				src={`/img/cache/datadragon/profileicon/${icon}.png`}
-				alt={'icon' + icon}
+				src={`/img/cache/datadragon/profileicon/${playerData?.summoner?.profileIconId}.png`}
+				alt={'icon' + playerData?.summoner?.profileIconId}
 			/>
 			<Tooltip>
 				{numberFormat.format(playerData.challenges.totalPoints.current)} / {numberFormat.format(
@@ -91,8 +85,9 @@
 				{#snippet text()}
 					<img
 						class="h-10 max-h-10 w-10 max-w-10"
-						src="/img/challengecrystal/{globalLevel}.ls_c2.png"
-						alt={globalLevel}
+						src="/img/challengecrystal/{playerData?.challenges?.totalPoints?.level?.toLocaleLowerCase() ??
+							'iron'}.ls_c2.png"
+						alt={playerData?.challenges?.totalPoints?.level?.toLocaleLowerCase() ?? 'iron'}
 					/>
 				{/snippet}
 			</Tooltip>
