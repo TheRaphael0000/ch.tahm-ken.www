@@ -131,7 +131,7 @@
 			<thead>
 				<tr>
 					<th class="px-2"></th>
-					<th class="px-2 text-right">#</th>
+					<th class="px-2 text-right">&nbsp;&nbsp;#</th>
 					<th class="px-2 text-left">Challenge</th>
 					<th class="px-2 text-left">Label</th>
 					<th class="px-2 text-left">Selection</th>

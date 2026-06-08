@@ -8,7 +8,16 @@
 	import ThemeSelector from './ThemeSelector.svelte';
 	import { browser } from '$app/environment';
 	import { Link } from '$lib/components';
-	const version = import.meta.env.VITE_BUILD_VERSION;
+
+	const version = import.meta.env.VITE_BUILD_VERSION ?? 'N/A';
+
+	onMount(() => {
+		if (typeof umami !== 'undefined') {
+			umami.track('appLoad', { version: version });
+		} else {
+			console.info('umami not loaded');
+		}
+	});
 
 	let currentPath = $derived(page.url.pathname);
 	let background: string = $state(

@@ -25,6 +25,8 @@ export default defineConfig(({ mode }) => {
 
 	return {
 		plugins: [sveltekit(), tailwindcss()],
-		server: { proxy: proxy }
+		server: {
+			proxy: proxy,
+		}
 	};
 });
