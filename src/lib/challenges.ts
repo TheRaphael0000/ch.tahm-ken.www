@@ -4,17 +4,16 @@ import champions_json from 'data/cache/datadragon/champion.json';
 import challenges_json from 'data/lcu/challenges.json';
 import challenge_labels from 'data/challenge_labels.json';
 
-export const challengesRanks = [
+export const challengesRanksToMaster = [
 	'IRON',
 	'BRONZE',
 	'SILVER',
 	'GOLD',
 	'PLATINUM',
 	'DIAMOND',
-	'MASTER',
-	'GRANDMASTER',
-	'CHALLENGER'
+	'MASTER'
 ];
+export const challengesRanks = [...challengesRanksToMaster, 'GRANDMASTER', 'CHALLENGER'];
 export const champions = Object.entries(champions_json.data).map((c) => c[1]);
 export const championsMap = new Map(Object.entries(champions_json.data));
 export const championsKeys = Object.entries(champions_json.data).map((c) => c[1].key);
@@ -91,6 +90,6 @@ export function getChampions(challenges: any[]) {
 }
 
 export function ensureChallengeLevelRank(text: any) {
-	text = (text?.toString() ?? "").toUpperCase();
+	text = (text?.toString() ?? '').toUpperCase();
 	return challengesRanks.includes(text) ? text : 'IRON';
 }

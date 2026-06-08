@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Button, Select, Option, TextArea, Link } from '$lib/components';
+	import { Button, Select, Option, TextArea, Link, Article, H1 } from '$lib/components';
 	import { browser } from '$app/environment';
 	import { onMount } from 'svelte';
 	import regions from 'data/regions.json';
@@ -79,47 +79,42 @@
 	}
 </script>
 
-<svelte:head>
-	<title>Multisearch - Tahm-Ken.ch</title>
-	<meta
-		name="description"
-		content="Multisearch for Harmony and Globtrotter challenges in League of Legends"
-	/>
-</svelte:head>
+<Article>
+	<H1>Multisearch</H1>
+	<p>
+		Enter the summoners name + tag of all the players in your lobby. You can copy/paste join
+		messages in chat.
+	</p>
+	<label>
+		<p>Region</p>
+		<Select class="block w-full" bind:value={region}>
+			{#each regions as region}
+				<Option value={region.id}>{region.abbreviation} - {region.name}</Option>
+			{/each}
+		</Select>
+	</label>
 
-<p>
-	Enter the summoners name + tag of all the players in your lobby. You can copy/paste join messages
-	in chat.
-</p>
-<label>
-	<p>Region</p>
-	<Select class="block w-full" bind:value={region}>
-		{#each regions as region}
-			<Option value={region.id}>{region.abbreviation} - {region.name}</Option>
-		{/each}
-	</Select>
-</label>
+	<label>
+		<p>Summoners</p>
+		<TextArea
+			class="block w-full"
+			rows="9"
+			bind:value={summoners}
+			placeholder={donatorsStr}
+			onpaste={paste}
+		/>
+	</label>
 
-<label>
-	<p>Summoners</p>
-	<TextArea
-		class="block w-full"
-		rows="9"
-		bind:value={summoners}
-		placeholder={donatorsStr}
-		onpaste={paste}
-	/>
-</label>
+	<p>
+		<Button onclick={search} disabled={Boolean(error)}>Search</Button>
+		<span class="text-red-400">
+			{error}
+		</span>
+	</p>
 
-<p>
-	<Button onclick={search} disabled={Boolean(error)}>Search</Button>
-	<span class="text-red-400">
-		{error}
-	</span>
-</p>
-
-<div class="mt-2 text-gray-500" style="font-size:0.9em;">
-	The placeholder contains the list of the Donators, thanks to them ! link to the
-	<Link href="/donate">donation page</Link>
-	&lt;(^.^&lt;) <br />
-</div>
+	<div class="mt-2 text-gray-500" style="font-size:0.9em;">
+		The placeholder contains the list of the Donators, thanks to them ! link to the
+		<Link href="/donate">donation page</Link>
+		&lt;(^.^&lt;) <br />
+	</div>
+</Article>

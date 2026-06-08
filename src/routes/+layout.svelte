@@ -120,7 +120,7 @@
 	{@render children()}
 </main>
 
-<footer class="mt-3 flex flex-col gap-y-3 text-center">
+<footer class="m-3 flex flex-col gap-y-3 text-center">
 	<div>
 		<cite>{quote}</cite> &mdash; The River King
 	</div>

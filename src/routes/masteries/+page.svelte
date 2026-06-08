@@ -5,7 +5,9 @@
 		championsMapKey,
 		ensureChallengeLevelRank
 	} from '$lib/challenges';
+	import { InputText } from '$lib/components';
 	import Button from '$lib/components/Button.svelte';
+	import ChallengeHover from '$lib/components/ChallengeHover.svelte';
 	import ChampionPool from '$lib/components/ChampionPool.svelte';
 	import HelpText from '$lib/components/HelpText.svelte';
 	import Pill from '$lib/components/Pill.svelte';
@@ -14,6 +16,7 @@
 	import { masteryLevelToColor, numberFormat } from '$lib/utils';
 
 	let playerData: any = $state(undefined);
+	let textfilterChampions: string = $state('');
 
 	const playerMasteriesMap: Map<string, any> = $derived.by(
 		() => new Map(playerData?.champion_masteries?.map((c: any) => [c?.championId?.toString(), c]))
@@ -199,213 +202,216 @@
 		<PlayerSearch bind:playerData>
 			<Button onclick={resetFilters}>Clear</Button>
 		</PlayerSearch>
-		<!-- Filters -->
-		<div class="flex justify-center gap-3">
-			<Tooltip>
-				{#snippet text()}
-					<label class="flex items-center justify-center gap-1">
-						<input type="checkbox" value={10} bind:group={masteryFilter} />
-						<Pill bg={masteryLevelToColor(10)} fg="text-white" class="min-w-10">
-							{masteryLevels.filter((l: number) => l >= 10).length}
-						</Pill>
-					</label>
-				{/snippet}
-				Mastery 10+
-			</Tooltip>
-
-			{#each [9, 8, 7, 6, 5] as li}
+		<div class="flex flex-col gap-9">
+			<!-- Filters -->
+			<div class="flex justify-center gap-3">
 				<Tooltip>
 					{#snippet text()}
 						<label class="flex items-center justify-center gap-1">
-							<input type="checkbox" value={li} bind:group={masteryFilter} />
-							<Pill bg={masteryLevelToColor(li)} fg="text-white" class="min-w-10">
-								{masteryLevels.filter((l: number) => l == li).length}
+							<input type="checkbox" value={10} bind:group={masteryFilter} />
+							<Pill bg={masteryLevelToColor(10)} fg="text-white" class="min-w-10">
+								{masteryLevels.filter((l: number) => l >= 10).length}
 							</Pill>
 						</label>
 					{/snippet}
-					Mastery {li}
+					Mastery 10+
 				</Tooltip>
-			{/each}
 
-			<Tooltip>
-				{#snippet text()}
-					<label class="flex items-center justify-center gap-1">
-						<input type="checkbox" value={4} bind:group={masteryFilter} />
-						<Pill bg={masteryLevelToColor(4)} fg="text-white" class="min-w-10">
-							{masteryLevels.filter((l: number) => l <= 4).length}
-						</Pill>
-					</label>
-				{/snippet}
-				Mastery 4-
-			</Tooltip>
-		</div>
+				{#each [9, 8, 7, 6, 5] as li}
+					<Tooltip>
+						{#snippet text()}
+							<label class="flex items-center justify-center gap-1">
+								<input type="checkbox" value={li} bind:group={masteryFilter} />
+								<Pill bg={masteryLevelToColor(li)} fg="text-white" class="min-w-10">
+									{masteryLevels.filter((l: number) => l == li).length}
+								</Pill>
+							</label>
+						{/snippet}
+						Mastery {li}
+					</Tooltip>
+				{/each}
 
-		<!-- Guru -->
-		<div>
-			<div class="flex justify-center">
-				<div class="flex">
-					{guruChallenge?.name}
-					{playerChallengesMap?.get(guruChallenge.id)?.value ?? 0} /
-					{guruChallenge?.thresholds?.MASTER?.value ?? 0}
-
-					<img
-						class="my-1 ml-2 max-w-6"
-						src={`/img/cache/datadragon/challenges-images/${guruChallenge.id}-${guruLevel}.png`}
-						alt={guruLevel}
-					/>
-				</div>
+				<Tooltip>
+					{#snippet text()}
+						<label class="flex items-center justify-center gap-1">
+							<input type="checkbox" value={4} bind:group={masteryFilter} />
+							<Pill bg={masteryLevelToColor(4)} fg="text-white" class="min-w-10">
+								{masteryLevels.filter((l: number) => l <= 4).length}
+							</Pill>
+						</label>
+					{/snippet}
+					Mastery 4-
+				</Tooltip>
 			</div>
-			<table class="w-full">
-				<thead class="font-bold whitespace-nowrap">
-					<tr>
-						<td>Challenge</td>
-						<td class="text-right">Completion</td>
-						<td></td>
-						<td class="text-right"> Missing Points </td>
-					</tr>
-				</thead>
-				<tbody>
-					{#each guruChallenges as { challengeId, missingPoints }}
-						{@const challengeNew = challengesById.get(challengeId as number)}
-						{@const playerDataChallengeNew = playerChallengesMap.get(challengeNew.id)}
-						{@const playerChallengeLevelNew = ensureChallengeLevelRank(
-							playerDataChallengeNew?.level
-						)}
-						<tr>
-							<td>{challengeNew.name}</td>
 
+			<!-- Guru -->
+			<div>
+				<div class="flex justify-center">
+					<div class="flex">
+						{guruChallenge?.name}
+						{playerChallengesMap?.get(guruChallenge.id)?.value ?? 0} /
+						{guruChallenge?.thresholds?.MASTER?.value ?? 0}
+
+						<div class="my-1 ml-2 max-w-6">
+							<ChallengeHover id={guruChallenge.id} level={guruLevel} />
+						</div>
+					</div>
+				</div>
+				<table class="w-full">
+					<thead class="font-bold whitespace-nowrap">
+						<tr>
+							<td>Challenge</td>
+							<td class="text-right">Completion</td>
+							<td></td>
+							<td class="text-right"> Missing Points </td>
+						</tr>
+					</thead>
+					<tbody>
+						{#each guruChallenges as { challengeId, missingPoints }}
+							{@const challengeNew = challengesById.get(challengeId as number)}
+							{@const playerDataChallengeNew = playerChallengesMap.get(challengeNew.id)}
+							{@const playerChallengeLevelNew = ensureChallengeLevelRank(
+								playerDataChallengeNew?.level
+							)}
+							<tr>
+								<td>{challengeNew.name}</td>
+
+								<td class="text-right">
+									{numberFormat.format(playerDataChallengeNew?.value ?? 0)} /
+									{numberFormat.format(challengeNew?.thresholds?.MASTER?.value ?? 0)}
+								</td>
+								<td class="text-right">
+									<div class="my-1 ml-2 max-w-6">
+										<ChallengeHover id={challengeNew.id} level={playerChallengeLevelNew} />
+									</div>
+								</td>
+								<td class="text-right">
+									{#if missingPoints() < 0}
+										N/A
+									{:else}
+										{numberFormat.format(missingPoints())} pts
+									{/if}
+								</td>
+							</tr>
+						{/each}
+					</tbody>
+				</table>
+			</div>
+
+			<!-- Virtoso -->
+			<div>
+				<div class="flex justify-center">
+					<div class="flex">
+						{virtuosoChallenge?.name}
+						{playerChallengesMap?.get(virtuosoChallenge.id)?.value ?? 0} /
+						{virtuosoChallenge?.thresholds?.MASTER?.value ?? 0}
+
+						<div class="my-1 ml-2 max-w-6">
+							<ChallengeHover id={virtuosoChallenge.id} level={virtuosoLevel} />
+						</div>
+					</div>
+				</div>
+				<table class="w-full whitespace-nowrap">
+					<thead class="font-bold">
+						<tr>
+							<td></td>
+							<td></td>
+							<td>Role</td>
+							<td class="text-right">Legacy (7+)</td>
+							<td class="text-right">New (10+)</td>
 							<td class="text-right">
-								{numberFormat.format(playerDataChallengeNew?.value ?? 0)} /
-								{numberFormat.format(challengeNew?.thresholds?.MASTER?.value ?? 0)}
-							</td>
-							<td class="text-right">
-								<img
-									class="my-1 ml-2 max-w-6"
-									src={`/img/cache/datadragon/challenges-images/${challengeNew.id == 401107 ? 401105 : challengeNew.id}-${playerChallengeLevelNew}.png`}
-									alt={playerChallengeLevelNew}
-								/>
-							</td>
-							<td class="text-right">
-								{#if missingPoints() < 0}
-									N/A
-								{:else}
-									{numberFormat.format(missingPoints())} pts
-								{/if}
+								<Tooltip
+									>{#snippet text()}
+										<HelpText>Missing points</HelpText>
+									{/snippet}
+									<div class="w-100 text-left font-normal">
+										Sum of the closest champions to reach mastery 10 for the challenge.
+									</div>
+								</Tooltip>
 							</td>
 						</tr>
-					{/each}
-				</tbody>
-			</table>
-		</div>
+					</thead>
+					<tbody>
+						{#each virtuosoChallenges as [label, legacyId, newId]}
+							{@const challengeLegacy = challengesById.get(legacyId as number)}
+							{@const playerDataChallengeLegacy = playerChallengesMap.get(challengeLegacy.id)}
+							{@const playerChallengeLevelLegacy = ensureChallengeLevelRank(
+								playerDataChallengeLegacy?.level
+							)}
 
-		<!-- Virtoso -->
-		<div>
-			<div class="flex justify-center">
-				<div class="flex">
-					{virtuosoChallenge?.name}
-					{playerChallengesMap?.get(virtuosoChallenge.id)?.value ?? 0} /
-					{virtuosoChallenge?.thresholds?.MASTER?.value ?? 0}
+							{@const challengeNew = challengesById.get(newId as number)}
+							{@const playerDataChallengeNew = playerChallengesMap.get(challengeNew.id)}
+							{@const playerChallengeLevelNew = ensureChallengeLevelRank(
+								playerDataChallengeNew?.level
+							)}
+							{@const challengeChampions = champions.filter((champion) =>
+								challengeNew.availableIds.includes(parseInt(champion.key))
+							)}
+							{@const missingPoints = computeMissingPoints(
+								challengeChampions,
+								masteryPoints[10],
+								challengeNew?.thresholds?.MASTER?.value
+							)}
+							<tr>
+								<td>
+									<input
+										id={legacyId as string}
+										type="checkbox"
+										value={legacyId as number}
+										bind:group={virtuosoFilter}
+									/>
+								</td>
+								<td>
+									<label for={legacyId as string} class="flex">
+										{challengeNew.availableIds.length}
+									</label>
+								</td>
+								<td>
+									<label for={legacyId as string} class="flex">
+										{label}
+									</label>
+								</td>
+								<td>
+									<label for={legacyId as string} class="flex items-center justify-end">
+										{playerDataChallengeLegacy?.value ?? 0} /
+										{challengeLegacy?.thresholds?.MASTER?.value ?? 0}
 
-					<img
-						class="my-1 ml-2 max-w-6"
-						src={`/img/cache/datadragon/challenges-images/${virtuosoChallenge.id}-${virtuosoLevel}.png`}
-						alt={virtuosoLevel}
-					/>
-				</div>
+										<div class="my-1 ml-2 max-w-6">
+											<ChallengeHover id={challengeLegacy.id} level={playerChallengeLevelLegacy} />
+										</div>
+									</label>
+								</td>
+								<td>
+									<label for={legacyId as string} class="flex items-center justify-end">
+										{playerDataChallengeNew?.value ?? 0} /
+										{challengeNew?.thresholds?.MASTER?.value ?? 0}
+
+										<div class="my-1 ml-2 max-w-6">
+											<ChallengeHover id={challengeNew.id} level={playerChallengeLevelNew} />
+										</div>
+									</label>
+								</td>
+								<td class="text-right">
+									<label for={legacyId as string} class="flex justify-end">
+										{numberFormat.format(missingPoints)} pts
+									</label>
+								</td>
+							</tr>
+						{/each}
+					</tbody>
+				</table>
 			</div>
-			<table class="w-full whitespace-nowrap">
-				<thead class="font-bold">
-					<tr>
-						<td></td>
-						<td></td>
-						<td>Role</td>
-						<td class="text-right">Legacy (7+)</td>
-						<td class="text-right">New (10+)</td>
-						<td class="text-right">
-							<Tooltip
-								>{#snippet text()}
-									<HelpText>Missing points</HelpText>
-								{/snippet}
-								<div class="w-100 text-left font-normal">
-									Sum of the closest champions to reach mastery 10 for the challenge.
-								</div>
-							</Tooltip>
-						</td>
-					</tr>
-				</thead>
-				<tbody>
-					{#each virtuosoChallenges as [label, legacyId, newId]}
-						{@const challengeLegacy = challengesById.get(legacyId as number)}
-						{@const playerDataChallengeLegacy = playerChallengesMap.get(challengeLegacy.id)}
-						{@const playerChallengeLevelLegacy = ensureChallengeLevelRank(
-							playerDataChallengeLegacy?.level
-						)}
-
-						{@const challengeNew = challengesById.get(newId as number)}
-						{@const playerDataChallengeNew = playerChallengesMap.get(challengeNew.id)}
-						{@const playerChallengeLevelNew = ensureChallengeLevelRank(
-							playerDataChallengeNew?.level
-						)}
-						{@const challengeChampions = champions.filter((champion) =>
-							challengeNew.availableIds.includes(parseInt(champion.key))
-						)}
-						{@const missingPoints = computeMissingPoints(
-							challengeChampions,
-							masteryPoints[10],
-							challengeNew?.thresholds?.MASTER?.value
-						)}
-						<tr>
-							<td>
-								<input
-									id={legacyId as string}
-									type="checkbox"
-									value={legacyId as number}
-									bind:group={virtuosoFilter}
-								/>
-							</td>
-							<td>
-								<label for={legacyId as string} class="flex">
-									{challengeNew.availableIds.length}
-								</label>
-							</td>
-							<td>
-								<label for={legacyId as string} class="flex">
-									{label}
-								</label>
-							</td>
-							<td>
-								<label for={legacyId as string} class="flex items-center justify-end">
-									{playerDataChallengeLegacy?.value ?? 0} /
-									{challengeLegacy?.thresholds?.MASTER?.value ?? 0}
-
-									<img
-										class="my-1 ml-2 max-w-6"
-										src={`/img/cache/datadragon/challenges-images/${challengeLegacy.id}-${playerChallengeLevelLegacy}.png`}
-										alt={playerChallengeLevelLegacy}
-									/>
-								</label>
-							</td>
-							<td>
-								<label for={legacyId as string} class="flex items-center justify-end">
-									{playerDataChallengeNew?.value ?? 0} /
-									{challengeNew?.thresholds?.MASTER?.value ?? 0}
-									<img
-										class="my-1 ml-2 max-w-6"
-										src={`/img/cache/datadragon/challenges-images/${challengeLegacy.id}-${playerChallengeLevelNew}.png`}
-										alt={playerChallengeLevelNew}
-									/>
-								</label>
-							</td>
-							<td class="text-right">
-								<label for={legacyId as string} class="flex justify-end">
-									{numberFormat.format(missingPoints)} pts
-								</label>
-							</td>
-						</tr>
-					{/each}
-				</tbody>
-			</table>
 		</div>
 	</div>
-	<ChampionPool {playerData} {lowOpacityChampions} {topChampions}></ChampionPool>
+	<div class="flex w-full flex-col items-center justify-start gap-3">
+		<div class="flex flex-wrap justify-center">
+			<InputText
+				title="Search for champions, enter allows you to selected when only one champion matches the search"
+				placeholder="Search champion..."
+				bind:value={textfilterChampions}
+			/>
+		</div>
+		<ChampionPool {playerData} {lowOpacityChampions} {topChampions} {textfilterChampions}
+		></ChampionPool>
+	</div>
 </div>

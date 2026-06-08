@@ -15,6 +15,7 @@
 	import Pill from '$lib/components/Pill.svelte';
 	import PlayerSearch from '$lib/components/PlayerSearch.svelte';
 	import ChampionPool from '$lib/components/ChampionPool.svelte';
+	import ChallengeHover from '$lib/components/ChallengeHover.svelte';
 
 	const selectedChampions: string[] = $state([]);
 	let challengesSelected: any[] = $state([]);
@@ -101,10 +102,6 @@
 	/>
 </svelte:head>
 
-{#snippet helpText()}
-	<HelpText>?</HelpText>
-{/snippet}
-
 <!-- svelte-ignore a11y_no_static_element_interactions -->
 <div class="flex flex-col gap-3 p-3 2xl:flex-row">
 	<div class="flex flex-col gap-3">
@@ -130,15 +127,23 @@
 			{/if}
 		</div>
 
-		<table class="mb-auto w-full">
+		<table class="mb-auto w-full whitespace-nowrap">
 			<thead>
 				<tr>
 					<th class="px-2"></th>
-					<th class="px-2 text-right">&nbsp;&nbsp;#</th>
-					<th class="px-2 text-left">Challenges</th>
+					<th class="px-2 text-right">#</th>
+					<th class="px-2 text-left">Challenge</th>
 					<th class="px-2 text-left">Label</th>
-					<th class="px-2"></th>
 					<th class="px-2 text-left">Selection</th>
+					<th class="px-2 text-right">Progress</th>
+					<th class="px-2 text-center">
+						<Tooltip>
+							{#snippet text()}
+								<HelpText>?</HelpText>
+							{/snippet}
+							Hover to see challenge infos
+						</Tooltip>
+					</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -146,27 +151,22 @@
 					{@const main = challengeGroup.main}
 					{@const mainPlayerChallenge = playerChallengesMap?.get(main?.id)}
 					{@const mainPlayerChallengeLevel = ensureChallengeLevelRank(mainPlayerChallenge?.level)}
+					{@const playerChallengeValue = mainPlayerChallenge?.value ?? 0}
+					{@const threshold = main.thresholds.MASTER.value}
 					<tr>
 						<td class="px-2"></td>
 						<td class="px-2"></td>
 						<th class="px-2 text-left">{main.name}</th>
-						<td class="px-2"></td>
-						<td class="px-2 text-left">
-							<Tooltip text={helpText}>
-								{main.description}
-							</Tooltip>
+						<td></td>
+						<td></td>
+						<td class="px-2 text-right">
+							{playerChallengeValue} / {threshold}
 						</td>
-						{#if playerData}
-							<td class="px-2 text-center"> </td>
-							<td>
-								<img
-									class="h-6 max-h-6 w-6 max-w-6"
-									src={`/img/cache/datadragon/challenges-images/${main.id}-${mainPlayerChallengeLevel}.png`}
-									alt={mainPlayerChallengeLevel}
-								/>
-							</td>
-							<td></td>
-						{/if}
+						<td class="flex">
+							<div class="h-6 max-h-6 w-6 max-w-6">
+								<ChallengeHover id={main.id} level={mainPlayerChallengeLevel} />
+							</div>
+						</td>
 					</tr>
 					{#each challengeGroup.challenges as challenge}
 						{@const championsChallenge = getChampions([challenge])}
@@ -220,11 +220,6 @@
 									</label>
 								</td>
 								<td class="px-2 text-left">
-									<Tooltip text={helpText}>
-										{challenge.description}
-									</Tooltip>
-								</td>
-								<td class="px-2 text-left">
 									<div class="flex items-center">
 										{#each championsSelectedChallenge as championSelectedChallenge}
 											<div class="mx-0.5 h-5 w-5">
@@ -241,23 +236,14 @@
 										{/each}
 									</div>
 								</td>
-
-								{#if playerData}
-									<td>
-										<img
-											class="h-6 max-h-6 w-6 max-w-6"
-											src={`/img/cache/datadragon/challenges-images/${challenge.id}-${playerChallengeLevel}.png`}
-											alt={playerChallengeLevel}
-										/>
-									</td>
-									<td class="px-2 text-center">
-										{#if playerChallengeValue >= threshold}
-											{playerChallengeValue}
-										{:else}
-											{playerChallengeValue} / {threshold}
-										{/if}
-									</td>
-								{/if}
+								<td class="px-2 text-right">
+									{playerChallengeValue} / {threshold}
+								</td>
+								<td>
+									<div class="h-6 max-h-6 w-6 max-w-6">
+										<ChallengeHover id={challenge.id} level={playerChallengeLevel} title2={challenge.label} />
+									</div>
+								</td>
 							</tr>
 						{/if}
 					{/each}
@@ -265,8 +251,9 @@
 			</tbody>
 		</table>
 	</div>
-	<div class="flex flex-col gap-3">
-		<div class="flex flex-wrap items-center justify-center gap-3 2xl:flex-nowrap">
+
+	<div class="flex w-full flex-col items-center justify-start gap-3">
+		<div class="flex flex-wrap justify-center gap-3 2xl:flex-nowrap">
 			<InputText
 				title="Search for champions, enter allows you to selected when only one champion matches the search"
 				placeholder="Search champion..."

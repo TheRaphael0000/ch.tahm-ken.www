@@ -1,11 +1,13 @@
 <script lang="ts">
-	import { Article, H1 } from '$lib/components';
-
-	let { children } = $props();
+	const { children } = $props();
 </script>
 
-<Article>
-	<H1>Multisearch</H1>
+<svelte:head>
+	<title>Multisearch - Tahm-Ken.ch</title>
+	<meta
+		name="description"
+		content="Multisearch for Harmony and Globtrotter challenges in League of Legends"
+	/>
+</svelte:head>
 
-	{@render children()}
-</Article>
+{@render children()}
