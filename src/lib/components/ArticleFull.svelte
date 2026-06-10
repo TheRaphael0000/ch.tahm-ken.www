@@ -2,6 +2,6 @@
 	let { children, class: propClasses = '', ...props } = $props();
 </script>
 
-<article {...props} class={["m-6",'bg-black/50', 'p-6', 'rounded-md', propClasses]}>
+<article {...props} class={['bg-black/60', 'p-6', propClasses]}>
 	{@render children()}
 </article>

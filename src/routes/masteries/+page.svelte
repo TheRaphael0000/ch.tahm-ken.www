@@ -197,7 +197,7 @@
 	<meta name="description" content="Masteries Overview. Guru and Virtuoso challenges" />
 </svelte:head>
 
-<div class="flex flex-col gap-3 p-3 lg:flex-row">
+<div class="flex flex-col gap-3 lg:flex-row">
 	<div class="flex flex-col gap-3">
 		<PlayerSearch bind:playerData>
 			<Button onclick={resetFilters}>Clear</Button>

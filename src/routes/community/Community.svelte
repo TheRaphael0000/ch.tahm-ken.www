@@ -5,7 +5,7 @@
 </script>
 
 <div
-	class="my-6 flex flex-col items-center justify-between rounded-md border-1 px-8 py-6 text-white sm:flex-row"
+	class="my-6 flex flex-col items-center justify-between border px-8 py-6 text-white sm:flex-row"
 >
 	<img {src} alt={name} class="h-[100px] w-[100px] rounded-full" />
 	<div class="m-6 flex w-full flex-col">

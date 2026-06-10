@@ -5,9 +5,9 @@
 	import lcu_version from 'data/lcu/version.json';
 	import { page } from '$app/state';
 	import { onMount } from 'svelte';
-	import ThemeSelector from './ThemeSelector.svelte';
 	import { browser } from '$app/environment';
 	import { Link } from '$lib/components';
+	import Nav from './_components/Nav.svelte';
 
 	const version = import.meta.env.VITE_BUILD_VERSION ?? 'N/A';
 
@@ -30,33 +30,6 @@
 			localStorage.setItem('background', background);
 		}
 	});
-
-	let headerNav = [
-		{
-			href: '/',
-			text: 'Tahm-Ken.ch'
-		},
-		{
-			href: '/multisearch',
-			text: 'Multisearch'
-		},
-		{
-			href: '/team_builder',
-			text: 'Team Builder'
-		},
-		{
-			href: '/masteries',
-			text: 'Masteries'
-		},
-		{
-			href: '/community',
-			text: 'Community'
-		},
-		{
-			href: '/donate',
-			text: 'Donate'
-		}
-	];
 
 	let footerNav = [
 		{
@@ -103,30 +76,10 @@
 		class="bg_img"
 		style:background-image={background ? `url(/img/cache/datadragon/splash/${background})` : ''}
 	></div>
-	<nav class="flex flex-col items-center justify-between lg:flex-row">
-		<div class="mx-7 my-3 flex flex-col items-center gap-2 lg:flex-row lg:gap-7">
-			<a href="/" aria-label="home">
-				<img src="/img/favicon.png" alt="logo" class="h-10 min-h-10 min-w-10" />
-			</a>
-			{#each headerNav as link, i}
-				<!-- svelte-ignore a11y_accesskey -->
-				<a
-					class:border-b-1={currentPath === link.href}
-					class="whitespace-nowrap"
-					href={link.href}
-					accesskey={(i + 1).toString()}
-				>
-					{link.text}
-				</a>
-			{/each}
-		</div>
-		<div class="mx-7 my-3 flex flex-col items-center gap-2 lg:flex-row lg:gap-7">
-			<ThemeSelector bind:background />
-		</div>
-	</nav>
+	<Nav {currentPath} bind:background />
 </header>
 
-<main>
+<main class="p-6">
 	{@render children()}
 </main>
 

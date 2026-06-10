@@ -7,6 +7,7 @@
 	import ChallengeHover from '$lib/components/ChallengeHover.svelte';
 	import ArticleFull from '$lib/components/ArticleFull.svelte';
 	import { H1 } from '$lib/components';
+	import { masteryLevelToColor } from '$lib/utils';
 
 	let multisearch: any = $state();
 	let order: Map<number, { completion: number; mae: number }> = $state(new Map());
@@ -182,7 +183,8 @@
 													/>
 													<div
 														class={[
-															'absolute right-0 bottom-0 rounded-tl-[50%] bg-black/50 px-1 pt-0.5 text-xs font-bold'
+															'absolute right-0 bottom-0 rounded-tl-[50%] px-1 pt-0.5 text-xs font-bold',
+															masteryLevelToColor(level)
 														]}
 													>
 														{level}

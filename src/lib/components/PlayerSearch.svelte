@@ -59,18 +59,18 @@
 <div>
 	<div class="flex w-full gap-3">
 		<form class="flex" onsubmit={search}>
-			<Select class="rounded-r-none" bind:value={region}>
+			<Select bind:value={region}>
 				{#each regions as region}
 					<Option value={region.id}>{region.abbreviation}</Option>
 				{/each}
 			</Select>
 			<InputText
-				class="-ml-px rounded-none {playerData == undefined ? 'text-red-500' : 'text-green-500'}"
+				class="-ml-px {playerData == undefined ? 'text-red-500' : 'text-green-500'}"
 				title="Search your account"
 				placeholder="Summoner name#tag..."
 				bind:value={summoner}
 			/>
-			<Button class="-ml-px rounded-l-none" type="submit">Search</Button>
+			<Button class="-ml-px" type="submit">Search</Button>
 		</form>
 		{#if playerData}
 			<img

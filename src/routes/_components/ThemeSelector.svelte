@@ -28,12 +28,12 @@
 		onclick={(event) => {
 			event.preventDefault();
 			isVisible = !isVisible;
-		}}>Site Theme</a
+		}}>Theme</a
 	>
 
 	{#if isVisible}
 		<div
-			class="fixed top-1/3 left-1/2 z-100 my-3 -translate-x-1/2 -translate-y-1/2 transform rounded-md bg-black p-5 shadow shadow-white"
+			class="fixed top-1/3 left-1/2 z-100 my-3 -translate-x-1/2 -translate-y-1/2 transform border border-white bg-black/80 p-5"
 		>
 			<div class="flex flex-col gap-5">
 				<label>
