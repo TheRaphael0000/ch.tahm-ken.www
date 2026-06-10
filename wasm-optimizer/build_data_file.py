@@ -31,10 +31,15 @@ pub fn get_challenges() -> HashMap<String, HashSet<i32>> {{
     challenges
 }}"""
 
+to_keep_id = [303400, 303500]
+
 
 # rust data file generation
 rows = []
 for challenge_k, challenge in challenges.items():
+
+    if challenge["parentId"] not in to_keep_id:
+        continue
     if len(challenge["availableIds"]) <= 0:
         continue
 
