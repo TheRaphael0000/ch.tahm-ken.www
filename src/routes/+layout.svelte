@@ -4,11 +4,12 @@
 	import manifest_json from 'data/cache/datadragon/manifest.json';
 	import lcu_version from 'data/lcu/version.json';
 	import { page } from '$app/state';
-	import { onMount } from 'svelte';
+	import { onMount, setContext } from 'svelte';
 	import { browser } from '$app/environment';
 	import { Link } from '$lib/components';
 	import Nav from './_components/Nav.svelte';
 
+	let { children } = $props();
 	const version = import.meta.env.VITE_BUILD_VERSION ?? 'N/A';
 
 	onMount(() => {
@@ -23,7 +24,12 @@
 	let background: string = $state(
 		browser ? (localStorage.getItem('background') ?? 'TahmKench_0.jpg') : ''
 	);
-	let { children } = $props();
+
+	setContext<ThemeContext>('theme', {
+		get background() {
+			return background;
+		}
+	});
 
 	$effect(() => {
 		if (background) {

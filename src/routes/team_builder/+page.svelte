@@ -241,7 +241,11 @@
 								</td>
 								<td>
 									<div class="h-6 max-h-6 w-6 max-w-6">
-										<ChallengeHover id={challenge.id} level={playerChallengeLevel} title2={challenge.label} />
+										<ChallengeHover
+											id={challenge.id}
+											level={playerChallengeLevel}
+											title2={challenge.label}
+										/>
 									</div>
 								</td>
 							</tr>

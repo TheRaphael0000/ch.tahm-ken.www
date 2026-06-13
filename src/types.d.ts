@@ -1,0 +1,3 @@
+interface ThemeContext {
+	background: string;
+}
