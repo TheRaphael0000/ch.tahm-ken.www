@@ -20,6 +20,10 @@
 			text: 'Masteries'
 		},
 		{
+			href: '/decay_calendar',
+			text: 'Decay Calendar'
+		},
+		{
 			href: '/community',
 			text: 'Community'
 		},
