@@ -23,7 +23,7 @@ jobs:
         uses: actions/checkout@v5
 
       - name: Build
-        run: VITE_BUILD_VERSION=$(git describe --tags | tr -d '\n') ./docker_build.sh
+        run: VITE_BUILD_VERSION=${{ github.ref_name }} ./docker_build.sh
 
       - name: Archiving build
         run: (cd build && tar -cvf ../build.tar .)
