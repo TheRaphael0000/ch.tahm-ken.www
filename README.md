@@ -36,18 +36,6 @@ npm run dev # Run the vite dev server
 ```bash
 # clean git if you want to do a clean build
 git clean -xfd
-
-docker compose up --build
-
 # build with version number
 VITE_BUILD_VERSION=$(git describe --tags | tr -d '\n') docker compose up --build
 ```
-
-Uses 2 cache volumes:
-
-- data/datadragon -> cache the big data dragon file
-- data/node_modules -> cache the node modules
-
-Output volume:
-
-- data/build -> build output
