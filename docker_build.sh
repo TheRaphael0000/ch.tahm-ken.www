@@ -9,6 +9,7 @@ npm ci
 npm run cache
 
 # build web assembly optimizer
+rustup default stable
 rustup target add wasm32-unknown-unknown
 npm run wasm:data
 npm run wasm:build
