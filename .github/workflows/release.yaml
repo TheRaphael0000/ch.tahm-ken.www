@@ -11,15 +11,22 @@ permissions:
 jobs:
   release:
     runs-on: ubuntu-latest
+
+    container:
+      image: ghcr.io/${{ github.repository }}:main
+      credentials:
+        username: ${{ github.actor }}
+        password: ${{ secrets.GITHUB_TOKEN }}
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v5
-        
+
       - name: Build the image using docker
-        run: VITE_BUILD_VERSION=$(git describe --tags | tr -d '\n') docker compose up --build
+        run: VITE_BUILD_VERSION=$(git describe --tags | tr -d '\n') ./docker_build.sh
 
       - name: Archiving build
-        run: (cd data/build && tar -cvf ../../build.tar .)
+        run: (cd build && tar -cvf ../build.tar .)
 
       - name: Create Release
         id: create_release

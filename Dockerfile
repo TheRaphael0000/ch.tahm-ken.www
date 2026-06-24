@@ -18,9 +18,3 @@ ENV PATH="/root/.cargo/bin:${PATH}"
 RUN rustup target add wasm32-unknown-unknown
 RUN curl -L --proto '=https' --tlsv1.2 -sSf https://raw.githubusercontent.com/cargo-bins/cargo-binstall/main/install-from-binstall-release.sh | sh
 RUN cargo install wasm-pack
-
-# install rsync
-RUN apk add rsync --no-cache
-
-# script comes from the repository once the volume is mounted, check compose.yaml
-CMD ["sh", "./docker_build.sh"]

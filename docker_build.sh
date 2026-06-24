@@ -1,5 +1,6 @@
 #!/bin/sh
-echo $VITE_BUILD_VERSION
+echo pwd: $(pwd)
+echo version: $VITE_BUILD_VERSION
 
 # install dependencies
 npm ci
@@ -13,6 +14,3 @@ npm run wasm:build
 
 # build webapp
 npm run build
-
-# copy artifacts
-rsync -a --delete /app/build/ /build/

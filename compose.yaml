@@ -5,3 +5,4 @@ services:
       - VITE_BUILD_VERSION=${VITE_BUILD_VERSION}
     volumes:
       - .:/app
+    command: "sh ./docker_build.sh"
