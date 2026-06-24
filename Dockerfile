@@ -22,14 +22,5 @@ RUN cargo install wasm-pack
 # install rsync
 RUN apk add rsync --no-cache
 
-COPY ./package*.json .
-COPY ./svelte.config.js .
-COPY ./vite.config.ts .
-COPY ./tsconfig.json .
-COPY ./docker_build.sh .
-COPY ./cache cache
-COPY ./wasm-optimizer wasm-optimizer
-COPY ./static static
-COPY ./src src
-
+# script comes from the repository once the volume is mounted, check compose.yaml
 CMD ["sh", "./docker_build.sh"]
