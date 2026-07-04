@@ -43,8 +43,8 @@
 			href: 'https://discord.gg/aHs3uDraNU'
 		},
 		{
-			text: 'ko-fi',
-			href: 'https://ko-fi.com/theraphael0000'
+			text: 'paypal',
+			href: 'https://www.paypal.com/ncp/payment/KA8SQSKTDTDFQ'
 		},
 		{
 			text: 'github',

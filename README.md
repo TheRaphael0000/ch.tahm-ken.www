@@ -37,5 +37,5 @@ npm run dev # Run the vite dev server
 # clean git if you want to do a clean build
 git clean -xfd
 # build with version number
-VITE_BUILD_VERSION=$(git describe --tags | tr -d '\n') docker compose up --build
+VITE_BUILD_VERSION=dev-build docker compose up --build
 ```

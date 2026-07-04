@@ -3,7 +3,7 @@
 	import { browser } from '$app/environment';
 	import { onMount } from 'svelte';
 	import regions from 'data/regions.json';
-	import donators from 'data/donators.json';
+	import supporters from 'data/supporters.json';
 	import { goto } from '$app/navigation';
 	import { parseJoinText } from '$lib/utils';
 
@@ -20,7 +20,7 @@
 		];
 	});
 	let region: string = $state('');
-	let donatorsStr: string = $state('');
+	let supportersStr: string = $state('');
 	let error: string = $derived.by(() => {
 		if (summonerClean.length > 7)
 			return `You can search only up to 7 different summoners at a time (${summonerClean.length} entered)`;
@@ -39,7 +39,7 @@
 	});
 
 	onMount(async () => {
-		donatorsStr = shuffleArray(donators)
+		supportersStr = shuffleArray(supporters)
 			.map((d) => `${d} joined the lobby`)
 			.join('\n');
 	});
@@ -100,7 +100,7 @@
 			class="block w-full"
 			rows="9"
 			bind:value={summoners}
-			placeholder={donatorsStr}
+			placeholder={supportersStr}
 			onpaste={paste}
 		/>
 	</label>
@@ -113,8 +113,8 @@
 	</p>
 
 	<div class="mt-2 text-gray-500" style="font-size:0.9em;">
-		The placeholder contains the list of the Donators, thanks to them ! link to the
-		<Link href="/donate">donation page</Link>
+		The placeholder contains the list of the Supporters, thanks to them ! link to the
+		<Link href="/support">support page</Link>
 		&lt;(^.^&lt;) <br />
 	</div>
 </Article>

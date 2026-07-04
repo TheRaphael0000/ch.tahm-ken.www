@@ -24,8 +24,8 @@
 			text: 'Community'
 		},
 		{
-			href: '/donate',
-			text: 'Donate'
+			href: '/support',
+			text: 'Support us'
 		}
 	];
 
