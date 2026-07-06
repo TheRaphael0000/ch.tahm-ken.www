@@ -13,7 +13,7 @@
 		},
 		{
 			href: '/team_builder',
-			text: 'Team Builder'
+			text: 'Team builder'
 		},
 		{
 			href: '/masteries',

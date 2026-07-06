@@ -25,7 +25,7 @@
 			are missing from your premade group.
 		</li>
 		<li>
-			<Link href="/team_builder">Team Builder</Link>
+			<Link href="/team_builder">Team builder</Link>
 			<br />
 			Discover and optimize which champions to pick to complete your <b>Harmony</b> and
 			<b>Globetrotter</b> challenges.
