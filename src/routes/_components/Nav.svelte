@@ -46,7 +46,8 @@
 			>☰</button
 		>
 		<a href="/" aria-label="home">
-			<img src="/img/favicon.png" alt="logo" class="h-10 min-h-10 w-10 min-w-10" />
+
+			<img src="/img/favicon.svg" alt="logo" class="h-10 min-h-10 w-10 min-w-10" />
 		</a>
 	</div>
 	<div
