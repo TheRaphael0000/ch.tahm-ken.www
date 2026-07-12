@@ -3,7 +3,7 @@
 	import { numberFormat } from '$lib/utils';
 	import Tooltip from './Tooltip.svelte';
 
-	const { id, level, label = '', title2 = '' } = $props();
+	const { id, level, label = '', title2 = '', class: className } = $props();
 
 	const challenge = $derived(challengesById.get(id));
 
@@ -22,12 +22,11 @@
 
 <Tooltip>
 	{#snippet text()}
-		<div class="relative">
-			<span class="absolute right-1 bottom-0 text-right">
+		<div class={['relative', 'cursor-pointer', className]}>
+			<span class={['absolute', 'right-1', 'bottom-0', 'text-right']}>
 				{label}
 			</span>
 			<img
-				class="cursor-pointer"
 				src={`/img/cache/datadragon/challenges-images/${imageId}-${level}.png`}
 				alt={challenge.name}
 			/>

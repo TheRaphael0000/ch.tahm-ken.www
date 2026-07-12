@@ -13,6 +13,7 @@
 	let order: Map<number, { completion: number; mae: number }> = $state(new Map());
 	let completion: Map<string, number> = $state(new Map());
 	let showMasteries: boolean = $state(false);
+	let hideCompleted: boolean = $state(false);
 
 	let orderedMultiSearch = $derived.by(() => {
 		return multisearch?.toSorted((a: any, b: any) => {
@@ -95,12 +96,16 @@
 	<H1>Multisearch</H1>
 	<p><i>Hover to see the challenge name</i></p>
 
-	<p class="text-right">
+	<div class="flex justify-end gap-5">
 		<label>
-			Show masteries
-			<input type="checkbox" bind:checked={showMasteries} />
+			<input type="checkbox" bind:checked={hideCompleted} />
+			Hide completed
 		</label>
-	</p>
+		<label>
+			<input type="checkbox" bind:checked={showMasteries} />
+			Show masteries
+		</label>
+	</div>
 
 	<div class="flex justify-center">
 		<table>
@@ -153,6 +158,10 @@
 									(c: any) => c.challengeId == challenge.id
 								)}
 								{@const challengeLevel = ensureChallengeLevelRank(summonerChallenge?.level)}
+								{@const value = summonerChallenge?.value ?? 0}
+								{@const threshold = challenge.thresholds.MASTER.value}
+								{@const completed = value >= threshold}
+
 								<div class="flex flex-col">
 									<div class="h-9 max-h-9 w-9 max-w-9">
 										<ChallengeHover
@@ -160,6 +169,7 @@
 											level={challengeLevel}
 											title2={challenge?.label}
 											label={summonerChallenge?.value ?? '0'}
+											class={{ 'opacity-35': completed && hideCompleted }}
 										/>
 									</div>
 
