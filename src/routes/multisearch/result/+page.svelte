@@ -33,6 +33,13 @@
 		});
 	});
 
+	let challenges_text = $derived.by(() => {
+		return ordredChallenges
+			.filter((c) => (order.get(c.id)?.completion ?? 999) <= 0)
+			.map((c) => (c?.label as string) ?? '')
+			.join(', ');
+	});
+
 	$effect(() => {
 		if (browser) {
 			const urlParams = page.url.searchParams;
@@ -248,5 +255,12 @@
 				</tr>
 			</tbody>
 		</table>
+	</div>
+
+	<div>
+		Uncompleted challenges in common:
+		<div>
+			{challenges_text}
+		</div>
 	</div>
 </ArticleFull>
