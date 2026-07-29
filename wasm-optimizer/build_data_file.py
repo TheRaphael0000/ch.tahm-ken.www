@@ -5,6 +5,10 @@ challenges = json.load(open("../src/data/lcu/challenges.json", "r"))
 champions = json.load(
     open("../src/data/cache/datadragon/champion.json", "r"))["data"]
 
+# filter out classic
+champions = {k:v for k,v in champions.items() if int(v["key"]) < 60000}
+print("champions len", len(champions))
+
 champions_by_tag = defaultdict(list)
 for c in champions.values():
     for t in c["tags"]:

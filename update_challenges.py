@@ -22,6 +22,8 @@ challenges = query(f"/lol-challenges/v1/challenges/local-player")
 
 champions = json.loads(open("src/data/cache/datadragon/champion.json", "rb").read().decode("utf-8"))
 champions_keys = [int(c["key"]) for c in champions["data"].values()]
+champions_keys = [c for c in champions_keys if c < 60000]
+print(champions_keys)
 
 to_keep = [
     "availableIds", "capstoneGroupId", "capstoneGroupName", "category", "childrenIds", "description", "descriptionShort", "gameModes", "hasLeaderboard", "id", "idListType", "isCapstone", "isReverseDirection", "name", "parentId", "parentName", "retireTimestamp", "source", "thresholds"

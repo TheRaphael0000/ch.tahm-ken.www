@@ -14,11 +14,15 @@ export const challengesRanksToMaster = [
 	'MASTER'
 ];
 export const challengesRanks = [...challengesRanksToMaster, 'GRANDMASTER', 'CHALLENGER'];
-export const champions = Object.entries(champions_json.data).map((c) => c[1]);
-export const championsMap = new Map(Object.entries(champions_json.data));
-export const championsKeys = Object.entries(champions_json.data).map((c) => c[1].key);
+const champions_without_classic = Object.entries(champions_json.data)
+	.filter((c) => parseInt(c[1].key) < 60000)
+	.map((c) => c[1]);
+export const champions = Object.entries(champions_without_classic).map((c) => c[1]);
+export const championsMap = new Map(
+	Object.entries(champions_without_classic).map((c) => [c[1].id, c[1]])
+);
 export const championsMapKey = new Map(
-	Object.entries(champions_json.data).map((c) => [c[1].key, c[1]])
+	Object.entries(champions_without_classic).map((c) => [c[1].key, c[1]])
 );
 
 export const championsByTags = new Map<string, number[]>();

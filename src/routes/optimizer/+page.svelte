@@ -70,7 +70,6 @@
 			computing = false;
 			worker.terminate();
 		};
-
 		worker.postMessage({ challenges_array, champions_array, limit: selected_limit });
 	}
 </script>
