@@ -140,13 +140,13 @@
 								alt={'icon' + icon}
 							/>
 						</td>
-						<td class="px-2">
+						<td>
 							<span class="whitespace-nowrap">{account.gameName}</span><span
 								class="text-xs text-gray-500">#{account.tagLine}</span
 							>
 						</td>
 
-						<td class="px-2 text-right">
+						<td class="text-right">
 							{(100 * (completion.get(summoner.account.puuid) ?? 0)).toFixed(1)}%
 						</td>
 

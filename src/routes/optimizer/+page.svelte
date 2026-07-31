@@ -188,8 +188,8 @@
 				<table class="table-auto">
 					<thead>
 						<tr>
-							<th class="px-2">#missing champions</th>
-							<th class="px-2">Combinations</th>
+							<th>#missing champions</th>
+							<th>Combinations</th>
 						</tr>
 					</thead>
 					<tbody>

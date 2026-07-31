@@ -5,9 +5,9 @@
 </script>
 
 <div
-	class="my-6 flex flex-col items-center justify-between border px-8 py-6 text-white sm:flex-row"
+	class="my-6 flex flex-col items-center justify-between border border-white/75 px-8 py-6 text-white sm:flex-row"
 >
-	<img {src} alt={name} class="h-[100px] w-[100px] rounded-full" />
+	<img {src} alt={name} class="h-25 w-25 rounded-full" />
 	<div class="m-6 flex w-full flex-col">
 		<h2 class="text-xl">
 			{name}

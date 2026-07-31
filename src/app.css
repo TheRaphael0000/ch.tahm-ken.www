@@ -1,5 +1,20 @@
 @import 'tailwindcss';
 
+@theme {
+	--shadow-border: 0px 0px 6px 0px;
+	--color-bg-light: rgba(0, 0, 0, 0.6);
+	--color-bg: rgba(0, 0, 0, 1);
+}
+
+@layer base {
+	td {
+		@apply px-2 whitespace-nowrap;
+	}
+	th {
+		@apply px-2 whitespace-nowrap;
+	}
+}
+
 html {
 	background-color: rgb(10, 10, 10);
 	color: white;

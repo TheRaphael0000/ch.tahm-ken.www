@@ -103,9 +103,9 @@
 </svelte:head>
 
 <!-- svelte-ignore a11y_no_static_element_interactions -->
-<div class="flex flex-col gap-3 lg:flex-row">
+<div class="flex flex-col gap-3 lg:flex-row lg:items-start">
 	<div class="flex flex-col gap-3">
-		<div class="flex flex-wrap items-center justify-start gap-3 2xl:flex-nowrap">
+		<div class="flex flex-wrap gap-3 px-6 lg:flex-nowrap">
 			<PlayerSearch bind:playerData></PlayerSearch>
 			{#if playerData}
 				<Pill class="my-auto">
@@ -127,135 +127,136 @@
 			{/if}
 		</div>
 
-		<table class="mb-auto w-full whitespace-nowrap">
-			<thead>
-				<tr>
-					<th class="px-2"></th>
-					<th class="px-2 text-right">&nbsp;&nbsp;#</th>
-					<th class="px-2 text-left">Challenge</th>
-					<th class="px-2 text-left">Label</th>
-					<th class="px-2 text-left">Selection</th>
-					<th class="px-2 text-right">Progress</th>
-					<th class="px-2 text-center">
-						<Tooltip>
-							{#snippet text()}
-								<HelpText>?</HelpText>
-							{/snippet}
-							Hover to see challenge infos
-						</Tooltip>
-					</th>
-				</tr>
-			</thead>
-			<tbody>
-				{#each challengesGroups as challengeGroup}
-					{@const main = challengeGroup.main}
-					{@const mainPlayerChallenge = playerChallengesMap?.get(main?.id)}
-					{@const mainPlayerChallengeLevel = ensureChallengeLevelRank(mainPlayerChallenge?.level)}
-					{@const playerChallengeValue = mainPlayerChallenge?.value ?? 0}
-					{@const threshold = main.thresholds.MASTER.value}
+		<div class="bg-bg-light shadow-border p-6">
+			<table class=" mb-auto w-full whitespace-nowrap">
+				<thead>
 					<tr>
-						<td class="px-2"></td>
-						<td class="px-2"></td>
-						<th class="px-2 text-left">{main.name}</th>
-						<td></td>
-						<td></td>
-						<td class="px-2 text-right">
-							{playerChallengeValue} / {threshold}
-						</td>
-						<td class="flex">
-							<div class="h-6 max-h-6 w-6 max-w-6">
-								<ChallengeHover id={main.id} level={mainPlayerChallengeLevel} />
-							</div>
-						</td>
+						<th></th>
+						<th class="text-right">&nbsp;&nbsp;#</th>
+						<th class="text-left">Challenge</th>
+						<th class="text-left">Label</th>
+						<th class="text-left">Selection</th>
+						<th class="text-right">Progress</th>
+						<th class="text-center">
+							<Tooltip>
+								{#snippet text()}
+									<HelpText>?</HelpText>
+								{/snippet}
+								Hover to see challenge infos
+							</Tooltip>
+						</th>
 					</tr>
-					{#each challengeGroup.challenges as challenge}
-						{@const championsChallenge = getChampions([challenge])}
-						{@const championsSelectedChallenge = championsChallenge.filter((champion: any) =>
-							selectedChampions.includes(champion.id)
-						)}
-						{@const missingDots = Math.max(
-							getChallengeRequirements(challenge) - championsSelectedChallenge.length,
-							0
-						)}
-						{@const playerChallenge = playerChallengesMap?.get(challenge?.id)}
-						{@const playerChallengeLevel = ensureChallengeLevelRank(playerChallenge?.level)}
-						{@const playerChallengeValue = playerChallenge?.value ?? 0}
-						{@const threshold = challenge.thresholds.MASTER.value}
-						{@const showRow = showCompleted || playerChallengeValue < threshold}
+				</thead>
+				<tbody>
+					{#each challengesGroups as challengeGroup}
+						{@const main = challengeGroup.main}
+						{@const mainPlayerChallenge = playerChallengesMap?.get(main?.id)}
+						{@const mainPlayerChallengeLevel = ensureChallengeLevelRank(mainPlayerChallenge?.level)}
+						{@const playerChallengeValue = mainPlayerChallenge?.value ?? 0}
+						{@const threshold = main.thresholds.MASTER.value}
+						<tr>
+							<td></td>
+							<td></td>
+							<th class="text-left">{main.name}</th>
+							<td></td>
+							<td></td>
+							<td class="text-right">
+								{playerChallengeValue} / {threshold}
+							</td>
+							<td class="flex">
+								<div class="h-6 max-h-6 w-6 max-w-6">
+									<ChallengeHover id={main.id} level={mainPlayerChallengeLevel} />
+								</div>
+							</td>
+						</tr>
+						{#each challengeGroup.challenges as challenge}
+							{@const championsChallenge = getChampions([challenge])}
+							{@const championsSelectedChallenge = championsChallenge.filter((champion: any) =>
+								selectedChampions.includes(champion.id)
+							)}
+							{@const missingDots = Math.max(
+								getChallengeRequirements(challenge) - championsSelectedChallenge.length,
+								0
+							)}
+							{@const playerChallenge = playerChallengesMap?.get(challenge?.id)}
+							{@const playerChallengeLevel = ensureChallengeLevelRank(playerChallenge?.level)}
+							{@const playerChallengeValue = playerChallenge?.value ?? 0}
+							{@const threshold = challenge.thresholds.MASTER.value}
+							{@const showRow = showCompleted || playerChallengeValue < threshold}
 
-						{#if showRow}
-							<tr class:text-amber-400={missingDots <= 0}>
-								<td class="px-2 pt-0.5 text-right"
-									><input
-										type="checkbox"
-										id={`challenge_cb_${challenge.internalId}`}
-										class="cursor-pointer"
-										bind:group={challengesSelected}
-										value={challenge}
-									/></td
-								>
-								<td class="px-2 text-right">
-									<label
-										for={`challenge_cb_${challenge.internalId}`}
-										class="cursor-pointer"
-										style="width:30px; display inline-block;"
+							{#if showRow}
+								<tr class:text-amber-400={missingDots <= 0}>
+									<td class="text-right"
+										><input
+											type="checkbox"
+											id={`challenge_cb_${challenge.internalId}`}
+											class="cursor-pointer"
+											bind:group={challengesSelected}
+											value={challenge}
+										/></td
 									>
-										{getChampions([...challengesSelected, challenge]).length}
-									</label>
-								</td>
-								<td class="px-2 text-left">
-									<label
-										for={`challenge_cb_${challenge.internalId}`}
-										class="cursor-pointer text-nowrap"
-									>
-										{challenge.name}
-									</label>
-								</td>
-								<td class="px-2 text-left">
-									<label
-										for={`challenge_cb_${challenge.internalId}`}
-										class="cursor-pointer text-nowrap"
-									>
-										{challenge.label}
-									</label>
-								</td>
-								<td class="px-2 text-left">
-									<div class="flex items-center">
-										{#each championsSelectedChallenge as championSelectedChallenge}
-											<div class="mx-0.5 h-5 w-5">
-												<img
-													src={`/img/cache/datadragon/champion/${championSelectedChallenge?.image.full}`}
-													alt={championSelectedChallenge?.name}
-												/>
-											</div>
-										{/each}
-										{#each Array(missingDots) as i}
-											<div class="mx-0.5 h-5 w-5 p-1.25">
-												<div class="v-full h-full rounded-full bg-white/50"></div>
-											</div>
-										{/each}
-									</div>
-								</td>
-								<td class="px-2 text-right">
-									{playerChallengeValue} / {threshold}
-								</td>
-								<td>
-									<div class="h-6 max-h-6 w-6 max-w-6">
-										<ChallengeHover
-											id={challenge.id}
-											level={playerChallengeLevel}
-											title2={challenge.label}
-										/>
-									</div>
-								</td>
-							</tr>
-						{/if}
+									<td class="text-right">
+										<label
+											for={`challenge_cb_${challenge.internalId}`}
+											class="cursor-pointer"
+											style="width:30px; display inline-block;"
+										>
+											{getChampions([...challengesSelected, challenge]).length}
+										</label>
+									</td>
+									<td class="text-left">
+										<label
+											for={`challenge_cb_${challenge.internalId}`}
+											class="cursor-pointer text-nowrap"
+										>
+											{challenge.name}
+										</label>
+									</td>
+									<td class="text-left">
+										<label
+											for={`challenge_cb_${challenge.internalId}`}
+											class="cursor-pointer text-nowrap"
+										>
+											{challenge.label}
+										</label>
+									</td>
+									<td class="text-left">
+										<div class="flex items-center">
+											{#each championsSelectedChallenge as championSelectedChallenge}
+												<div class="mx-0.5 h-5 w-5">
+													<img
+														src={`/img/cache/datadragon/champion/${championSelectedChallenge?.image.full}`}
+														alt={championSelectedChallenge?.name}
+													/>
+												</div>
+											{/each}
+											{#each Array(missingDots) as i}
+												<div class="mx-0.5 h-5 w-5 p-1.25">
+													<div class="v-full h-full rounded-full bg-white/50"></div>
+												</div>
+											{/each}
+										</div>
+									</td>
+									<td class="text-right">
+										{playerChallengeValue} / {threshold}
+									</td>
+									<td>
+										<div class="h-6 max-h-6 w-6 max-w-6">
+											<ChallengeHover
+												id={challenge.id}
+												level={playerChallengeLevel}
+												title2={challenge.label}
+											/>
+										</div>
+									</td>
+								</tr>
+							{/if}
+						{/each}
 					{/each}
-				{/each}
-			</tbody>
-		</table>
+				</tbody>
+			</table>
+		</div>
 	</div>
-
 	<div class="flex w-full flex-col items-center justify-start gap-3">
 		<div class="flex flex-wrap justify-center gap-3 2xl:flex-nowrap">
 			<InputText

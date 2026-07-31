@@ -3,7 +3,7 @@
 	import { numberFormat } from '$lib/utils';
 	import Tooltip from './Tooltip.svelte';
 
-	const { id, level, label = '', title2 = '', class: className } = $props();
+	const { id, level, label = '', title2 = '', class: className = '' } = $props();
 
 	const challenge = $derived(challengesById.get(id));
 
@@ -46,7 +46,7 @@
 				{#if ri}
 					<div class="flex flex-col items-center">
 						<img
-							class="w-15"
+							class="h-15 w-15"
 							src={`/img/cache/datadragon/challenges-images/${imageId}-${r}.png`}
 							alt={challenge.name}
 						/>

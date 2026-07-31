@@ -197,12 +197,14 @@
 	<meta name="description" content="Masteries Overview. Guru and Virtuoso challenges" />
 </svelte:head>
 
-<div class="flex flex-col gap-3 lg:flex-row">
+<div class="flex flex-col gap-3 lg:flex-row lg:items-start">
 	<div class="flex flex-col gap-3">
-		<PlayerSearch bind:playerData>
-			<Button onclick={resetFilters}>Clear</Button>
-		</PlayerSearch>
-		<div class="flex flex-col gap-9">
+		<div class="px-6">
+			<PlayerSearch bind:playerData>
+				<Button onclick={resetFilters}>Clear</Button>
+			</PlayerSearch>
+		</div>
+		<div class=" bg-bg-light shadow-border flex flex-col gap-3 p-6">
 			<!-- Filters -->
 			<div class="flex justify-center gap-3">
 				<Tooltip>
@@ -245,25 +247,25 @@
 			</div>
 
 			<!-- Guru -->
-			<div>
-				<div class="flex justify-center">
-					<div class="flex">
-						{guruChallenge?.name}
-						{playerChallengesMap?.get(guruChallenge.id)?.value ?? 0} /
-						{guruChallenge?.thresholds?.MASTER?.value ?? 0}
+			<div class="flex flex-col items-center">
+				<div>
+					{guruChallenge?.name}
+				</div>
+				<div class="flex items-center">
+					{playerChallengesMap?.get(guruChallenge.id)?.value ?? 0} /
+					{guruChallenge?.thresholds?.MASTER?.value ?? 0}
 
-						<div class="my-1 ml-2 max-w-6">
-							<ChallengeHover id={guruChallenge.id} level={guruLevel} />
-						</div>
+					<div class="ml-2 h-5 w-5">
+						<ChallengeHover id={virtuosoChallenge.id} level={virtuosoLevel} />
 					</div>
 				</div>
+
 				<table class="w-full">
-					<thead class="font-bold whitespace-nowrap">
+					<thead>
 						<tr>
-							<td>Challenge</td>
-							<td class="text-right">Completion</td>
-							<td></td>
-							<td class="text-right"> Missing Points </td>
+							<th class="text-left">Challenge</th>
+							<th class="text-right">Completion</th>
+							<th class="text-right">Missing Points</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -276,14 +278,15 @@
 							<tr>
 								<td>{challengeNew.name}</td>
 
-								<td class="text-right">
-									{numberFormat.format(playerDataChallengeNew?.value ?? 0)} /
-									{numberFormat.format(challengeNew?.thresholds?.MASTER?.value ?? 0)}
-								</td>
-								<td class="text-right">
-									<div class="my-1 ml-2 max-w-6">
-										<ChallengeHover id={challengeNew.id} level={playerChallengeLevelNew} />
-									</div>
+								<td>
+									<label class="flex items-center justify-end">
+										{numberFormat.format(playerDataChallengeNew?.value ?? 0)} /
+										{numberFormat.format(challengeNew?.thresholds?.MASTER?.value ?? 0)}
+
+										<div class="ml-2 h-5 w-5">
+											<ChallengeHover id={challengeNew.id} level={playerChallengeLevelNew} />
+										</div>
+									</label>
 								</td>
 								<td class="text-right">
 									{#if missingPoints() < 0}
@@ -299,27 +302,28 @@
 			</div>
 
 			<!-- Virtoso -->
-			<div>
-				<div class="flex justify-center">
-					<div class="flex">
-						{virtuosoChallenge?.name}
-						{playerChallengesMap?.get(virtuosoChallenge.id)?.value ?? 0} /
-						{virtuosoChallenge?.thresholds?.MASTER?.value ?? 0}
+			<div class="flex flex-col items-center">
+				<div>
+					{virtuosoChallenge?.name}
+				</div>
+				<div class="flex items-center">
+					{playerChallengesMap?.get(virtuosoChallenge.id)?.value ?? 0} /
+					{virtuosoChallenge?.thresholds?.MASTER?.value ?? 0}
 
-						<div class="my-1 ml-2 max-w-6">
-							<ChallengeHover id={virtuosoChallenge.id} level={virtuosoLevel} />
-						</div>
+					<div class="ml-2 h-5 w-5">
+						<ChallengeHover id={virtuosoChallenge.id} level={virtuosoLevel} />
 					</div>
 				</div>
+
 				<table class="w-full whitespace-nowrap">
-					<thead class="font-bold">
+					<thead>
 						<tr>
-							<td></td>
-							<td></td>
-							<td>Role</td>
-							<td class="text-right">Legacy (7+)</td>
-							<td class="text-right">New (10+)</td>
-							<td class="text-right">
+							<th></th>
+							<th></th>
+							<th class="text-left">Role</th>
+							<th class="text-right">Legacy (7+)</th>
+							<th class="text-right">New (10+)</th>
+							<th class="text-right">
 								<Tooltip
 									>{#snippet text()}
 										<HelpText>Missing points</HelpText>
@@ -328,7 +332,7 @@
 										Sum of the closest champions to reach mastery 10 for the challenge.
 									</div>
 								</Tooltip>
-							</td>
+							</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -376,7 +380,7 @@
 										{playerDataChallengeLegacy?.value ?? 0} /
 										{challengeLegacy?.thresholds?.MASTER?.value ?? 0}
 
-										<div class="my-1 ml-2 max-w-6">
+										<div class="ml-2 h-5 w-5">
 											<ChallengeHover id={challengeLegacy.id} level={playerChallengeLevelLegacy} />
 										</div>
 									</label>
@@ -386,7 +390,7 @@
 										{playerDataChallengeNew?.value ?? 0} /
 										{challengeNew?.thresholds?.MASTER?.value ?? 0}
 
-										<div class="my-1 ml-2 max-w-6">
+										<div class="ml-2 h-5 w-5">
 											<ChallengeHover id={challengeNew.id} level={playerChallengeLevelNew} />
 										</div>
 									</label>

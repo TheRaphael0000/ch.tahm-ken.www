@@ -9,7 +9,8 @@
 		['TahmKench_3.jpg', 'Coin Emperor'],
 		['TahmKench_11.jpg', 'Arcana'],
 		['TahmKench_20.jpg', 'High Noon'],
-		['TahmKench_30.jpg', 'Shan Hai Scrolls']
+		['TahmKench_30.jpg', 'Shan Hai Scrolls'],
+		['TahmKench_39.jpg', 'Choncc Kench'],
 	];
 
 	let isVisible: boolean = $state(false);
@@ -33,7 +34,7 @@
 
 	{#if isVisible}
 		<div
-			class="fixed top-1/3 left-1/2 z-100 my-3 -translate-x-1/2 -translate-y-1/2 transform border border-white bg-black/80 p-5"
+			class="shadow-border fixed top-1/3 left-1/2 z-100 my-3 -translate-x-1/2 -translate-y-1/2 transform bg-bg p-5"
 		>
 			<div class="flex flex-col gap-5">
 				<label>
