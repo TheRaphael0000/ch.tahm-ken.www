@@ -209,8 +209,8 @@
 			<div class="flex justify-center gap-3">
 				<Tooltip>
 					{#snippet text()}
-						<label class="flex items-center justify-center gap-1">
-							<input type="checkbox" value={10} bind:group={masteryFilter} />
+						<label class="flex cursor-pointer items-center justify-center gap-1">
+							<input type="checkbox" value={10} bind:group={masteryFilter} class="cursor-pointer" />
 							<Pill bg={masteryLevelToColor(10)} fg="text-white" class="min-w-10">
 								{masteryLevels.filter((l: number) => l >= 10).length}
 							</Pill>
@@ -222,8 +222,13 @@
 				{#each [9, 8, 7, 6, 5] as li}
 					<Tooltip>
 						{#snippet text()}
-							<label class="flex items-center justify-center gap-1">
-								<input type="checkbox" value={li} bind:group={masteryFilter} />
+							<label class="flex cursor-pointer items-center justify-center gap-1">
+								<input
+									type="checkbox"
+									value={li}
+									bind:group={masteryFilter}
+									class="cursor-pointer"
+								/>
 								<Pill bg={masteryLevelToColor(li)} fg="text-white" class="min-w-10">
 									{masteryLevels.filter((l: number) => l == li).length}
 								</Pill>
@@ -235,9 +240,9 @@
 
 				<Tooltip>
 					{#snippet text()}
-						<label class="flex items-center justify-center gap-1">
-							<input type="checkbox" value={4} bind:group={masteryFilter} />
-							<Pill bg={masteryLevelToColor(4)} fg="text-white" class="min-w-10">
+						<label class="flex cursor-pointer items-center justify-center gap-1">
+							<input type="checkbox" value={4} bind:group={masteryFilter} class="cursor-pointer" />
+							<Pill bg="bg-white" fg="text-black" class="min-w-10">
 								{masteryLevels.filter((l: number) => l <= 4).length}
 							</Pill>
 						</label>
@@ -255,7 +260,7 @@
 					{playerChallengesMap?.get(guruChallenge.id)?.value ?? 0} /
 					{guruChallenge?.thresholds?.MASTER?.value ?? 0}
 
-					<div class="ml-2 h-5 w-5">
+					<div class="ml-2 h-6 w-6">
 						<ChallengeHover id={virtuosoChallenge.id} level={virtuosoLevel} />
 					</div>
 				</div>
@@ -283,7 +288,7 @@
 										{numberFormat.format(playerDataChallengeNew?.value ?? 0)} /
 										{numberFormat.format(challengeNew?.thresholds?.MASTER?.value ?? 0)}
 
-										<div class="ml-2 h-5 w-5">
+										<div class="ml-2 h-6 w-6">
 											<ChallengeHover id={challengeNew.id} level={playerChallengeLevelNew} />
 										</div>
 									</label>
@@ -310,7 +315,7 @@
 					{playerChallengesMap?.get(virtuosoChallenge.id)?.value ?? 0} /
 					{virtuosoChallenge?.thresholds?.MASTER?.value ?? 0}
 
-					<div class="ml-2 h-5 w-5">
+					<div class="ml-2 h-6 w-6">
 						<ChallengeHover id={virtuosoChallenge.id} level={virtuosoLevel} />
 					</div>
 				</div>
@@ -361,42 +366,49 @@
 									<input
 										id={legacyId as string}
 										type="checkbox"
+										class="cursor-pointer"
 										value={legacyId as number}
 										bind:group={virtuosoFilter}
 									/>
 								</td>
 								<td>
-									<label for={legacyId as string} class="flex">
+									<label for={legacyId as string} class="flex cursor-pointer">
 										{challengeNew.availableIds.length}
 									</label>
 								</td>
 								<td>
-									<label for={legacyId as string} class="flex">
+									<label for={legacyId as string} class="flex cursor-pointer">
 										{label}
 									</label>
 								</td>
 								<td>
-									<label for={legacyId as string} class="flex items-center justify-end">
+									<label
+										for={legacyId as string}
+										class="flex cursor-pointer items-center justify-end"
+									>
 										{playerDataChallengeLegacy?.value ?? 0} /
 										{challengeLegacy?.thresholds?.MASTER?.value ?? 0}
 
-										<div class="ml-2 h-5 w-5">
+										<div class="ml-2 h-6 w-6">
 											<ChallengeHover id={challengeLegacy.id} level={playerChallengeLevelLegacy} />
 										</div>
 									</label>
 								</td>
 								<td>
-									<label for={legacyId as string} class="flex items-center justify-end">
+									<label
+										for={legacyId as string}
+										class="flex cursor-pointer items-center justify-end"
+									>
 										{playerDataChallengeNew?.value ?? 0} /
 										{challengeNew?.thresholds?.MASTER?.value ?? 0}
 
-										<div class="ml-2 h-5 w-5">
+										<div class="ml-2 h-6 w-6">
 											<ChallengeHover id={challengeNew.id} level={playerChallengeLevelNew} />
 										</div>
 									</label>
 								</td>
 								<td class="text-right">
-									<label for={legacyId as string} class="flex justify-end">
+									<label for={legacyId as string} class="flex cursor-pointer justify-end">
 										{numberFormat.format(missingPoints)} pts
 									</label>
 								</td>

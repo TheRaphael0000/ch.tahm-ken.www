@@ -112,18 +112,16 @@
 					{challengesCompleted}/{challengesTotal}
 				</Pill>
 
-				<div>
-					<Button
-						title="Show/Hide completed challenges"
-						onclick={() => (showCompleted = !showCompleted)}
-					>
-						{#if showCompleted}
-							Hide Completed
-						{:else}
-							Show Completed
-						{/if}
-					</Button>
-				</div>
+				<Button
+					title="Show/Hide completed challenges"
+					onclick={() => (showCompleted = !showCompleted)}
+				>
+					{#if showCompleted}
+						Hide Completed
+					{:else}
+						Show Completed
+					{/if}
+				</Button>
 			{/if}
 		</div>
 
@@ -137,7 +135,7 @@
 						<th class="text-left">Label</th>
 						<th class="text-left">Selection</th>
 						<th class="text-right">Progress</th>
-						<th class="text-center">
+						<th class="flex justify-center">
 							<Tooltip>
 								{#snippet text()}
 									<HelpText>?</HelpText>
@@ -163,8 +161,8 @@
 							<td class="text-right">
 								{playerChallengeValue} / {threshold}
 							</td>
-							<td class="flex">
-								<div class="h-6 max-h-6 w-6 max-w-6">
+							<td class="flex justify-center">
+								<div class="h-6 w-6">
 									<ChallengeHover id={main.id} level={mainPlayerChallengeLevel} />
 								</div>
 							</td>
@@ -240,8 +238,8 @@
 									<td class="text-right">
 										{playerChallengeValue} / {threshold}
 									</td>
-									<td>
-										<div class="h-6 max-h-6 w-6 max-w-6">
+									<td class="flex justify-center">
+										<div class="h-6 w-6">
 											<ChallengeHover
 												id={challenge.id}
 												level={playerChallengeLevel}
