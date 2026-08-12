@@ -257,7 +257,7 @@
 			</table>
 		</div>
 	</div>
-	<div class="flex w-full flex-col items-center justify-start gap-3">
+	<div class="flex w-full flex-col items-center justify-start gap-2">
 		<div class="flex flex-wrap justify-center gap-3 2xl:flex-nowrap">
 			<InputText
 				title="Search for champions, enter allows you to selected when only one champion matches the search"
