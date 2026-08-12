@@ -56,7 +56,7 @@
 	<Nav {currentPath} bind:background />
 </header>
 
-<main class="p-2">
+<main class="p-6">
 	{@render children()}
 </main>
 

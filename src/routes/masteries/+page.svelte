@@ -199,12 +199,12 @@
 
 <div class="flex flex-col gap-3 lg:flex-row lg:items-start">
 	<div class="flex flex-col gap-3">
-		<div class="px-6">
+		<div>
 			<PlayerSearch bind:playerData>
 				<Button onclick={resetFilters}>Clear</Button>
 			</PlayerSearch>
 		</div>
-		<div class=" bg-bg-light shadow-border flex flex-col gap-3 p-6">
+		<div class="bg-bg-light flex flex-col gap-3">
 			<!-- Filters -->
 			<div class="flex justify-center gap-3">
 				<Tooltip>

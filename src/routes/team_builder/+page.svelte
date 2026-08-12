@@ -105,7 +105,7 @@
 <!-- svelte-ignore a11y_no_static_element_interactions -->
 <div class="flex flex-col gap-3 lg:flex-row lg:items-start">
 	<div class="flex flex-col gap-3">
-		<div class="flex flex-wrap gap-3 px-6 lg:flex-nowrap">
+		<div class="flex flex-wrap gap-3 lg:flex-nowrap">
 			<PlayerSearch bind:playerData></PlayerSearch>
 			{#if playerData}
 				<Pill class="my-auto">
@@ -125,7 +125,7 @@
 			{/if}
 		</div>
 
-		<div class="bg-bg-light shadow-border p-6">
+		<div class="bg-bg-light">
 			<table class=" mb-auto w-full whitespace-nowrap">
 				<thead>
 					<tr>
