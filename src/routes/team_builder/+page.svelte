@@ -125,7 +125,7 @@
 			{/if}
 		</div>
 
-		<div class="bg-bg-light">
+		<div class="bg-bg-light -m-3 p-3">
 			<table class=" mb-auto w-full whitespace-nowrap">
 				<thead>
 					<tr>

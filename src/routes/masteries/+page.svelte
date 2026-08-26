@@ -204,7 +204,7 @@
 				<Button onclick={resetFilters}>Clear</Button>
 			</PlayerSearch>
 		</div>
-		<div class="bg-bg-light flex flex-col gap-3">
+		<div class="bg-bg-light flex flex-col gap-3 -m-3 p-3">
 			<!-- Filters -->
 			<div class="flex justify-center gap-3">
 				<Tooltip>
