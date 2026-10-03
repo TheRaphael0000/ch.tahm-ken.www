@@ -41,28 +41,27 @@
 		<cite>{quote}</cite> &mdash; The River King
 	</div>
 
-	<div class="flex flex-wrap justify-center gap-x-3">
+	<div class="flex flex-wrap justify-center gap-x-3 text-sm">
 		{#each footerNav as link}
-			<a aria-label={link.text} href={link.href} target="_blank" class="text-sm">
+			<a aria-label={link.text} href={link.href} target="_blank">
 				{link.text}
 			</a>
 		{/each}
 	</div>
 
-	<div class="text-sm text-gray-500">
-		Build
-		<Link
-			href="https://github.com/TheRaphael0000/ch.tahm-ken.www/commits/{version}"
+	<div class="flex flex-wrap justify-center gap-x-3 text-sm text-gray-500">
+		<a href="https://github.com/TheRaphael0000/ch.tahm-ken.www/tree/{version}" target="_blank">
+			build {version}
+		</a>
+		<a href="https://ddragon.leagueoflegends.com/cdn/dragontail-{manifest_json.dd}.tgz">
+			dd {manifest_json.dd}
+		</a>
+		<a
+			href="https://github.com/TheRaphael0000/ch.tahm-ken.www/tree/{version}/src/data/lcu"
 			target="_blank"
 		>
-			{version}
-		</Link>
-		/ DD
-		<Link href="https://ddragon.leagueoflegends.com/cdn/dragontail-{manifest_json.dd}.tgz">
-			{manifest_json.dd}
-		</Link>
-		/ LCU
-		{lcu_version}
+			lcu {lcu_version}
+		</a>
 	</div>
 	<div class="text-sm text-gray-500">
 		Tahm-Ken.ch isn't endorsed by Riot Games and doesn't reflect the views or opinions of Riot Games

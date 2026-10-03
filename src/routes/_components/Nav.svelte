@@ -39,14 +39,13 @@
 </script>
 
 <nav
-	class="mx-6 my-3 flex flex-col items-start justify-between gap-x-7 gap-y-5 lg:mx-6 lg:flex-row lg:items-center"
+	class="mx-6 my-3 flex flex-col items-start justify-between gap-x-7 gap-y-5 text-lg tracking-tight lg:mx-6 lg:flex-row lg:items-center"
 >
 	<div class="flex flex-row items-start justify-start gap-5 lg:flex lg:w-1/8 lg:items-center">
 		<button class="cursor-pointer text-4xl lg:hidden" onclick={() => (toggleMenu = !toggleMenu)}
 			>☰</button
 		>
 		<a href="/" aria-label="home">
-
 			<img src="/img/favicon.svg" alt="logo" class="h-10 min-h-10 w-10 min-w-10" />
 		</a>
 	</div>

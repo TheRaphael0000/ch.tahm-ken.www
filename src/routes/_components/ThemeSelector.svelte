@@ -10,7 +10,7 @@
 		['TahmKench_11.jpg', 'Arcana'],
 		['TahmKench_20.jpg', 'High Noon'],
 		['TahmKench_30.jpg', 'Shan Hai Scrolls'],
-		['TahmKench_39.jpg', 'Choncc Kench'],
+		['TahmKench_39.jpg', 'Choncc Kench']
 	];
 
 	let isVisible: boolean = $state(false);
@@ -31,25 +31,24 @@
 			isVisible = !isVisible;
 		}}>Theme</a
 	>
+</div>
+{#if isVisible}
+	<div
+		class="bg-bg fixed top-1/3 left-1/2 z-100 my-3 -translate-x-1/2 -translate-y-1/2 transform border border-white p-5"
+	>
+		<div class="flex flex-col gap-5">
+			<label>
+				Background:
+				<Select bind:value={background}>
+					{#each valid_img as [img, name]}
+						<Option value={img}>{name}</Option>
+					{/each}
+				</Select>
+			</label>
 
-	{#if isVisible}
-		<div
-			class="shadow-border fixed top-1/3 left-1/2 z-100 my-3 -translate-x-1/2 -translate-y-1/2 transform bg-bg p-5"
-		>
-			<div class="flex flex-col gap-5">
-				<label>
-					Background:
-					<Select bind:value={background}>
-						{#each valid_img as [img, name]}
-							<Option value={img}>{name}</Option>
-						{/each}
-					</Select>
-				</label>
-
-				<div class="text-center">
-					<Button onclick={() => (isVisible = false)}>Close</Button>
-				</div>
+			<div class="text-center">
+				<Button onclick={() => (isVisible = false)}>Close</Button>
 			</div>
 		</div>
-	{/if}
-</div>
+	</div>
+{/if}
