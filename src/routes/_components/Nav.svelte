@@ -50,15 +50,15 @@
 		</a>
 	</div>
 	<div
-		class="flex flex-col items-start justify-center gap-2 lg:flex lg:w-6/8 lg:flex-row lg:items-center lg:gap-7"
+		class="flex w-full flex-col items-start justify-center lg:flex lg:w-auto lg:flex-row lg:items-center"
 		class:flex={toggleMenu}
 		class:hidden={!toggleMenu}
 	>
 		{#each headerNav as link, i}
 			<!-- svelte-ignore a11y_accesskey -->
 			<a
-				class:border-b-1={currentPath === link.href}
-				class="whitespace-nowrap"
+				class:underline={currentPath === link.href}
+				class="block w-full py-1.5 whitespace-nowrap underline-offset-5 lg:px-3.5"
 				href={link.href}
 				accesskey={(i + 1).toString()}
 			>
