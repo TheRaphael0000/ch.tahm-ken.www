@@ -21,11 +21,13 @@
 	</p>
 	<p>If you'd like to support our work you can use the following link:</p>
 
-	<div class="flex items-center justify-center">
-		<a href="https://www.paypal.com/ncp/payment/KA8SQSKTDTDFQ" class="my-auto" target="_blank">
-			<Button class="border-0 bg-blue-400"
-				>PayPal / Apple Pay / Credit Cards <span class="text-xl">↗</span></Button
-			>
+	<div class="flex flex-col items-center justify-center gap-3">
+		<div>PayPal / Apple Pay / Credit Cards</div>
+		<a href="https://www.paypal.com/ncp/payment/KA8SQSKTDTDFQ" target="_blank">
+			<Button class="border-0 bg-blue-400">
+				Support us
+				<span class="inline-block pl-2 text-xl leading-none">↗</span>
+			</Button>
 		</a>
 	</div>
 
