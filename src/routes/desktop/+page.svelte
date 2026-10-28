@@ -2,10 +2,8 @@
 	import { H1, H2, Link } from '$lib/components';
 	import ArrowDown from '$lib/components/ArrowDown.svelte';
 	import ArrowTopRight from '$lib/components/ArrowTopRight.svelte';
-	import Arrow from '$lib/components/ArrowTopRight.svelte';
 	import Article from '$lib/components/Article.svelte';
 	import Button from '$lib/components/Button.svelte';
-	import ChallengeHover from '$lib/components/ChallengeHover.svelte';
 	import Pill from '$lib/components/Pill.svelte';
 	import { onMount } from 'svelte';
 
