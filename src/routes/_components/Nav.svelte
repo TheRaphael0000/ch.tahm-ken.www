@@ -1,5 +1,6 @@
 <script>
 	import { onNavigate } from '$app/navigation';
+	import Pill from '$lib/components/Pill.svelte';
 	import ThemeSelector from './ThemeSelector.svelte';
 
 	let headerNav = [
@@ -18,6 +19,11 @@
 		{
 			href: '/masteries',
 			text: 'Masteries'
+		},
+		{
+			href: '/desktop',
+			text: 'Desktop',
+			new: true
 		},
 		{
 			href: '/community',
@@ -64,6 +70,9 @@
 			>
 				{link.text}
 			</a>
+			{#if link.new}
+				<Pill bg="bg-green-500/80" fg="text-white" class="w-15">new</Pill>
+			{/if}
 		{/each}
 	</div>
 	<div

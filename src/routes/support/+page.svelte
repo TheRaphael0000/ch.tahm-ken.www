@@ -13,9 +13,9 @@
 <Article>
 	<H1>Support us</H1>
 	<p>
-		Tahm-Ken.ch is <b>open-source</b> and <b>ad-free</b>, and we do not use cookies or collect any
+		Tahm-Ken.ch is <b>open source</b> and <b>ad-free</b>, and we do not use cookies or collect any
 		personal data. The only exception is page visit statistics, which are tracked using an
-		open-source, privacy-focused solution (<Link href="https://github.com/umami-software/umami"
+		open source, privacy-focused solution (<Link href="https://github.com/umami-software/umami"
 			>Umami</Link
 		>).
 	</p>
