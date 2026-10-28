@@ -70,8 +70,10 @@
 				</a>
 			</div>
 			<div class="text-center text-sm text-gray-500 italic">
-				You may have a warning when you start the program since it's <b>not signed</b>.
+				You may have a warning when you start the program for the first time since it's <b>not signed</b>.
 				<br />
+				Just click "More info", "Run anyway".
+				<br/>
 				The program is <b>open source</b>, so feel free to check it or compile it yourself.
 			</div>
 		</div>
