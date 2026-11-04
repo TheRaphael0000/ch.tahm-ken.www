@@ -2,9 +2,6 @@
 echo pwd: $(pwd)
 echo version: $VITE_BUILD_VERSION
 
-gh --version
-cargo --version
-
 # install dependencies
 npm ci
 
