@@ -11,6 +11,8 @@ permissions:
 jobs:
   release:
     runs-on: ubuntu-latest
+    env:
+      RELEASE_TAR: "tahm-ken.ch-${{ github.ref_name }}.tar"
 
     container:
       image: ghcr.io/theraphael0000/ch.tahm-ken.www:main
@@ -26,25 +28,13 @@ jobs:
         run: VITE_BUILD_VERSION=${{ github.ref_name }} ./docker_build.sh
 
       - name: Archiving build
-        run: (cd build && tar -cvf ../build.tar .)
+        run: (cd build && tar -cvf ../$RELEASE_TAR .)
 
       - name: Create Release
-        id: create_release
-        uses: actions/create-release@v1.1.4
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          tag_name: ${{ github.ref }}
-          release_name: Release ${{ github.ref_name }}
-          draft: false
-          prerelease: false
-
-      - name: Upload Release Asset
-        uses: actions/upload-release-asset@v1.0.2
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ./build.tar
-          asset_name: tahm-ken.ch-${{ github.ref_name }}.tar
-          asset_content_type: application/zip
+        run: |
+          gh release create ${{ github.ref }} \
+          --title "Release ${{ github.ref_name }}" \
+          --generate-notes \
+          ./$RELEASE_TAR
