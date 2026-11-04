@@ -3,7 +3,7 @@ from requests import get, auth, post
 import json
 
 game_path = "C:/Riot Games/League of Legends/"
-certif_path = "./riotgames.pem"
+# certif_path = "./riotgames.pem"
 
 def get_endpoint(game_folder):
     values = open(game_folder / Path("lockfile")).read().split(":")
@@ -13,7 +13,9 @@ def query(route):
     try:
         url, creds = get_endpoint(Path(game_path))
         basic = auth.HTTPBasicAuth(*creds)
-        answer = get(url + route, auth=basic, verify=Path(certif_path))
+        print(url + route)
+        # answer = get(url + route, auth=basic, verify=Path(certif_path))
+        answer = get(url + route, auth=basic, verify=False)
         return json.loads(answer.content)
     except FileNotFoundError:
         print("Client not open")
